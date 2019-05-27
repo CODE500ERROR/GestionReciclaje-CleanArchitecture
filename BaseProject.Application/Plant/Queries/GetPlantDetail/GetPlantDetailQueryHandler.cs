@@ -13,15 +13,15 @@ using BaseProject.Application.Roles;
 using BaseProject.Application.Managers;
 using BaseProject.Application.Users.Queries.GetAllUsers;
 
-namespace BaseProject.Application.Plant.Queries.GetAllPlant
+namespace BaseProject.Application.Plant.Queries.GetPlantDetail
 {
-    public class GetFactoryDetailQueryHandler : IRequestHandler<GetPlantDetailQuery, PlantDetailModel>
+    public class GetPlantDetailQueryHandler : IRequestHandler<GetPlantDetailQuery, PlantDetailModel>
     {
         private readonly BaseProjectDbContext _context;
         private readonly IMapper _mapper;
         private readonly UserManager _userMananger;
 
-        public GetFactoryDetailQueryHandler(BaseProjectDbContext db, IMapper mapper, UserManager user)
+        public GetPlantDetailQueryHandler(BaseProjectDbContext db, IMapper mapper, UserManager user)
         {
             _context = db;
             _mapper=mapper;
@@ -30,15 +30,15 @@ namespace BaseProject.Application.Plant.Queries.GetAllPlant
 
         public async Task<PlantDetailModel> Handle(GetPlantDetailQuery request, CancellationToken cancellationToken)
         {
-            var factory = await _context.Plants.FindAsync(request.PlantId);            
-            if (factory == null)      
+            var Plant = await _context.Plants.FindAsync(request.PlantId);            
+            if (Plant == null)      
                 throw new NotFoundException(nameof(BaseProject.Domain.Plant.Plant), request.PlantId);
             
             return new PlantDetailModel {
-                PlantId=factory.PlantId,
-                Name=factory.Name,
-                Address=factory.Address,
-                MunicipioId=factory.MunicipioId
+                PlantId=Plant.PlantId,
+                Name=Plant.Name,
+                Address=Plant.Address,
+                MunicipioId=Plant.MunicipioId
             };
 
         }

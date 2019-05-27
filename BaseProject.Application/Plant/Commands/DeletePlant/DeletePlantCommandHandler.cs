@@ -11,7 +11,7 @@ using MediatR;
 using Whoever.Common.Exceptions;
 using Whoever.Common.Extensions;
 
-namespace BaseProject.Application.Users.Administrators.Commands.UpdateAdministrator
+namespace BaseProject.Application.Plant.Commands.DeletePlant
 {
     public class DeletePlantCommandHandler :  IRequestHandler<DeletePlantCommand>
     {

@@ -19,6 +19,28 @@ namespace BaseProject.Persistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("BaseProject.Domain.Category", b =>
+                {
+                    b.Property<Guid>("CategoryId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreationTime")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(new DateTime(2019, 5, 26, 20, 42, 33, 78, DateTimeKind.Local).AddTicks(6223));
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("Category");
+                });
+
             modelBuilder.Entity("BaseProject.Domain.DeviceToken", b =>
                 {
                     b.Property<int>("Id");
@@ -48,7 +70,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 26, 0, 33, 12, 38, DateTimeKind.Local).AddTicks(9391));
+                        .HasDefaultValue(new DateTime(2019, 5, 26, 20, 42, 33, 73, DateTimeKind.Local).AddTicks(8623));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -74,7 +96,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 26, 0, 33, 12, 35, DateTimeKind.Local).AddTicks(6527));
+                        .HasDefaultValue(new DateTime(2019, 5, 26, 20, 42, 33, 68, DateTimeKind.Local).AddTicks(3878));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -158,6 +180,32 @@ namespace BaseProject.Persistence.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("RoleClaim");
+                });
+
+            modelBuilder.Entity("BaseProject.Domain.SubCategory", b =>
+                {
+                    b.Property<Guid>("SubCategoryId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid>("CategoryId");
+
+                    b.Property<DateTime>("CreationTime")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(new DateTime(2019, 5, 26, 20, 42, 33, 57, DateTimeKind.Local).AddTicks(5289));
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.HasKey("SubCategoryId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("SubCategory");
                 });
 
             modelBuilder.Entity("BaseProject.Domain.User", b =>
@@ -317,6 +365,14 @@ namespace BaseProject.Persistence.Migrations
                         .WithMany("Claims")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("BaseProject.Domain.SubCategory", b =>
+                {
+                    b.HasOne("BaseProject.Domain.Category", "Category")
+                        .WithMany("SubCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("BaseProject.Domain.UserClaim", b =>

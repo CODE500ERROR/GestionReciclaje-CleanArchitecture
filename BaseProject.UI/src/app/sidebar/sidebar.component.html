@@ -35,12 +35,22 @@
         <a
         mat-list-item
         (click)="sidenav.close()"
-        [routerLink]="['/']"
+        [routerLink]="['/category']"
         routerLinkActive="list-item-active">    
         <mat-icon  matListIcon class="app-nav-list-icon">create</mat-icon>
         Categorías
         </a>
 
+
+        
+        <a
+        mat-list-item
+        (click)="sidenav.close()"
+        [routerLink]="['/subCategory']"
+        routerLinkActive="list-item-active">    
+        <mat-icon  matListIcon class="app-nav-list-icon">create</mat-icon>
+        SubCategorías
+        </a>
         <a
         mat-list-item
         (click)="sidenav.close()"

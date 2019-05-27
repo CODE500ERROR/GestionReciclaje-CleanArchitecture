@@ -7,7 +7,7 @@ using Whoever.Data.EntityFramework;
 
 namespace BaseProject.Persistence.Configurations.Plant
 {
-    public class PlantConfiguration : BaseEntityTypeConfiguration<BaseProject.Domain.Plant.Plant>
+    public class SubCategoryConfiguration : BaseEntityTypeConfiguration<BaseProject.Domain.Plant.Plant>
     {
 
         public override void Configure(EntityTypeBuilder<BaseProject.Domain.Plant.Plant> builder)

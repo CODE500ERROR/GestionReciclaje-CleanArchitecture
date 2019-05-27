@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
+using BaseProject.Application.Plant.Commands.DeletePlant;
+using BaseProject.Application.Plant.Commands.UpdatePlant;
 using BaseProject.Application.Plant.CreatePlant;
 using BaseProject.Application.Plant.Queries.GetAllPlant;
+using BaseProject.Application.Plant.Queries.GetPlantDetail;
 using BaseProject.Application.Users.Commands.UpdateUser;
 using BaseProject.Application.Users.Queries.GetAllUsers;
 using BaseProject.WebApi.Common;
@@ -25,8 +28,6 @@ namespace BaseProject.WebApi.Controller
         {
             return Ok(await Mediator.Send(query));
         }
-
-
 
         /// <summary>
         /// Get all roles.

@@ -3,7 +3,7 @@ using FluentValidation;
 using BaseProject.Application.Infrastructure.Request.Commands.Update;
 using BaseProject.Application.Users.Commands.UpdateUser;
 
-namespace BaseProject.Application.Users.Administrators.Commands.UpdateAdministrator
+namespace BaseProject.Application.Plant.Commands.UpdatePlant
 {
 
     public class UpdatePlantCommandValidator : UpdateCommandValidator<UpdatePlantCommand>

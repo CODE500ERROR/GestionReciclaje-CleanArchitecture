@@ -6,7 +6,7 @@ using Whoever.Data.EntityFramework;
 
 namespace BaseProject.Persistence.Configurations.Municipio
 {
-    public class MunicipioConfiguration : BaseEntityTypeConfiguration<BaseProject.Domain.Municipio>
+    public class CategoryConfiguration : BaseEntityTypeConfiguration<BaseProject.Domain.Municipio>
     {
 
         public override void Configure(EntityTypeBuilder<BaseProject.Domain.Municipio> builder)

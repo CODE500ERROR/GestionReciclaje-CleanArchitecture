@@ -5,7 +5,7 @@ using BaseProject.Application.Roles;
 using BaseProject.Domain;
 using Whoever.Common.Mapping;
 
-namespace BaseProject.Application.Plant.Queries.GetAllPlant
+namespace BaseProject.Application.Plant.Queries.GetPlantDetail
 {
     public class PlantDetailModel
     {

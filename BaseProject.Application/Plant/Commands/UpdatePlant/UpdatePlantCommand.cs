@@ -7,7 +7,7 @@ using BaseProject.Domain;
 using MediatR;
 using Whoever.Common.Mapping;
 
-namespace BaseProject.Application.Users.Commands.UpdateUser
+namespace BaseProject.Application.Plant.Commands.UpdatePlant
 {
     public class UpdatePlantCommand : UpdateCommand, IRequest
     {

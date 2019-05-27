@@ -67,6 +67,16 @@ import { CreatePlantComponent } from './plant/create-plant/create-plant.componen
 import { EditPlantComponent } from './plant/edit-plant/edit-plant.component';
 import { ListPlantResolver } from './_resolvers/list-plant-resolvers';
 import { DetailPlantResolver } from './_resolvers/detail-plant-resolvers';
+import { EditCategoryComponent } from './category/edit-category/edit-category.component';
+import { CreateCategoryComponent } from './category/create-category/create-category.component';
+import { ListCategoryComponent } from './category/list-category/list-category.component';
+import { EditSubCategoryComponent } from './subCategory/edit-subCategory/edit-subCategory.component';
+import { CreateSubCategoryComponent } from './subCategory/create-subCategory/create-subCategory.component';
+import { ListSubCategoryComponent } from './subCategory/list-subCategory/list-subCategory.component';
+import { ListSubCategoryResolver } from './_resolvers/list-subCategory-resolvers';
+import { ListCategoryResolver } from './_resolvers/list-category-resolvers';
+import { DetailSubCategoryResolver } from './_resolvers/detail-subCategory-resolvers';
+import { DetailCategoryResolver } from './_resolvers/detail-category-resolvers';
 
 
 
@@ -93,7 +103,14 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       NavbarComponent,
       ListPlantComponent,
       CreatePlantComponent,
-      EditPlantComponent
+      EditPlantComponent,
+      ListCategoryComponent,
+      CreateCategoryComponent,
+      EditCategoryComponent,
+      ListSubCategoryComponent,
+      CreateSubCategoryComponent,
+      EditSubCategoryComponent,
+      
    ],
    imports: [
       BrowserModule,
@@ -147,9 +164,17 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       AlertifyService,
       DetailUserResolver,
       ListUserResolver,
+
       ListPlantResolver,
       DetailPlantResolver,
-      PreventUnsavedChanges,      
+
+      ListCategoryResolver,
+      DetailCategoryResolver,
+
+      ListSubCategoryResolver,
+      DetailSubCategoryResolver,
+
+      PreventUnsavedChanges,
       UserService,
       {
          provide: PERFECT_SCROLLBAR_CONFIG,
