@@ -26,7 +26,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 26, 20, 42, 33, 78, DateTimeKind.Local).AddTicks(6223));
+                        .HasDefaultValue(new DateTime(2019, 5, 27, 20, 30, 22, 530, DateTimeKind.Local).AddTicks(3046));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -36,7 +36,11 @@ namespace BaseProject.Persistence.Migrations
                         .IsRequired()
                         .HasMaxLength(100);
 
+                    b.Property<Guid?>("ParentId");
+
                     b.HasKey("CategoryId");
+
+                    b.HasIndex("ParentId");
 
                     b.ToTable("Category");
                 });
@@ -70,7 +74,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 26, 20, 42, 33, 73, DateTimeKind.Local).AddTicks(8623));
+                        .HasDefaultValue(new DateTime(2019, 5, 27, 20, 30, 22, 528, DateTimeKind.Local).AddTicks(4451));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -96,7 +100,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 26, 20, 42, 33, 68, DateTimeKind.Local).AddTicks(3878));
+                        .HasDefaultValue(new DateTime(2019, 5, 27, 20, 30, 22, 525, DateTimeKind.Local).AddTicks(744));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -180,32 +184,6 @@ namespace BaseProject.Persistence.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("RoleClaim");
-                });
-
-            modelBuilder.Entity("BaseProject.Domain.SubCategory", b =>
-                {
-                    b.Property<Guid>("SubCategoryId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<Guid>("CategoryId");
-
-                    b.Property<DateTime>("CreationTime")
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 26, 20, 42, 33, 57, DateTimeKind.Local).AddTicks(5289));
-
-                    b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValue(false);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100);
-
-                    b.HasKey("SubCategoryId");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("SubCategory");
                 });
 
             modelBuilder.Entity("BaseProject.Domain.User", b =>
@@ -343,6 +321,14 @@ namespace BaseProject.Persistence.Migrations
                     b.ToTable("UserToken");
                 });
 
+            modelBuilder.Entity("BaseProject.Domain.Category", b =>
+                {
+                    b.HasOne("BaseProject.Domain.Category", "Parent")
+                        .WithMany("Children")
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
             modelBuilder.Entity("BaseProject.Domain.DeviceToken", b =>
                 {
                     b.HasOne("BaseProject.Domain.User", "User")
@@ -365,14 +351,6 @@ namespace BaseProject.Persistence.Migrations
                         .WithMany("Claims")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("BaseProject.Domain.SubCategory", b =>
-                {
-                    b.HasOne("BaseProject.Domain.Category", "Category")
-                        .WithMany("SubCategories")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("BaseProject.Domain.UserClaim", b =>

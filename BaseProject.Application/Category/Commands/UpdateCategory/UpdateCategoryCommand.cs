@@ -12,6 +12,7 @@ namespace BaseProject.Application.Category.Commands.UpdateCategory
     public class UpdateCategoryCommand : UpdateCommand, IRequest
     {
         public Guid CategoryId { get; set; }
+        public Guid? ParentId { get; set; }
         public string Name { get; set; }        
 
     }

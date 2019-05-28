@@ -11,6 +11,7 @@ namespace BaseProject.Application.Category.Commands.CreateCategory
     public class CreateCategoryCommand: IRequest<bool>
     {
         public string Name { get; set; }
+        public Guid? ParentId{ get; set; }
 
     }
 }

@@ -26,6 +26,12 @@
         </member>
         <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:BaseProject.WebApi.Controller.CategoryController.Delete(System.Guid)" -->
         <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:BaseProject.WebApi.Controller.CategoryController.Update(BaseProject.Application.Category.Commands.UpdateCategory.UpdateCategoryCommand)" -->
+        <member name="M:BaseProject.WebApi.Controller.CategoryController.GetAllParent">
+            <summary>
+            Get all category parents.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:BaseProject.WebApi.Controller.MunicipioController.GetAll(BaseProject.Application.Roles.GetAllRoles.GetMunicipioListQuery)">
             <summary>
             Get all roles.
@@ -62,28 +68,6 @@
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:BaseProject.WebApi.Controller.SubCategoryController.GetAll(BaseProject.Application.Category.Queries.GetAllSubCategories.GetSubCategoryListQuery)">
-            <summary>
-            Get all roles.
-            </summary>
-            <param name="query"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BaseProject.WebApi.Controller.SubCategoryController.Create(BaseProject.Application.Category.Commands.CreateSubCategory.CreateSubCategoryCommand)">
-            <summary>
-            Get all roles.
-            </summary>
-            <param name="command"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BaseProject.WebApi.Controller.SubCategoryController.Get(System.Guid)">
-            <summary>
-            Get user by id.
-            </summary>
-            <returns></returns>
-        </member>
-        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:BaseProject.WebApi.Controller.SubCategoryController.Delete(System.Guid)" -->
-        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:BaseProject.WebApi.Controller.SubCategoryController.Update(BaseProject.Application.Category.Commands.UpdateSubCategory.UpdateSubCategoryCommand)" -->
         <member name="M:BaseProject.WebApi.Controller.UserController.GetAll(BaseProject.Application.Users.Queries.GetAllUsers.GetUserListQuery)">
             <summary>
             Get all users.

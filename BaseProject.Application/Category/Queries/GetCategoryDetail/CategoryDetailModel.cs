@@ -10,6 +10,7 @@ namespace BaseProject.Application.Category.Queries.GetCategoryDetail
     public class CategoryDetailModel
     {
         public Guid CategoryId { get; set; }
+        public Guid? ParentId { get; set; }
         public string Name { get; set; }
     }
 }

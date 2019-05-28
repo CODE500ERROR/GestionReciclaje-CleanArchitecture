@@ -12,6 +12,7 @@ import { CategoryService } from 'src/app/_services/category.service';
 })
 export class CreateCategoryComponent implements OnInit {
   categoryRegister: Category;
+  parents: Category[];
   createCategoryForm: FormGroup;
   municipios: any[];
 
@@ -21,12 +22,14 @@ export class CreateCategoryComponent implements OnInit {
 
   ngOnInit() {
     this.createRegisterForm();
+    this.getAllParent();
   }
 
   createRegisterForm() {
     this.createCategoryForm = this.fb.group(
         {
           name: ['', Validators.required],
+          parentId : [''],
         }
     );
   }
@@ -45,6 +48,15 @@ export class CreateCategoryComponent implements OnInit {
      }, () => {
          this.router.navigate(['/category']);
      });
+ }
+
+ getAllParent(){
+   this.categoryService.getAllParent().subscribe(data => {
+   this.parents = data.parents;
+  }, error => {
+    this.alertService.error(error);
+  }, () => {   
+  });
  }
 
  cancel() {

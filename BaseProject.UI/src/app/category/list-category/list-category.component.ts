@@ -15,7 +15,7 @@ import { CategoryFilter } from 'src/app/models/categoryFilter';
 export class ListCategoryComponent implements OnInit, AfterViewInit {
   
   filters = new CategoryFilter();
-  displayedColumns: string[] = [ 'name', 'actions'];
+  displayedColumns: string[] = [ 'name', 'parentName', 'actions'];
   public dataSource = new MatTableDataSource<Category>();
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;

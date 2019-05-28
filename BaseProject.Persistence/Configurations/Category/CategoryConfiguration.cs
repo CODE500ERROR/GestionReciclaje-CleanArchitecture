@@ -30,7 +30,9 @@ namespace BaseProject.Persistence.Configurations.CategoryConfiguration
             //////////////////////////////////////////
             ///
             builder
-               .HasMany(x => x.SubCategories);
+                .HasMany(x=>x.Children)
+                .WithOne(x => x.Parent)
+                .HasForeignKey(x=>x.ParentId);
         }
     }
 }

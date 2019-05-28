@@ -28,7 +28,8 @@ namespace BaseProject.Application.Category.Commands.UpdateCategory
             if (factory == null)
                 throw new NotFoundException(nameof(BaseProject.Domain.Category), request.CategoryId);
 
-            factory.Name = request.Name;           
+            factory.Name = request.Name;
+            factory.ParentId = request.ParentId;
             await _context.SaveChangesAsync(cancellationToken);
 
             return Unit.Value;

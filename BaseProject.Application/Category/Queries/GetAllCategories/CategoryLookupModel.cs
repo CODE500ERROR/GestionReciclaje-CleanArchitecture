@@ -11,5 +11,6 @@ namespace BaseProject.Application.Category.Queries.GetAllCategories
     {
         public Guid CategoryId{ get; set; }
         public string Name{ get; set; }
+        public string ParentName{ get; set; }
     }
 }

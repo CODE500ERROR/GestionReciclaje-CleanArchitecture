@@ -15,7 +15,7 @@ export class EditCategoryComponent implements OnInit {
   updateCategoryForm: FormGroup;
   category: Category ;
   municipios: any[];
-
+  parents: Category[];
   constructor(private route: ActivatedRoute, private router: Router, private fb: FormBuilder,
               private alertService: AlertifyService, private categoryService: CategoryService) { }
 
@@ -23,14 +23,16 @@ export class EditCategoryComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.category = (data.category);
       this.createUpdateForm();
+      this.getAllParent();
     });
   }
 
   createUpdateForm() {
     this.updateCategoryForm = this.fb.group(
        {
-         name: [this.category.name, Validators.required],
-         categoryId: [this.category.categoryId, Validators.required]
+        categoryId: [this.category.categoryId, Validators.required], 
+        name: [this.category.name, Validators.required],
+        parentId: [this.category.parentId],
        }
      );
    }
@@ -48,5 +50,14 @@ export class EditCategoryComponent implements OnInit {
 
   cancel() {
     this.router.navigate(['/category']);
+  }
+
+  getAllParent(){
+    this.categoryService.getAllParent().subscribe(data => {
+    this.parents = data.parents;
+   }, error => {
+     this.alertService.error(error);
+   }, () => {   
+   });
   }
 }

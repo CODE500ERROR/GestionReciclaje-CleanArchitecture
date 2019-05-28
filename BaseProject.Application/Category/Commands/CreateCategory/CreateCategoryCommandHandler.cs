@@ -25,14 +25,16 @@ namespace BaseProject.Application.Category.Commands.CreateCategory
 
         public async Task<bool> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
         {
-
-            var cat = new BaseProject.Domain.Category() {                
-                Name = request.Name,                
+            var cat = new BaseProject.Domain.Category() {
+                Name = request.Name,
+                ParentId=request.ParentId
             };
 
 
             try
             {
+
+                //var cat = _mapper.Map<BaseProject.Domain.Category>(request);
 
                 var result = await _context.Categories.AddAsync(cat);
 

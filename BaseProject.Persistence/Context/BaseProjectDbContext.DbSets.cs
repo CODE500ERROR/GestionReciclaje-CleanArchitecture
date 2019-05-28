@@ -94,7 +94,6 @@ namespace BaseProject.Persistence
         public virtual DbSet<Municipio> Municipios { get; set; }
         public virtual DbSet<Plant> Plants{ get; set; }
         public virtual DbSet<Category> Categories{ get; set; }
-        public virtual DbSet<SubCategory> SubCategories { get; set; }
         #endregion
     }
 }

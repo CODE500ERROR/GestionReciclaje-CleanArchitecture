@@ -36,7 +36,8 @@ namespace BaseProject.Application.Category.Queries.GetCategoryDetail
             
             return new CategoryDetailModel {
                 CategoryId= cat.CategoryId,
-                Name= cat.Name
+                Name= cat.Name,
+                ParentId=cat.ParentId
             };
 
         }

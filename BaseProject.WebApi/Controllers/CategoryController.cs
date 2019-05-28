@@ -6,6 +6,7 @@ using BaseProject.Application.Category.Commands.CreateCategory;
 using BaseProject.Application.Category.Commands.DeleteCategory;
 using BaseProject.Application.Category.Commands.UpdateCategory;
 using BaseProject.Application.Category.Queries.GetAllCategories;
+using BaseProject.Application.Category.Queries.GetAllCategoryParent;
 using BaseProject.Application.Category.Queries.GetCategoryDetail;
 using BaseProject.Application.Roles;
 using BaseProject.Application.Roles.GetAllRoles;
@@ -80,6 +81,18 @@ namespace BaseProject.WebApi.Controller
         {
             await Mediator.Send(command);
             return NoContent();
+        }
+
+
+        /// <summary>
+        /// Get all category parents.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("GetAllParent")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<CategoryParentListViewModel>> GetAllParent()
+        {
+            return Ok(await Mediator.Send(new GetCategoryParentListQuery()));
         }
 
 
