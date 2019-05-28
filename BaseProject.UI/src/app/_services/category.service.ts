@@ -43,6 +43,10 @@ export class CategoryService {
     return this.http.get<Category>(this.baseApiUrl + 'GetAllParent');
   }
 
+  getByParent(parentId: string) : Observable<any> {
+    return this.http.get<any>(this.baseApiUrl + 'GetCategoryByParent/' + parentId);
+  }
+
   update(category: Category) {
     return this.http.put(this.baseApiUrl, category);
   }

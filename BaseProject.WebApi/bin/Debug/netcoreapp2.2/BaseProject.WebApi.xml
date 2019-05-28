@@ -20,7 +20,7 @@
         </member>
         <member name="M:BaseProject.WebApi.Controller.CategoryController.Get(System.Guid)">
             <summary>
-            Get user by id.
+            Get category by id.
             </summary>
             <returns></returns>
         </member>
@@ -29,6 +29,12 @@
         <member name="M:BaseProject.WebApi.Controller.CategoryController.GetAllParent">
             <summary>
             Get all category parents.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BaseProject.WebApi.Controller.CategoryController.GetCategoryByParent(System.String)">
+            <summary>
+            Get category by parentid.
             </summary>
             <returns></returns>
         </member>
@@ -61,6 +67,28 @@
         </member>
         <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:BaseProject.WebApi.Controller.PlantController.Delete(System.Guid)" -->
         <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:BaseProject.WebApi.Controller.PlantController.Update(BaseProject.Application.Plant.Commands.UpdatePlant.UpdatePlantCommand)" -->
+        <member name="M:BaseProject.WebApi.Controller.ProductController.GetAll(BaseProject.Application.Product.Queries.GetAllProduct.GetProductListQuery)">
+            <summary>
+            Get all roles.
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseProject.WebApi.Controller.ProductController.Create(BaseProject.Application.Product.Commands.CreateProduct.CreateProductCommand)">
+            <summary>
+            Get all roles.
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseProject.WebApi.Controller.ProductController.Get(System.Guid)">
+            <summary>
+            Get user by id.
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:BaseProject.WebApi.Controller.ProductController.Delete(System.Guid)" -->
+        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:BaseProject.WebApi.Controller.ProductController.Update(BaseProject.Application.Product.Commands.UpdateProduct.UpdateProductCommand)" -->
         <member name="M:BaseProject.WebApi.Controller.RolesController.GetAll(BaseProject.Application.Roles.GetAllRoles.GetRolesListQuery)">
             <summary>
             Get all roles.

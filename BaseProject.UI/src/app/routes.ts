@@ -17,11 +17,11 @@ import { EditCategoryComponent } from './category/edit-category/edit-category.co
 import { CreateCategoryComponent } from './category/create-category/create-category.component';
 import { ListCategoryComponent } from './category/list-category/list-category.component';
 import { ListCategoryResolver } from './_resolvers/list-category-resolvers';
-import { ListSubCategoryResolver } from './_resolvers/list-subCategory-resolvers';
-import { ListSubCategoryComponent } from './subCategory/list-subCategory/list-subCategory.component';
-import { CreateSubCategoryComponent } from './subCategory/create-subCategory/create-subCategory.component';
-import { EditSubCategoryComponent } from './subCategory/edit-subCategory/edit-subCategory.component';
-import { DetailSubCategoryResolver } from './_resolvers/detail-subCategory-resolvers';
+import { ListProductComponent } from './product/product-list/list-product.component';
+import { CreateProductComponent } from './product/product-create/create-product.component';
+import { EditProductComponent } from './product/product-edit/edit-product.component';
+import { DetailProductResolver } from './_resolvers/detail-product-resolvers';
+import { ListProductResolver } from './_resolvers/list-product-resolvers';
 
 
 
@@ -46,16 +46,15 @@ export const appRoutes: Routes = [
             {path: 'Plant/create', component: CreatePlantComponent  },
             {path: 'Plant/edit/:id', component: EditPlantComponent , resolve: {plant: DetailPlantResolver} },
 
-
             // ******************** CATEGORY *******************
             {path: 'category', component: ListCategoryComponent , resolve: {categories: ListCategoryResolver} },
             {path: 'category/create', component: CreateCategoryComponent  },
             {path: 'category/edit/:id', component: EditCategoryComponent , resolve: {category: DetailCategoryResolver} },
 
-            // ******************** SUBCATEGORY *******************
-            {path: 'subCategory', component: ListSubCategoryComponent , resolve: {subCategories: ListSubCategoryResolver} },
-            {path: 'subCategory/create', component: CreateSubCategoryComponent  },
-            {path: 'subCategory/edit/:id', component: EditSubCategoryComponent , resolve: {subCategory: DetailSubCategoryResolver} },
+            // ******************** PRODUCT *******************
+            {path: 'product', component: ListProductComponent , resolve: {products: ListProductResolver} },
+            {path: 'product/create', component: CreateProductComponent  },
+            {path: 'product/edit/:id', component: EditProductComponent , resolve: {product: DetailProductResolver} },
         ]
      },
     {path: '', redirectTo: 'login', pathMatch: 'full'},

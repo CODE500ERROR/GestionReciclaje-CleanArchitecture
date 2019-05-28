@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BaseProject.Persistence.Migrations
 {
-    public partial class create_municipio_planta_category : Migration
+    public partial class initial_migration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,7 @@ namespace BaseProject.Persistence.Migrations
                     CategoryId = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
                     IsDeleted = table.Column<bool>(nullable: false, defaultValue: false),
-                    CreationTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2019, 5, 27, 20, 30, 22, 530, DateTimeKind.Local).AddTicks(3046)),
+                    CreationTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2019, 5, 27, 22, 23, 31, 14, DateTimeKind.Local).AddTicks(3416)),
                     ParentId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
@@ -35,7 +35,7 @@ namespace BaseProject.Persistence.Migrations
                 {
                     MunicipioId = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
-                    CreationTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2019, 5, 27, 20, 30, 22, 528, DateTimeKind.Local).AddTicks(4451)),
+                    CreationTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2019, 5, 27, 22, 23, 31, 12, DateTimeKind.Local).AddTicks(970)),
                     IsDeleted = table.Column<bool>(nullable: false, defaultValue: false)
                 },
                 constraints: table =>
@@ -107,13 +107,34 @@ namespace BaseProject.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Product",
+                columns: table => new
+                {
+                    ProductId = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(maxLength: 100, nullable: false),
+                    CategoryId = table.Column<Guid>(nullable: false),
+                    IsDeleted = table.Column<bool>(nullable: false, defaultValue: false),
+                    CreationTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2019, 5, 27, 22, 23, 31, 10, DateTimeKind.Local).AddTicks(1763))
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Product", x => x.ProductId);
+                    table.ForeignKey(
+                        name: "FK_Product_Category_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Category",
+                        principalColumn: "CategoryId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Plant",
                 columns: table => new
                 {
                     PlantId = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
                     Address = table.Column<string>(maxLength: 200, nullable: false),
-                    CreationTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2019, 5, 27, 20, 30, 22, 525, DateTimeKind.Local).AddTicks(744)),
+                    CreationTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2019, 5, 27, 22, 23, 31, 5, DateTimeKind.Local).AddTicks(5952)),
                     IsDeleted = table.Column<bool>(nullable: false, defaultValue: false),
                     MunicipioId = table.Column<Guid>(nullable: false)
                 },
@@ -167,7 +188,7 @@ namespace BaseProject.Persistence.Migrations
                         column: x => x.Id,
                         principalTable: "User",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -266,6 +287,11 @@ namespace BaseProject.Persistence.Migrations
                 column: "MunicipioId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Product_CategoryId",
+                table: "Product",
+                column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Role_Name",
                 table: "Role",
                 column: "NormalizedName",
@@ -315,13 +341,13 @@ namespace BaseProject.Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Category");
-
-            migrationBuilder.DropTable(
                 name: "DeviceToken");
 
             migrationBuilder.DropTable(
                 name: "Plant");
+
+            migrationBuilder.DropTable(
+                name: "Product");
 
             migrationBuilder.DropTable(
                 name: "RefreshToken");
@@ -343,6 +369,9 @@ namespace BaseProject.Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "Municipio");
+
+            migrationBuilder.DropTable(
+                name: "Category");
 
             migrationBuilder.DropTable(
                 name: "Role");

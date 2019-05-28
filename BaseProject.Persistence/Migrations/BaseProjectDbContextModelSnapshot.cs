@@ -26,7 +26,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 27, 20, 30, 22, 530, DateTimeKind.Local).AddTicks(3046));
+                        .HasDefaultValue(new DateTime(2019, 5, 27, 22, 23, 31, 14, DateTimeKind.Local).AddTicks(3416));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -74,7 +74,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 27, 20, 30, 22, 528, DateTimeKind.Local).AddTicks(4451));
+                        .HasDefaultValue(new DateTime(2019, 5, 27, 22, 23, 31, 12, DateTimeKind.Local).AddTicks(970));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -100,7 +100,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 27, 20, 30, 22, 525, DateTimeKind.Local).AddTicks(744));
+                        .HasDefaultValue(new DateTime(2019, 5, 27, 22, 23, 31, 5, DateTimeKind.Local).AddTicks(5952));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -117,6 +117,32 @@ namespace BaseProject.Persistence.Migrations
                     b.HasIndex("MunicipioId");
 
                     b.ToTable("Plant");
+                });
+
+            modelBuilder.Entity("BaseProject.Domain.Product", b =>
+                {
+                    b.Property<Guid>("ProductId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid>("CategoryId");
+
+                    b.Property<DateTime>("CreationTime")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(new DateTime(2019, 5, 27, 22, 23, 31, 10, DateTimeKind.Local).AddTicks(1763));
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.HasKey("ProductId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("BaseProject.Domain.RefreshToken", b =>
@@ -334,7 +360,7 @@ namespace BaseProject.Persistence.Migrations
                     b.HasOne("BaseProject.Domain.User", "User")
                         .WithOne("DeviceToken")
                         .HasForeignKey("BaseProject.Domain.DeviceToken", "Id")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("BaseProject.Domain.Plant.Plant", b =>
@@ -342,6 +368,14 @@ namespace BaseProject.Persistence.Migrations
                     b.HasOne("BaseProject.Domain.Municipio", "Municipio")
                         .WithMany("Plants")
                         .HasForeignKey("MunicipioId")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("BaseProject.Domain.Product", b =>
+                {
+                    b.HasOne("BaseProject.Domain.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Restrict);
                 });
 

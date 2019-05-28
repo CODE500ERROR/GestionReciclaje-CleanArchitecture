@@ -7,6 +7,7 @@ using BaseProject.Application.Category.Commands.DeleteCategory;
 using BaseProject.Application.Category.Commands.UpdateCategory;
 using BaseProject.Application.Category.Queries.GetAllCategories;
 using BaseProject.Application.Category.Queries.GetAllCategoryParent;
+using BaseProject.Application.Category.Queries.GetCategoryByParent;
 using BaseProject.Application.Category.Queries.GetCategoryDetail;
 using BaseProject.Application.Roles;
 using BaseProject.Application.Roles.GetAllRoles;
@@ -48,7 +49,7 @@ namespace BaseProject.WebApi.Controller
 
 
         /// <summary>
-        /// Get user by id.
+        /// Get category by id.
         /// </summary>
         /// <returns></returns>
         [HttpGet("{id}")]
@@ -95,6 +96,17 @@ namespace BaseProject.WebApi.Controller
             return Ok(await Mediator.Send(new GetCategoryParentListQuery()));
         }
 
+
+        /// <summary>
+        /// Get category by parentid.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("GetCategoryByParent/{parentId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<CategoryDetailModel>> GetCategoryByParent(string parentId)
+        {
+            return Ok(await Mediator.Send(new GetChildrenListQuery { ParentId = Guid.Parse(parentId) }));
+        }
 
     }
 }

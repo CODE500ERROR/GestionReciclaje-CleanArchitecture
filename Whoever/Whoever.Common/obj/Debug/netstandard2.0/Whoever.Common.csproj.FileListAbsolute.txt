@@ -21,4 +21,3 @@ D:\Development\GestionReciclaje\Whoever\Whoever.Common\obj\Debug\netstandard2.0\
 D:\Development\GestionReciclaje\Whoever\Whoever.Common\obj\Debug\netstandard2.0\Whoever.Common.csproj.CopyComplete
 D:\Development\GestionReciclaje\Whoever\Whoever.Common\obj\Debug\netstandard2.0\Whoever.Common.dll
 D:\Development\GestionReciclaje\Whoever\Whoever.Common\obj\Debug\netstandard2.0\Whoever.Common.pdb
-D:\Development\GestionReciclaje\Whoever\Whoever.Common\obj\Debug\netstandard2.0\Whoever.Common.csprojAssemblyReference.cache

@@ -33,6 +33,10 @@ namespace BaseProject.Persistence.Configurations.CategoryConfiguration
                 .HasMany(x=>x.Children)
                 .WithOne(x => x.Parent)
                 .HasForeignKey(x=>x.ParentId);
+
+            builder
+                    .HasMany(x => x.Products);
+                    
         }
     }
 }

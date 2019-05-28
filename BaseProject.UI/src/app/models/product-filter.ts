@@ -1,5 +1,5 @@
 import { FilterBase } from './pagination';
 
-export  class SubCategoryFilter extends FilterBase {
+export  class ProductFilter extends FilterBase {
     name = '';
 }

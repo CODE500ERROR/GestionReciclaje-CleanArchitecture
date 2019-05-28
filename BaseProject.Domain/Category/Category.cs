@@ -10,6 +10,7 @@ namespace BaseProject.Domain
         public Category()
         {
             Children = new List<Category>();
+            Products = new List<Product>();
         }
         public Guid CategoryId { get; set; }
         public string Name{ get; set; }
@@ -19,5 +20,6 @@ namespace BaseProject.Domain
         public virtual Category Parent { get; set; }
 
         public ICollection<Category> Children { get; set; }
+        public ICollection<Product> Products{ get; set; }
     }
 }

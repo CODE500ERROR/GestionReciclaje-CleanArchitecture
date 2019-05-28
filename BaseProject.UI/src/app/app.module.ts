@@ -70,13 +70,15 @@ import { DetailPlantResolver } from './_resolvers/detail-plant-resolvers';
 import { EditCategoryComponent } from './category/edit-category/edit-category.component';
 import { CreateCategoryComponent } from './category/create-category/create-category.component';
 import { ListCategoryComponent } from './category/list-category/list-category.component';
-import { EditSubCategoryComponent } from './subCategory/edit-subCategory/edit-subCategory.component';
-import { CreateSubCategoryComponent } from './subCategory/create-subCategory/create-subCategory.component';
-import { ListSubCategoryComponent } from './subCategory/list-subCategory/list-subCategory.component';
-import { ListSubCategoryResolver } from './_resolvers/list-subCategory-resolvers';
+
+
+import { ListProductResolver } from './_resolvers/list-product-resolvers';
 import { ListCategoryResolver } from './_resolvers/list-category-resolvers';
-import { DetailSubCategoryResolver } from './_resolvers/detail-subCategory-resolvers';
+import { DetailProductResolver } from './_resolvers/detail-product-resolvers';
 import { DetailCategoryResolver } from './_resolvers/detail-category-resolvers';
+import { EditProductComponent } from './product/product-edit/edit-product.component';
+import { CreateProductComponent } from './product/product-create/create-product.component';
+import { ListProductComponent } from './product/product-list/list-product.component';
 
 
 
@@ -107,10 +109,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       ListCategoryComponent,
       CreateCategoryComponent,
       EditCategoryComponent,
-      ListSubCategoryComponent,
-      CreateSubCategoryComponent,
-      EditSubCategoryComponent,
-      
+      ListProductComponent,
+      CreateProductComponent,
+      EditProductComponent,
    ],
    imports: [
       BrowserModule,
@@ -171,8 +172,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       ListCategoryResolver,
       DetailCategoryResolver,
 
-      ListSubCategoryResolver,
-      DetailSubCategoryResolver,
+      ListProductResolver,
+      DetailProductResolver,
 
       PreventUnsavedChanges,
       UserService,
