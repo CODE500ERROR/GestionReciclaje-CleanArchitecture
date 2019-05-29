@@ -11,6 +11,7 @@ namespace BaseProject.Application.Product.Commands.CreateProduct
     public class CreateProductCommand: IRequest<bool>
     {
         public string Name { get; set; }
+        public string Description { get; set; }
         public Guid CategoryId { get; set; }
 
     }

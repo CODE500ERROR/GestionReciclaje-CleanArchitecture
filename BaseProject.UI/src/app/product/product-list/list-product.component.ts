@@ -15,7 +15,7 @@ import { ProductFilter } from 'src/app/models/product-filter';
 export class ListProductComponent implements OnInit, AfterViewInit {
   
   filters = new ProductFilter();
-  displayedColumns: string[] = [ 'name', 'categoryName', 'actions'];
+  displayedColumns: string[] = [ 'name', 'categoryName', 'description' , 'actions'];
   public dataSource = new MatTableDataSource<Product>();
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;

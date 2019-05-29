@@ -30,16 +30,16 @@ namespace BaseProject.Application.Product.Queries.GetProductDetail
 
         public async Task<ProductDetailModel> Handle(GetProductDetailQuery request, CancellationToken cancellationToken)
         {
-            var Product = await _context.Products.FindAsync(request.ProductId);            
-            if (Product == null)      
+            var product = await _context.Products.Include(x => x.Category).FirstAsync(x=>x.ProductId==request.ProductId);            if (product == null)      
                 throw new NotFoundException(nameof(BaseProject.Domain.Product), request.ProductId);
             
             return new ProductDetailModel {
-                ProductId=Product.ProductId,
-                Name=Product.Name,
-                CategoryId=Product.CategoryId
+                ProductId= product.ProductId,
+                Name= product.Name,
+                Description= product.Description,
+                CategoryId= product.CategoryId,
+                ParentId=product.Category.ParentId
             };
-
         }
     }
 }

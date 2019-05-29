@@ -27,10 +27,9 @@ namespace BaseProject.Application.Product.Commands.CreateProduct
 
             var prod = new BaseProject.Domain.Product() {                
                 Name = request.Name,
+                Description=request.Description,
                 CategoryId= request.CategoryId
             };
-
-
             try
             {
 

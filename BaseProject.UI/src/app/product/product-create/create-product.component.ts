@@ -33,8 +33,9 @@ export class CreateProductComponent implements OnInit {
     this.createProductForm = this.fb.group(
         {
           name: ['', Validators.required],
-          categoryId : ['', Validators.required],
-          childrenId: ['']
+          description: [''],
+          parentId : [''],
+          categoryId: ['', Validators.required]
         }
     );
   }
@@ -60,12 +61,12 @@ export class CreateProductComponent implements OnInit {
    this.parents = data.parents;
   }, error => {
     this.alertService.error(error);
-  }, () => {   
+  }, () => {
   });
  }
 
- getCategoryByParent() {  
-  this.categoryService.getByParent(this.createProductForm.value.categoryId).subscribe(data => {
+ getCategoryByParent() {
+  this.categoryService.getByParent(this.createProductForm.value.parentId).subscribe(data => {
     this.children = data.children;
    }, error => {
      this.alertService.error(error);
@@ -74,7 +75,7 @@ export class CreateProductComponent implements OnInit {
  }
 
  cancel() {
-   this.router.navigate(['/Product']);
+   this.router.navigate(['/product']);
  }
 
 }

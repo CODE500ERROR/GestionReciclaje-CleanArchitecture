@@ -26,7 +26,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 27, 22, 23, 31, 14, DateTimeKind.Local).AddTicks(3416));
+                        .HasDefaultValue(new DateTime(2019, 5, 28, 22, 13, 45, 759, DateTimeKind.Local).AddTicks(1662));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -74,7 +74,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 27, 22, 23, 31, 12, DateTimeKind.Local).AddTicks(970));
+                        .HasDefaultValue(new DateTime(2019, 5, 28, 22, 13, 45, 756, DateTimeKind.Local).AddTicks(697));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -100,7 +100,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 27, 22, 23, 31, 5, DateTimeKind.Local).AddTicks(5952));
+                        .HasDefaultValue(new DateTime(2019, 5, 28, 22, 13, 45, 750, DateTimeKind.Local).AddTicks(1872));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -128,7 +128,9 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 27, 22, 23, 31, 10, DateTimeKind.Local).AddTicks(1763));
+                        .HasDefaultValue(new DateTime(2019, 5, 28, 22, 13, 45, 753, DateTimeKind.Local).AddTicks(7505));
+
+                    b.Property<string>("Description");
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()

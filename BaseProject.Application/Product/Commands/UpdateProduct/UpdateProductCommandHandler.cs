@@ -32,6 +32,7 @@ namespace BaseProject.Application.Product.Commands.UpdateProduct
 
             prod.Name = request.Name;
             prod.CategoryId = request.CategoryId;
+            prod.Description = request.Description;
             await _context.SaveChangesAsync(cancellationToken);
 
             return Unit.Value;

@@ -17,6 +17,7 @@ export class EditProductComponent implements OnInit {
   updateProductForm: FormGroup;
   product: Product;
   parents: Category[];
+  children: Category[];
 
   constructor(private route: ActivatedRoute, private router: Router, private fb: FormBuilder,
               private categoryService: CategoryService,
@@ -27,20 +28,23 @@ export class EditProductComponent implements OnInit {
       this.product = (data.product);
       this.createUpdateForm();
       this.getAllParent();
+      this.getCategoryByParent();
     });
   }
 
   createUpdateForm() {
     this.updateProductForm = this.fb.group(
        {
-        productId: [this.product.productId, Validators.required], 
+        productId: [this.product.productId, Validators.required],
         name: [this.product.name, Validators.required],
-        categoryId: [this.product.categoryId],
+        description: [this.product.description],
+        categoryId: [this.product.categoryId, Validators.required ],
+        parentId: [this.product.parentId ],
        }
      );
    }
 
-   updateproduct() {
+   updateProduct() {
     if (this.updateProductForm.invalid) { return; }
     this.product = Object.assign({}, this.updateProductForm.value);
     this.productService.update(this.product).subscribe(next => {
@@ -63,4 +67,15 @@ export class EditProductComponent implements OnInit {
    }, () => {   
    });
   }
+
+  getCategoryByParent() {
+    this.categoryService.getByParent(this.updateProductForm.value.parentId).subscribe(data => {
+      this.children = data.children;
+     }, error => {
+       this.alertService.error(error);
+     }, () => {
+     });
+   }
+
+   
 }
