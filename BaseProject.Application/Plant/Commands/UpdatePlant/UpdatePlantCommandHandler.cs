@@ -28,7 +28,7 @@ namespace BaseProject.Application.Plant.Commands.UpdatePlant
         {
             var factory = await _context.Plants.FindAsync(request.PlantId);
             if (factory == null)
-                throw new NotFoundException(nameof(BaseProject.Domain.Plant.Plant), request.Id);
+                throw new NotFoundException(nameof(BaseProject.Domain.Plant), request.Id);
 
             factory.Address = request.Address;
             factory.Name = request.Name;

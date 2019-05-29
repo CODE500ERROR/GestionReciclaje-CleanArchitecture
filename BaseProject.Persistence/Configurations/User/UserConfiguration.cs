@@ -12,6 +12,11 @@ namespace BaseProject.Persistence.Configurations
         {
             base.Configure(builder);
 
+            builder
+               .HasOne(x => x.Plant)
+               .WithMany(x => x.Users)
+               .HasForeignKey(x => x.PlantId);
+
             // Indexes for "normalized" username and email, to allow efficient lookups
             builder.HasIndex(u => new { u.NormalizedUserName, u.DeactivatedDate })
                 .HasName("IX_User_NormalizedUserName")

@@ -26,7 +26,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 28, 22, 13, 45, 759, DateTimeKind.Local).AddTicks(1662));
+                        .HasDefaultValue(new DateTime(2019, 5, 28, 23, 40, 20, 75, DateTimeKind.Local).AddTicks(168));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -74,7 +74,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 28, 22, 13, 45, 756, DateTimeKind.Local).AddTicks(697));
+                        .HasDefaultValue(new DateTime(2019, 5, 28, 23, 40, 20, 73, DateTimeKind.Local).AddTicks(2784));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -89,7 +89,7 @@ namespace BaseProject.Persistence.Migrations
                     b.ToTable("Municipio");
                 });
 
-            modelBuilder.Entity("BaseProject.Domain.Plant.Plant", b =>
+            modelBuilder.Entity("BaseProject.Domain.Plant", b =>
                 {
                     b.Property<Guid>("PlantId")
                         .ValueGeneratedOnAdd();
@@ -100,7 +100,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 28, 22, 13, 45, 750, DateTimeKind.Local).AddTicks(1872));
+                        .HasDefaultValue(new DateTime(2019, 5, 28, 23, 40, 20, 67, DateTimeKind.Local).AddTicks(8353));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -128,7 +128,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 28, 22, 13, 45, 753, DateTimeKind.Local).AddTicks(7505));
+                        .HasDefaultValue(new DateTime(2019, 5, 28, 23, 40, 20, 71, DateTimeKind.Local).AddTicks(4423));
 
                     b.Property<string>("Description");
 
@@ -258,6 +258,8 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed");
 
+                    b.Property<Guid?>("PlantId");
+
                     b.Property<string>("ResetPasswordCode");
 
                     b.Property<string>("SecurityStamp");
@@ -276,6 +278,8 @@ namespace BaseProject.Persistence.Migrations
                         .IsUnique()
                         .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("PlantId");
 
                     b.HasIndex("NormalizedUserName", "DeactivatedDate")
                         .IsUnique()
@@ -365,7 +369,7 @@ namespace BaseProject.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("BaseProject.Domain.Plant.Plant", b =>
+            modelBuilder.Entity("BaseProject.Domain.Plant", b =>
                 {
                     b.HasOne("BaseProject.Domain.Municipio", "Municipio")
                         .WithMany("Plants")
@@ -387,6 +391,13 @@ namespace BaseProject.Persistence.Migrations
                         .WithMany("Claims")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("BaseProject.Domain.User", b =>
+                {
+                    b.HasOne("BaseProject.Domain.Plant", "Plant")
+                        .WithMany("Users")
+                        .HasForeignKey("PlantId");
                 });
 
             modelBuilder.Entity("BaseProject.Domain.UserClaim", b =>

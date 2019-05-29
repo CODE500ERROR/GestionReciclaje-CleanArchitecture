@@ -7,10 +7,10 @@ using Whoever.Data.EntityFramework;
 
 namespace BaseProject.Persistence.Configurations.Plant
 {
-    public class PlantConfiguration : BaseEntityTypeConfiguration<BaseProject.Domain.Plant.Plant>
+    public class PlantConfiguration : BaseEntityTypeConfiguration<BaseProject.Domain.Plant>
     {
 
-        public override void Configure(EntityTypeBuilder<BaseProject.Domain.Plant.Plant> builder)
+        public override void Configure(EntityTypeBuilder<BaseProject.Domain.Plant> builder)
         {
 
             base.Configure(builder);
@@ -41,6 +41,9 @@ namespace BaseProject.Persistence.Configurations.Plant
                 .HasOne(x =>x.Municipio)
                 .WithMany(x => x.Plants)
                 .HasForeignKey(x => x.MunicipioId);
+
+            builder
+                    .HasMany(x => x.Users);
 
         }
     }

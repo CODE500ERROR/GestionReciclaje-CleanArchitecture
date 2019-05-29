@@ -32,7 +32,7 @@ namespace BaseProject.Application.Plant.Queries.GetPlantDetail
         {
             var Plant = await _context.Plants.FindAsync(request.PlantId);            
             if (Plant == null)      
-                throw new NotFoundException(nameof(BaseProject.Domain.Plant.Plant), request.PlantId);
+                throw new NotFoundException(nameof(BaseProject.Domain.Plant), request.PlantId);
             
             return new PlantDetailModel {
                 PlantId=Plant.PlantId,

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BaseProject.Persistence.Migrations
 {
-    public partial class initial_migration : Migration
+    public partial class initial_migrations : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,7 @@ namespace BaseProject.Persistence.Migrations
                     CategoryId = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
                     IsDeleted = table.Column<bool>(nullable: false, defaultValue: false),
-                    CreationTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2019, 5, 27, 22, 23, 31, 14, DateTimeKind.Local).AddTicks(3416)),
+                    CreationTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2019, 5, 28, 23, 40, 20, 75, DateTimeKind.Local).AddTicks(168)),
                     ParentId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
@@ -35,7 +35,7 @@ namespace BaseProject.Persistence.Migrations
                 {
                     MunicipioId = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
-                    CreationTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2019, 5, 27, 22, 23, 31, 12, DateTimeKind.Local).AddTicks(970)),
+                    CreationTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2019, 5, 28, 23, 40, 20, 73, DateTimeKind.Local).AddTicks(2784)),
                     IsDeleted = table.Column<bool>(nullable: false, defaultValue: false)
                 },
                 constraints: table =>
@@ -74,47 +74,15 @@ namespace BaseProject.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "User",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    UserName = table.Column<string>(maxLength: 256, nullable: true),
-                    NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
-                    Email = table.Column<string>(maxLength: 256, nullable: true),
-                    NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
-                    EmailConfirmed = table.Column<bool>(nullable: false),
-                    PasswordHash = table.Column<string>(nullable: true),
-                    SecurityStamp = table.Column<string>(nullable: true),
-                    ConcurrencyStamp = table.Column<string>(nullable: true),
-                    PhoneNumber = table.Column<string>(nullable: true),
-                    PhoneNumberConfirmed = table.Column<bool>(nullable: false),
-                    TwoFactorEnabled = table.Column<bool>(nullable: false),
-                    LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
-                    LockoutEnabled = table.Column<bool>(nullable: false),
-                    AccessFailedCount = table.Column<int>(nullable: false),
-                    ResetPasswordCode = table.Column<string>(nullable: true),
-                    CreationTime = table.Column<DateTime>(nullable: false),
-                    DeactivatedDate = table.Column<DateTime>(nullable: true),
-                    LastLoginDate = table.Column<DateTime>(nullable: true),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
-                    IsDeleted = table.Column<bool>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_User", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Product",
                 columns: table => new
                 {
                     ProductId = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
+                    Description = table.Column<string>(nullable: true),
                     CategoryId = table.Column<Guid>(nullable: false),
                     IsDeleted = table.Column<bool>(nullable: false, defaultValue: false),
-                    CreationTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2019, 5, 27, 22, 23, 31, 10, DateTimeKind.Local).AddTicks(1763))
+                    CreationTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2019, 5, 28, 23, 40, 20, 71, DateTimeKind.Local).AddTicks(4423))
                 },
                 constraints: table =>
                 {
@@ -134,7 +102,7 @@ namespace BaseProject.Persistence.Migrations
                     PlantId = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
                     Address = table.Column<string>(maxLength: 200, nullable: false),
-                    CreationTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2019, 5, 27, 22, 23, 31, 5, DateTimeKind.Local).AddTicks(5952)),
+                    CreationTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2019, 5, 28, 23, 40, 20, 67, DateTimeKind.Local).AddTicks(8353)),
                     IsDeleted = table.Column<bool>(nullable: false, defaultValue: false),
                     MunicipioId = table.Column<Guid>(nullable: false)
                 },
@@ -168,6 +136,46 @@ namespace BaseProject.Persistence.Migrations
                         principalTable: "Role",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "User",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    UserName = table.Column<string>(maxLength: 256, nullable: true),
+                    NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
+                    Email = table.Column<string>(maxLength: 256, nullable: true),
+                    NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
+                    EmailConfirmed = table.Column<bool>(nullable: false),
+                    PasswordHash = table.Column<string>(nullable: true),
+                    SecurityStamp = table.Column<string>(nullable: true),
+                    ConcurrencyStamp = table.Column<string>(nullable: true),
+                    PhoneNumber = table.Column<string>(nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(nullable: false),
+                    TwoFactorEnabled = table.Column<bool>(nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
+                    LockoutEnabled = table.Column<bool>(nullable: false),
+                    AccessFailedCount = table.Column<int>(nullable: false),
+                    ResetPasswordCode = table.Column<string>(nullable: true),
+                    CreationTime = table.Column<DateTime>(nullable: false),
+                    DeactivatedDate = table.Column<DateTime>(nullable: true),
+                    LastLoginDate = table.Column<DateTime>(nullable: true),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
+                    PlantId = table.Column<Guid>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_User", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_User_Plant_PlantId",
+                        column: x => x.PlantId,
+                        principalTable: "Plant",
+                        principalColumn: "PlantId",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -316,6 +324,11 @@ namespace BaseProject.Persistence.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_User_PlantId",
+                table: "User",
+                column: "PlantId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_User_NormalizedUserName",
                 table: "User",
                 columns: new[] { "NormalizedUserName", "DeactivatedDate" },
@@ -344,9 +357,6 @@ namespace BaseProject.Persistence.Migrations
                 name: "DeviceToken");
 
             migrationBuilder.DropTable(
-                name: "Plant");
-
-            migrationBuilder.DropTable(
                 name: "Product");
 
             migrationBuilder.DropTable(
@@ -368,9 +378,6 @@ namespace BaseProject.Persistence.Migrations
                 name: "UserToken");
 
             migrationBuilder.DropTable(
-                name: "Municipio");
-
-            migrationBuilder.DropTable(
                 name: "Category");
 
             migrationBuilder.DropTable(
@@ -378,6 +385,12 @@ namespace BaseProject.Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "User");
+
+            migrationBuilder.DropTable(
+                name: "Plant");
+
+            migrationBuilder.DropTable(
+                name: "Municipio");
         }
     }
 }

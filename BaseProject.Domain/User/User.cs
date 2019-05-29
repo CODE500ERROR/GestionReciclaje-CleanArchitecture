@@ -23,6 +23,7 @@ namespace BaseProject.Domain
         public DateTime? LastLoginDate { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public Guid? PlantId { get; set; }
         public bool IsDeleted{ get; set; }
         //public virtual BraintreeCustomer BraintreeCustomer { get; set; }
         //public virtual FingerPrint FingerPrint { get; set; }
@@ -31,6 +32,8 @@ namespace BaseProject.Domain
         //public virtual GymOwner GymOwner { get; set; }
         //public virtual GymMonitor GymMonitor { get; set; }
         public virtual DeviceToken DeviceToken { get; set; }
+        public virtual Plant Plant { get; set; }
+
         public virtual ICollection<UserClaim> Claims { get; private set; }
         public virtual ICollection<UserLogin> Logins { get; private set; }
         public virtual ICollection<UserToken> Tokens { get; private set; }

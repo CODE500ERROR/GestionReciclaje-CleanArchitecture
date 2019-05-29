@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BaseProject.Persistence.Migrations
 {
     [DbContext(typeof(BaseProjectDbContext))]
-    [Migration("20190528012331_initial_migration")]
-    partial class initial_migration
+    [Migration("20190529024020_initial_migrations")]
+    partial class initial_migrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,7 +28,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 27, 22, 23, 31, 14, DateTimeKind.Local).AddTicks(3416));
+                        .HasDefaultValue(new DateTime(2019, 5, 28, 23, 40, 20, 75, DateTimeKind.Local).AddTicks(168));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -76,7 +76,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 27, 22, 23, 31, 12, DateTimeKind.Local).AddTicks(970));
+                        .HasDefaultValue(new DateTime(2019, 5, 28, 23, 40, 20, 73, DateTimeKind.Local).AddTicks(2784));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -91,7 +91,7 @@ namespace BaseProject.Persistence.Migrations
                     b.ToTable("Municipio");
                 });
 
-            modelBuilder.Entity("BaseProject.Domain.Plant.Plant", b =>
+            modelBuilder.Entity("BaseProject.Domain.Plant", b =>
                 {
                     b.Property<Guid>("PlantId")
                         .ValueGeneratedOnAdd();
@@ -102,7 +102,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 27, 22, 23, 31, 5, DateTimeKind.Local).AddTicks(5952));
+                        .HasDefaultValue(new DateTime(2019, 5, 28, 23, 40, 20, 67, DateTimeKind.Local).AddTicks(8353));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -130,7 +130,9 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 27, 22, 23, 31, 10, DateTimeKind.Local).AddTicks(1763));
+                        .HasDefaultValue(new DateTime(2019, 5, 28, 23, 40, 20, 71, DateTimeKind.Local).AddTicks(4423));
+
+                    b.Property<string>("Description");
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -258,6 +260,8 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed");
 
+                    b.Property<Guid?>("PlantId");
+
                     b.Property<string>("ResetPasswordCode");
 
                     b.Property<string>("SecurityStamp");
@@ -276,6 +280,8 @@ namespace BaseProject.Persistence.Migrations
                         .IsUnique()
                         .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("PlantId");
 
                     b.HasIndex("NormalizedUserName", "DeactivatedDate")
                         .IsUnique()
@@ -365,7 +371,7 @@ namespace BaseProject.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("BaseProject.Domain.Plant.Plant", b =>
+            modelBuilder.Entity("BaseProject.Domain.Plant", b =>
                 {
                     b.HasOne("BaseProject.Domain.Municipio", "Municipio")
                         .WithMany("Plants")
@@ -387,6 +393,13 @@ namespace BaseProject.Persistence.Migrations
                         .WithMany("Claims")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("BaseProject.Domain.User", b =>
+                {
+                    b.HasOne("BaseProject.Domain.Plant", "Plant")
+                        .WithMany("Users")
+                        .HasForeignKey("PlantId");
                 });
 
             modelBuilder.Entity("BaseProject.Domain.UserClaim", b =>

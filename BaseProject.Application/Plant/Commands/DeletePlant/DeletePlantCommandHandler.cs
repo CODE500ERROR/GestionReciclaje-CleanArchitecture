@@ -26,7 +26,7 @@ namespace BaseProject.Application.Plant.Commands.DeletePlant
         {
             var entity = await _context.Plants.FindAsync(request.PlantId);
             if (entity == null)         
-                throw new NotFoundException(nameof(BaseProject.Domain.Plant.Plant), request.PlantId);           
+                throw new NotFoundException(nameof(BaseProject.Domain.Plant), request.PlantId);           
 
             entity.IsDeleted = true;
             await _context.SaveChangesAsync(cancellationToken);

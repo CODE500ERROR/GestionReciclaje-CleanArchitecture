@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using BaseProject.Domain;
-using BaseProject.Domain.Plant;
 
 namespace BaseProject.Persistence
 {

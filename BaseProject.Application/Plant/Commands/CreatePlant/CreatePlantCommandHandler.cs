@@ -26,7 +26,7 @@ namespace BaseProject.Application.Plant.CreatePlant
         public async Task<bool> Handle(CreatePlantCommand request, CancellationToken cancellationToken)
         {
 
-            var plant = new BaseProject.Domain.Plant.Plant() {
+            var plant = new BaseProject.Domain.Plant() {
                 Address = request.Address,
                 Name = request.Name,
                 MunicipioId = request.MunicipioId

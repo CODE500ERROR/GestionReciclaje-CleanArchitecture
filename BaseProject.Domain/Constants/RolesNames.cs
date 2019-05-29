@@ -6,11 +6,18 @@ namespace BaseProject.Domain.Constants
     {
         public static RolesNames Admin = new AdminType();
         public static RolesNames SuperAdmin = new SuperAdminType();
-        
+        public static RolesNames Operator= new OperatorType();
 
         protected RolesNames(int id, string name)
             : base(id, name)
         {
+        }
+       
+
+        private class SuperAdminType : RolesNames
+        {
+            public SuperAdminType() : base(1, "Super Admin")
+            { }
         }
 
         private class AdminType : RolesNames
@@ -19,13 +26,12 @@ namespace BaseProject.Domain.Constants
             { }
         }
 
-        private class SuperAdminType : RolesNames
+        private class OperatorType : RolesNames
         {
-            public SuperAdminType() : base(1, "Super Admin")
+            public OperatorType() : base(3, "Operator")
             { }
         }
 
-      
     }
    
 }
