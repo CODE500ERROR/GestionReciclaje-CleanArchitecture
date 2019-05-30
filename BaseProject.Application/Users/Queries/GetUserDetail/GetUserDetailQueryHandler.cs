@@ -38,7 +38,9 @@ namespace BaseProject.Application.Users.Queries.GetAllUsers
             return new UserDetailModel {
                 FirstName=user.FirstName,
                 LastName=user.LastName,
+                PlantId=user.PlantId.Value,
                 Email=user.Email,
+                PhoneNumber=user.PhoneNumber,
                 Id= user.Id,
                 Roles = roles.ToList()
             };

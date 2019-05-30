@@ -15,6 +15,6 @@ namespace BaseProject.Application.Plant.Commands.UpdatePlant
         public string Name { get; set; }
         public string Address { get; set; }
         public Guid MunicipioId{ get; set; }
-
+        public int OperatorsQuantity{ get; set; }
     }
 }

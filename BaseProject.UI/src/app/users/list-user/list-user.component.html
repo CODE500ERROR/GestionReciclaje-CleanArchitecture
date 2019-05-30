@@ -63,6 +63,14 @@
         <td mat-cell *matCellDef="let row" (click)="goToEdit(row)"> {{row.email}} </td>
       </ng-container>
 
+
+      <!-- plant Column -->
+      <ng-container matColumnDef="plantName" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Planta </th>
+        <td mat-cell *matCellDef="let row" (click)="goToEdit(row)"> {{row.plantName}} </td>
+      </ng-container>
+
+
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
 

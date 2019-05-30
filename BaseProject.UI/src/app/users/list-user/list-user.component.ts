@@ -17,7 +17,7 @@ export class ListUserComponent implements OnInit, AfterViewInit  {
   users: any [];
   isLoading = false;
 
-  displayedColumns: string[] = [ 'firstName', 'lastName' , 'email', 'actions'];
+  displayedColumns: string[] = [ 'firstName', 'lastName' , 'email', 'plantName','actions'];
   filters = new UserFilter();
 
   public dataSource = new MatTableDataSource<User>();

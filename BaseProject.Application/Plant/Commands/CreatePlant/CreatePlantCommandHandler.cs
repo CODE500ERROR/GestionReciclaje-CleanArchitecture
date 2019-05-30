@@ -29,7 +29,8 @@ namespace BaseProject.Application.Plant.CreatePlant
             var plant = new BaseProject.Domain.Plant() {
                 Address = request.Address,
                 Name = request.Name,
-                MunicipioId = request.MunicipioId
+                MunicipioId = request.MunicipioId,
+                OperatorsQuantity=request.OperatorsQuantity
             };
 
 

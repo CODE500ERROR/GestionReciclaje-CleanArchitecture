@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AutoMapper;
 using BaseProject.Application.Roles;
 using BaseProject.Domain;
@@ -16,7 +17,8 @@ namespace BaseProject.Application.Users.CreateUser
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
         public List<string> Roles { get; set; }
-
+        public Guid PlantId { get; set; }
+        public string PhoneNumber{ get; set; }
 
         public void CreateMappings(Profile configuration)
         {

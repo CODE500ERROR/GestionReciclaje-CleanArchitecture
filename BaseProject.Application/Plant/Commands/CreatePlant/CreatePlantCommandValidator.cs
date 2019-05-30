@@ -11,6 +11,8 @@ namespace BaseProject.Application.CreatePlant
             RuleFor(v => v.Name).NotEmpty();
             RuleFor(v => v.Address).NotEmpty();
             RuleFor(v => v.MunicipioId).NotEmpty();
+            RuleFor(v => v.OperatorsQuantity).NotEmpty();
+
         }
     }
 }

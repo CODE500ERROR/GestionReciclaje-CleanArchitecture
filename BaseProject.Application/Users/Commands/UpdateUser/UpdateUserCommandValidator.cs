@@ -11,6 +11,7 @@ namespace BaseProject.Application.Users.Administrators.Commands.UpdateAdministra
         public UpdateUserCommandValidator() 
         {
             RuleFor(v => v.Email).NotEmpty();            
+            RuleFor(v => v.PlantId).NotEmpty();            
         }
     }
 }

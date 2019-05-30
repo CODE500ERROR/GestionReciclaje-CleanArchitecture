@@ -6,6 +6,9 @@ import { User } from 'src/app/models/user';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { RolesService } from 'src/app/_services/roles.service';
 import { elementEnd } from '@angular/core/src/render3';
+import { PlantService } from 'src/app/_services/plant.service';
+import { Plant } from 'src/app/models/Plant';
+import { PlantFilter } from 'src/app/models/plantFilter';
 
 @Component({
   selector: 'app-edit-user',
@@ -16,8 +19,8 @@ export class EditUserComponent implements OnInit, AfterViewInit {
   updateUserForm: FormGroup;
   user: User ;
   roles: any = [];
-
-  constructor(private route: ActivatedRoute, private router: Router, private fb: FormBuilder,
+  plants: Plant[];
+  constructor(private route: ActivatedRoute, private plantService: PlantService,private router: Router, private fb: FormBuilder,
               private userService: UserService, private alertService: AlertifyService,
               private rolesSerice: RolesService) {}
 
@@ -26,7 +29,9 @@ export class EditUserComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.user = (data.user);
+      console.log(this.user);
       this.createUpdateForm();
+      this.getAllPlant();
      
     });
   }
@@ -43,6 +48,7 @@ export class EditUserComponent implements OnInit, AfterViewInit {
         firstName: [this.user.firstName, Validators.required],
         lastName: [this.user.lastName, Validators.required],
         phoneNumber: [this.user.phoneNumber],
+        plantId: [this.user.plantId],
         roles: [this.user.roles]
       }
     );
@@ -96,5 +102,15 @@ export class EditUserComponent implements OnInit, AfterViewInit {
         }
     }
   }
+
+  getAllPlant(){
+    const filter  = new PlantFilter();
+    filter.pageSize = 100;
+    this.plantService.getAll(filter).subscribe( data => {
+     this.plants = data.entity;
+   }, error => {
+     this.alertService.error(error);
+   });
+ }
 
 }

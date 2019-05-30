@@ -13,5 +13,6 @@ namespace BaseProject.Application.Plant.Queries.GetAllPlant
         public string Name{ get; set; }
         public string Address{ get; set; }
         public string MunicipioName{ get; set; }
+        public int OperatorsQuantity{ get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AutoMapper;
 using BaseProject.Application.Infrastructure.Request.Commands.Update;
 using BaseProject.Application.Roles;
@@ -14,6 +15,7 @@ namespace BaseProject.Application.Users.Commands.UpdateUser
         public string PhoneNumber { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public Guid PlantId{ get; set; }
         public IList<string> Roles{ get; set; }
 
         public void CreateMappings(Profile configuration)

@@ -57,6 +57,13 @@
           <td mat-cell *matCellDef="let row" (click)="goToEdit(row)"> {{row.address}} </td>
         </ng-container>
 
+          <!--addrres Column -->
+      <ng-container matColumnDef="operatorsQuantity" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Cantidad de Operarios </th>
+        <td mat-cell *matCellDef="let row" (click)="goToEdit(row)"> {{row.operatorsQuantity}} </td>
+      </ng-container>
+
+        
         <ng-container matColumnDef="municipioName" >
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Municipio </th>
           <td mat-cell *matCellDef="let row" (click)="goToEdit(row)"> {{row.municipioName}} </td>

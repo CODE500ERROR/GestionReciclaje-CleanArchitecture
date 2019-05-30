@@ -10,6 +10,7 @@ namespace BaseProject.Application.Users.Queries.GetAllUsers
         public string Email { get; set; }
         public string FirstName{ get; set; }
         public string LastName{ get; set; }
+        public string PlantName{ get; set; }
         public virtual ICollection<UserRole> Roles { get; private set; }
     }
 }

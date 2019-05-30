@@ -15,6 +15,7 @@
               [value]="updateUserForm.get('lastName').value | titlecase"/>
         <mat-error *ngIf="updateUserForm.get('lastName').errors">lastName is required</mat-error>
     </mat-form-field>
+    
 
     <mat-form-field class="full-width-input">
         <input matInput placeholder="Email" formControlName="email" />
@@ -24,6 +25,23 @@
     
         <mat-error *ngIf="f.email.errors && f.email.errors.email">
           Email must be a valid email address
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width-input">
+        <input matInput placeholder="Teléfono" 
+              formControlName="phoneNumber"
+              [value]="updateUserForm.get('phoneNumber').value" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Seleccione una planta</mat-label>
+        <mat-select [value]="updateUserForm.get('plantId').value"
+                    formControlName="plantId">
+          <mat-option *ngFor="let item of plants" value="{{item.plantId}}">{{item.name}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="updateUserForm.get('plantId').errors">
+          Planta es requerido
         </mat-error>
       </mat-form-field>
 

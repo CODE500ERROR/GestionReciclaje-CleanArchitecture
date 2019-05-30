@@ -5,4 +5,6 @@ export class Plant {
   municipioId: string;
   name: string;
   address: string;
+  municipioName: string;
+  operatorsQuantity: number;
 }

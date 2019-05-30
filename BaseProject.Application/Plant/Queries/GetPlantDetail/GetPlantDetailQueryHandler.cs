@@ -38,6 +38,7 @@ namespace BaseProject.Application.Plant.Queries.GetPlantDetail
                 PlantId=Plant.PlantId,
                 Name=Plant.Name,
                 Address=Plant.Address,
+                OperatorsQuantity=Plant.OperatorsQuantity,
                 MunicipioId=Plant.MunicipioId
             };
 

@@ -32,6 +32,7 @@ export class CreatePlantComponent implements OnInit {
           name: ['', Validators.required],
           address: ['', Validators.required],
           municipioId: ['', Validators.required],
+          operatorsQuantity: ['', Validators.required],
         }
     );
   }

@@ -11,6 +11,7 @@ namespace BaseProject.Application.Users
             RuleFor(v => v.Email).NotEmpty().EmailAddress();
             RuleFor(v => v.ConfirmEmail).Equal(v => v.Email);
             RuleFor(v => v.Password).NotEmpty();
+            RuleFor(v => v.PlantId).NotEmpty();
             RuleFor(v => v.ConfirmPassword).Equal(v => v.Password);
             RuleFor(v => v.Roles).Must(x=>x.Count>0).WithMessage("Rol is required");
         }

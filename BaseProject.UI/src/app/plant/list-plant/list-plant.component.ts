@@ -15,7 +15,7 @@ import { PlantFilter } from 'src/app/models/plantFilter';
 export class ListPlantComponent implements OnInit, AfterViewInit {
   
   filters = new PlantFilter();
-  displayedColumns: string[] = [ 'name', 'address', 'municipioName', 'actions'];
+  displayedColumns: string[] = [ 'name', 'address', 'municipioName', 'operatorsQuantity','actions'];
   public dataSource = new MatTableDataSource<Plant>();
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;

@@ -6,5 +6,6 @@ export class User {
   phoneNumber: string;
   firstName: string;
   lastName: string;
+  plantId: string;
   roles: string[];
 }

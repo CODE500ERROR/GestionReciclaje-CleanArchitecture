@@ -49,6 +49,14 @@ namespace BaseProject.Persistence
 
             //SeedOrders(context);
         }
+        private void SeedMunicipio(BaseProjectDbContext context)
+        {
+            var mun = new Municipio() {
+                Name="Resistencia"
+            };
+            context.Municipios.Add(mun);
+            context.SaveChanges();
+        }
 
         private void SeedRoles(BaseProjectDbContext context)
         {
@@ -58,9 +66,7 @@ namespace BaseProject.Persistence
                 new Role { Id = RolesNames.SuperAdmin.Id, Name = RolesNames.SuperAdmin.Name, NormalizedName = RolesNames.SuperAdmin.Name.ToUpper() },
                 new Role { Id = RolesNames.Operator.Id, Name = RolesNames.Operator.Name, NormalizedName = RolesNames.Operator.Name.ToUpper() }
             };
-
             context.Roles.AddRange(roles);
-
             context.SaveChanges();
         }
 

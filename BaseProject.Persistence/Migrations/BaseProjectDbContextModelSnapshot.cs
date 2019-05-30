@@ -26,7 +26,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 28, 23, 40, 20, 75, DateTimeKind.Local).AddTicks(168));
+                        .HasDefaultValue(new DateTime(2019, 5, 29, 21, 26, 28, 324, DateTimeKind.Local).AddTicks(9376));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -74,7 +74,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 28, 23, 40, 20, 73, DateTimeKind.Local).AddTicks(2784));
+                        .HasDefaultValue(new DateTime(2019, 5, 29, 21, 26, 28, 322, DateTimeKind.Local).AddTicks(9380));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -100,7 +100,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 28, 23, 40, 20, 67, DateTimeKind.Local).AddTicks(8353));
+                        .HasDefaultValue(new DateTime(2019, 5, 29, 21, 26, 28, 314, DateTimeKind.Local).AddTicks(3369));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -111,6 +111,8 @@ namespace BaseProject.Persistence.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100);
+
+                    b.Property<int>("OperatorsQuantity");
 
                     b.HasKey("PlantId");
 
@@ -128,7 +130,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 28, 23, 40, 20, 71, DateTimeKind.Local).AddTicks(4423));
+                        .HasDefaultValue(new DateTime(2019, 5, 29, 21, 26, 28, 320, DateTimeKind.Local).AddTicks(8719));
 
                     b.Property<string>("Description");
 

@@ -17,7 +17,7 @@ namespace BaseProject.Domain
         public string Address{ get; set; }
         public DateTime CreationTime { get; set; }
         public bool IsDeleted { get; set; }
-
+        public int OperatorsQuantity { get; set; }
         public Guid MunicipioId { get; set; }
         public virtual Municipio Municipio { get; set; }
         public virtual ICollection<User> Users{ get; set; }

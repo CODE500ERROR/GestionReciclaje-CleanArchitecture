@@ -33,6 +33,7 @@ namespace BaseProject.Application.Plant.Commands.UpdatePlant
             factory.Address = request.Address;
             factory.Name = request.Name;
             factory.MunicipioId = request.MunicipioId;
+            factory.OperatorsQuantity = request.OperatorsQuantity;
             await _context.SaveChangesAsync(cancellationToken);
 
             return Unit.Value;
