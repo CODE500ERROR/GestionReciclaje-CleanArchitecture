@@ -13,6 +13,7 @@ using BaseProject.Application.Roles;
 using BaseProject.Application.Roles.GetAllRoles;
 using BaseProject.Application.Users.Commands.UpdateUser;
 using BaseProject.Application.Users.Queries.GetAllUsers;
+using BaseProject.Domain.Constants;
 using BaseProject.WebApi.Common;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -20,6 +21,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BaseProject.WebApi.Controller
 {
+
+    [Authorize(Policy = "RequiredAdminRole")]
     public class CategoryController : BaseController
     {
         /// <summary>
@@ -28,6 +31,7 @@ namespace BaseProject.WebApi.Controller
         /// <param name="query"></param>
         /// <returns></returns>
         [HttpGet]
+       
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<CategoryListViewModel>> GetAll([FromQuery] GetCategoryListQuery query)
         {
@@ -42,6 +46,7 @@ namespace BaseProject.WebApi.Controller
         [HttpPost("Create")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesDefaultResponseType]
+
         public async Task<ActionResult<int>> Create([FromBody] CreateCategoryCommand command)
         {
             return Ok(await Mediator.Send(command));

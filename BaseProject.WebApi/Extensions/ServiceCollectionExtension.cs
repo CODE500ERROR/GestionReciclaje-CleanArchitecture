@@ -45,8 +45,7 @@ namespace BaseProject.WebApi.Extensions
         public static IServiceCollection AddAntiforgerySecurely(this IServiceCollection services)
         {
             return services.AddAntiforgery(
-                options =>
-                {
+                options => {
                     // Rename the Anti-Forgery cookie from "__RequestVerificationToken" to "f". This adds a little
                     // security through obscurity and also saves sending a few characters over the wire.
                     options.Cookie.Name = "f";
@@ -114,15 +113,15 @@ namespace BaseProject.WebApi.Extensions
                 .AddConfigOptions<ResponseCompressionSettings>(configuration, ResponseCompressionSettings.Key)
                 .AddConfigOptions<AuthSettings>(configuration, AuthSettings.Key)
                 .AddConfigOptions<JwtIssuerSettings>(configuration, JwtIssuerSettings.Key);
-                // Adds IOptionsSnapshot<AppSettings> to the services container.
-                //.Configure<AppSettings>(configuration.GetSection())
-                // Adds IOptionsSnapshot<CacheProfileSettings> to the services container.
-                //.Configure<CacheProfileSettings>(configuration.GetSection(CacheProfileSettings.Key))
-                //.Configure<DevelopmentSettings>(configuration.GetSection(DevelopmentSettings.Key))
-                //.Configure<ResponseCompressionSettings>(configuration.GetSection(ResponseCompressionSettings.Key));
+            // Adds IOptionsSnapshot<AppSettings> to the services container.
+            //.Configure<AppSettings>(configuration.GetSection())
+            // Adds IOptionsSnapshot<CacheProfileSettings> to the services container.
+            //.Configure<CacheProfileSettings>(configuration.GetSection(CacheProfileSettings.Key))
+            //.Configure<DevelopmentSettings>(configuration.GetSection(DevelopmentSettings.Key))
+            //.Configure<ResponseCompressionSettings>(configuration.GetSection(ResponseCompressionSettings.Key));
         }
 
-        public static IServiceCollection AddConfigOptions<TOptions>(this IServiceCollection services, IConfiguration configuration, string section) 
+        public static IServiceCollection AddConfigOptions<TOptions>(this IServiceCollection services, IConfiguration configuration, string section)
             where TOptions : class, new()
         {
             services.Configure<TOptions>(configuration.GetSection(section));
@@ -146,20 +145,15 @@ namespace BaseProject.WebApi.Extensions
         public static IServiceCollection AddCorsPolicies(this IServiceCollection services)
         {
             return services.AddCors(
-                options =>
-                {
+                options => {
                     options.AddPolicy(
-                    options.DefaultPolicyName,
-                    x =>
-                    {
-                        x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().AllowCredentials();
-                    });
-                    //options.AddPolicy(
-                    //    "MyCustomPolicy",
-                    //    x =>
-                    //    {
-                    //    });
+                        options.DefaultPolicyName,
+                        x => {
+                            x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().AllowCredentials();
+                        });
+
                 });
+
         }
 
         /// <summary>
@@ -184,8 +178,7 @@ namespace BaseProject.WebApi.Extensions
         /// </summary>
         public static IServiceCollection AddBaseProjectIdentity(this IServiceCollection services)
         {
-            services.AddIdentity<User, Role>(options =>
-            {
+            services.AddIdentity<User, Role>(options => {
                 options.Password.RequiredLength = 8;
                 options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
@@ -212,15 +205,13 @@ namespace BaseProject.WebApi.Extensions
             var jwtAppSettingOptions = configuration.GetSection(nameof(JwtIssuerSettings));
 
             // Configure JwtIssuerOptions
-            services.AddConfigOptions<JwtIssuerSettings>(options =>
-            {
+            services.AddConfigOptions<JwtIssuerSettings>(options => {
                 options.Issuer = jwtAppSettingOptions[nameof(JwtIssuerSettings.Issuer)];
                 options.Audience = jwtAppSettingOptions[nameof(JwtIssuerSettings.Audience)];
                 options.SigningCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
             });
 
-            var tokenValidationParameters = new TokenValidationParameters
-            {
+            var tokenValidationParameters = new TokenValidationParameters {
                 ValidateIssuer = true,
                 ValidIssuer = jwtAppSettingOptions[nameof(JwtIssuerSettings.Issuer)],
 
@@ -236,21 +227,17 @@ namespace BaseProject.WebApi.Extensions
             };
 
 
-                        services.AddAuthentication(options =>
-            {
+            services.AddAuthentication(options => {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 
-            }).AddJwtBearer(configureOptions =>
-            {
+            }).AddJwtBearer(configureOptions => {
                 configureOptions.ClaimsIssuer = jwtAppSettingOptions[nameof(JwtIssuerSettings.Issuer)];
                 configureOptions.TokenValidationParameters = tokenValidationParameters;
                 configureOptions.SaveToken = true;
 
-                configureOptions.Events = new JwtBearerEvents
-                {
-                    OnAuthenticationFailed = context =>
-                    {
+                configureOptions.Events = new JwtBearerEvents {
+                    OnAuthenticationFailed = context => {
                         if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
                         {
                             context.Response.Headers.Add("Token-Expired", "true");
@@ -261,8 +248,7 @@ namespace BaseProject.WebApi.Extensions
             });
 
             // api user claim policy
-            services.AddAuthorization(options =>
-            {
+            services.AddAuthorization(options => {
                 options.AddPolicy("ApiUser", policy => policy.RequireClaim(Constants.Strings.JwtClaimIdentifiers.Rol, Constants.Strings.JwtClaims.ApiAccess));
             });
 
@@ -270,7 +256,8 @@ namespace BaseProject.WebApi.Extensions
         }
 
 
-        public static IServiceCollection AddSwagger(this IServiceCollection services) {
+        public static IServiceCollection AddSwagger(this IServiceCollection services)
+        {
             // Register the Swagger generator, defining 1 or more Swagger documents
             return services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new Info { Title = "BaseProject", Version = "v1" });
@@ -313,7 +300,7 @@ namespace BaseProject.WebApi.Extensions
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestResponseLoggerBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
             services.AddMediatR(typeof(GetUserListQuery).GetTypeInfo().Assembly);
-        
+
             //// Add your own custom services here e.g.
             //services.AddScoped(x => x)
             // Singleton - Only one instance is ever created and returned.
@@ -328,6 +315,6 @@ namespace BaseProject.WebApi.Extensions
             return services;
         }
 
-        
+
     }
 }

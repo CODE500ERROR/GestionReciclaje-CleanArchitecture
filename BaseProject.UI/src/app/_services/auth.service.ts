@@ -15,16 +15,9 @@ baseApiUrl = environment.apiUrl + 'auth/';
 jwtHelper = new JwtHelperService();
 decodedToken: any;
 currentUser: User;
-photoUrl = new BehaviorSubject<string>('../../assets/user.png');
-currentPhotoUrl = this.photoUrl.asObservable();
 
 constructor(private http: HttpClient) { }
 
-
-
-changeMemberPhoto(photoUrl: string) {
-  this.photoUrl.next(photoUrl);
-}
 
 
   login(userLogin: any) {

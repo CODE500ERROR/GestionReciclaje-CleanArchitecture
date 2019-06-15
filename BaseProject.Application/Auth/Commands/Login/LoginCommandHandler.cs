@@ -53,8 +53,8 @@ namespace BaseProject.Application.Auth.Commands.Login
                 //var refreshToken = new RefreshToken(token, DateTime.UtcNow.AddDays(5), user.Id, request.RemoteIpAddress);
                 //_context.RefreshTokens.Add(refreshToken);
                 //await _context.SaveChangesAsync();
-
-                var accessToken = await _jwtFactory.GenerateEncodedToken(user.Id.ToString(), user.UserName);
+                var roles = await _userManager.GetRolesAsync(user);
+                var accessToken = await _jwtFactory.GenerateEncodedToken(user.Id.ToString(), user.UserName, roles );
                 return new LoginModel(accessToken, token);
             }
             catch (System.Exception ex)

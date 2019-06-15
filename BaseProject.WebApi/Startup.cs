@@ -20,6 +20,11 @@ using Whoever.Web.Utilities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
+using BaseProject.Persistence;
+using BaseProject.Application.Managers;
+using Microsoft.AspNetCore.Identity;
+using BaseProject.Domain;
 
 namespace BaseProject.WebApi
 {
@@ -49,9 +54,6 @@ namespace BaseProject.WebApi
                 .AddCustomServices()
                 .AddResponseCaching()
                 
-
-
-
                 //Add response compression to enable GZIP compression.
                 .AddResponseCompression(
                     options => {
@@ -68,6 +70,17 @@ namespace BaseProject.WebApi
                 });
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            
+
+            //policy
+            services.AddAuthorization(option => {
+
+                option.AddPolicy("RequiredAdminRole", policy => policy.RequireRole("Admin"));
+                //option.AddPolicy("RequiredAdminRole", policy => policy.RequireClaim("api-access"));
+                option.AddPolicy("RequiredSuperAdminRole", policy => policy.RequireRole("Super Admin"));
+                option.AddPolicy("RequiredOperator", policy => policy.RequireRole("Operator"));
+            });
+
 
 
             // MVC

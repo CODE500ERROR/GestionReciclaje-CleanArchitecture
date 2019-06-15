@@ -10,7 +10,7 @@ namespace BaseProject.Infrastructure
         {
             public static class JwtClaimIdentifiers
             {
-                public const string Rol = "rol", Id = "id";
+                public const string Rol = "role", Id = "id";
             }
 
             public static class JwtClaims

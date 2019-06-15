@@ -7,7 +7,7 @@
 
   <mat-form-field class="full-width-input">
     <input matInput 
-           placeholder="First Name" 
+           placeholder="Nombre" 
            
            [value]="createUserForm.get('firstName').value | titlecase"
 
@@ -19,7 +19,7 @@
   </mat-form-field>
 
   <mat-form-field class="full-width-input">
-    <input matInput placeholder="Last Name" 
+    <input matInput placeholder="Apellido" 
            [value]="createUserForm.get('lastName').value | titlecase"
            formControlName="lastName" />
 
@@ -37,18 +37,18 @@
   <mat-form-field class="full-width-input">
     <input matInput placeholder="Email" formControlName="email"  />
     <mat-error *ngIf="f.email.errors && f.email.errors.required">
-      Email is required
+      Email es requerido
     </mat-error>
 
     <mat-error *ngIf="f.email.errors && f.email.errors.email">
-      Email must be a valid email address
+      Debe ingresar un email válido
     </mat-error>
   </mat-form-field>
 
   <mat-form-field class="full-width-input">
     <input
       matInput
-      placeholder="Confirm Email"
+      placeholder="Confirmar Email"
       formControlName="confirmEmail"
     />
     <mat-error
@@ -57,14 +57,14 @@
         f.confirmEmail.errors.mustMatch
       "
     >
-      Confirm paassword must match
+      Email y confirmar email deben ser iguales
     </mat-error>
   </mat-form-field>
 
   <mat-form-field class="full-width-input">
     <input
       matInput
-      placeholder="Password"
+      placeholder="Contraseña"
       formControlName="password"
       type="password"
     />
@@ -74,26 +74,26 @@
     </mat-error>
 
     <mat-error *ngIf="f.password.hasError('minlength')">
-      Password must be at least 4 characters
+      Contraseña debe tener al menos 4 caracteres
     </mat-error>
 
     <mat-error *ngIf="f.password.hasError('maxlength')">
-      Password cannot exceed 10 characters
+      Contrasñea no puede exceder 10 caracteres
     </mat-error>
   </mat-form-field>
 
   <mat-form-field class="full-width-input">
     <input
       matInput
-      placeholder="Confirm Password"
+      placeholder="Confirmar Contraseña"
       type="password"
       formControlName="confirmPassword"
     />
     <mat-error
       *ngIf="f.confirmPassword.errors && f.confirmPassword.errors.mustMatch"
     >
-      Passwords must match
-    </mat-error>
+    Contraseña y confirmar contraseña deben ser iguales
+  </mat-error>
   </mat-form-field>
 
   

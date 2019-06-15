@@ -2,6 +2,7 @@
 using BaseProject.Application.Interfaces;
 using Microsoft.Extensions.Options;
 using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Principal;
@@ -21,18 +22,21 @@ namespace BaseProject.Infrastructure.Auth
             ThrowIfInvalidOptions(_jwtOptions);
         }
 
-        public async Task<AccessToken> GenerateEncodedToken(string id, string userName)
+        public async Task<AccessToken> GenerateEncodedToken(string id, string userName,IList<string> roles)
         {
-            var identity = GenerateClaimsIdentity(id, userName);
-
-            var claims = new[]
+            var identity = GenerateClaimsIdentity(id, userName, roles);
+            var claims = new List<Claim>
             {
                  new Claim(JwtRegisteredClaimNames.Sub, userName),
                  new Claim(JwtRegisteredClaimNames.Jti, await _jwtOptions.JtiGenerator()),
-                 new Claim(JwtRegisteredClaimNames.Iat, ToUnixEpochDate(_jwtOptions.IssuedAt).ToString(), ClaimValueTypes.Integer64),
-                 identity.FindFirst(Constants.Strings.JwtClaimIdentifiers.Rol),
-                 identity.FindFirst(Constants.Strings.JwtClaimIdentifiers.Id)
+                 new Claim(JwtRegisteredClaimNames.Iat, ToUnixEpochDate(_jwtOptions.IssuedAt).ToString(), ClaimValueTypes.Integer64),                                  
+                 new Claim(Constants.Strings.JwtClaimIdentifiers.Id, id)
              };
+
+            foreach (var role in roles)
+            {
+                claims.Add(new Claim(Constants.Strings.JwtClaimIdentifiers.Rol, role));
+            }
 
             // Create the JWT security token and encode it.
             var jwt = new JwtSecurityToken(
@@ -46,7 +50,7 @@ namespace BaseProject.Infrastructure.Auth
             return new AccessToken(_jwtTokenHandler.WriteToken(jwt), (int)_jwtOptions.ValidFor.TotalSeconds);
         }
 
-        private static ClaimsIdentity GenerateClaimsIdentity(string id, string userName)
+        private static ClaimsIdentity GenerateClaimsIdentity(string id, string userName, IList<string> roles)
         {
             return new ClaimsIdentity(new GenericIdentity(userName, "Token"), new[]
             {
