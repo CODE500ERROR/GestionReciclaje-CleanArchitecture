@@ -22,7 +22,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BaseProject.WebApi.Controller
 {
 
-    [Authorize(Policy = "RequiredAdminRole")]
+    [Authorize(Policy  = "RequiredAdminRole")]
     public class CategoryController : BaseController
     {
         /// <summary>
