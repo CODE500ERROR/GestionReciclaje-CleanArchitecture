@@ -21,7 +21,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BaseProject.WebApi.Controller
 {
-    [Authorize(Policy = "RequiredAdminRole")]
+    [Authorize(Policy = "RequiredOperator")]
     public class ProductController : BaseController
     {
         /// <summary>

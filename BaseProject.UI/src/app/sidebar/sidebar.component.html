@@ -16,6 +16,7 @@
         
         <a
           mat-list-item
+          *appHasRole="['Admin','Super Admin']"
           (click)="sidenav.close()"
           [routerLink]="['/users']"
           routerLinkActive="list-item-active">    
@@ -26,6 +27,7 @@
         <a
         mat-list-item
         (click)="sidenav.close()"
+        *appHasRole="['Admin','Super Admin']"
         [routerLink]="['/Plant']"
         routerLinkActive="list-item-active">    
         <mat-icon  matListIcon class="app-nav-list-icon">home</mat-icon>
@@ -35,6 +37,7 @@
         <a
         mat-list-item
         (click)="sidenav.close()"
+        *appHasRole="['Admin','Super Admin']"
         [routerLink]="['/category']"
         routerLinkActive="list-item-active">    
         <mat-icon  matListIcon class="app-nav-list-icon">note_add</mat-icon>
@@ -44,6 +47,7 @@
         <a
         mat-list-item
         (click)="sidenav.close()"
+        *appHasRole="['Admin','Super Admin','Operator']"
         [routerLink]="['/product']"
         routerLinkActive="list-item-active">    
         <mat-icon  matListIcon class="app-nav-list-icon">create</mat-icon>

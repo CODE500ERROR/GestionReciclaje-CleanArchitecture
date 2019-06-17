@@ -79,6 +79,7 @@ import { DetailCategoryResolver } from './_resolvers/detail-category-resolvers';
 import { EditProductComponent } from './product/product-edit/edit-product.component';
 import { CreateProductComponent } from './product/product-create/create-product.component';
 import { ListProductComponent } from './product/product-list/list-product.component';
+import { HasRoleDirective } from './_directives/hasRole.directive';
 
 
 
@@ -112,6 +113,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       ListProductComponent,
       CreateProductComponent,
       EditProductComponent,
+      HasRoleDirective
    ],
    imports: [
       BrowserModule,

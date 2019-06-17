@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BaseProject.WebApi.Controller
 {
-    [Authorize]
+    [Authorize(Policy = "RequiredAdminRole")]
     public class UserController : BaseController
     {
       

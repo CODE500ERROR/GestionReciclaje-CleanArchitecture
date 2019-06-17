@@ -37,24 +37,30 @@ export const appRoutes: Routes = [
         children: [
 
             // ******************** USERS *******************
-            {path: 'users', component: ListUserComponent, resolve: {users: ListUserResolver}},
-            {path: 'user/edit/:id', component: EditUserComponent, resolve: {user: DetailUserResolver} },
-            {path: 'user/create', component: CreateUserComponent},
+            {path: 'users', component: ListUserComponent, resolve: {users: ListUserResolver} , data: {roles: ['Admin', 'Super Admin']} },
+            {path: 'user/edit/:id', component: EditUserComponent, resolve: {user: DetailUserResolver},
+                                                                  data: {roles: ['Admin', 'Super Admin']}   },
+            {path: 'user/create', component: CreateUserComponent, data: {roles: ['Admin', 'Super Admin']}},
 
             // ******************** PLANT *******************
-            {path: 'Plant', component: ListPlantComponent , resolve: {plants: ListPlantResolver} },
-            {path: 'Plant/create', component: CreatePlantComponent  },
-            {path: 'Plant/edit/:id', component: EditPlantComponent , resolve: {plant: DetailPlantResolver} },
+            {path: 'Plant', component: ListPlantComponent , resolve: {plants: ListPlantResolver} ,data: {roles: ['Admin', 'Super Admin']} },
+            {path: 'Plant/create', component: CreatePlantComponent , data: {roles: ['Admin', 'Super Admin']} },
+            {path: 'Plant/edit/:id', component: EditPlantComponent , resolve: {plant: DetailPlantResolver} 
+                                                                   , data: {roles: ['Admin', 'Super Admin']} },
 
             // ******************** CATEGORY *******************
-            {path: 'category', component: ListCategoryComponent , resolve: {categories: ListCategoryResolver} },
-            {path: 'category/create', component: CreateCategoryComponent  },
-            {path: 'category/edit/:id', component: EditCategoryComponent , resolve: {category: DetailCategoryResolver} },
+            {path: 'category', component: ListCategoryComponent , resolve: {categories: ListCategoryResolver} 
+                                                                , data: {roles: ['Admin', 'Super Admin']} },
+            {path: 'category/create', component: CreateCategoryComponent , data: {roles: ['Admin', 'Super Admin']} },
+            {path: 'category/edit/:id', component: EditCategoryComponent , resolve: {category: DetailCategoryResolver}
+                                                                         , data: {roles: ['Admin', 'Super Admin']} },
 
             // ******************** PRODUCT *******************
-            {path: 'product', component: ListProductComponent , resolve: {products: ListProductResolver} },
-            {path: 'product/create', component: CreateProductComponent  },
-            {path: 'product/edit/:id', component: EditProductComponent , resolve: {product: DetailProductResolver} },
+            {path: 'product', component: ListProductComponent , resolve: {products: ListProductResolver}
+                                                              , data: {roles: ['Admin', 'Super Admin','Operator']} },
+            {path: 'product/create', component: CreateProductComponent , data: {roles: ['Admin', 'Super Admin','Operator']} },
+            {path: 'product/edit/:id', component: EditProductComponent , resolve: {product: DetailProductResolver}
+                                                                        , data: {roles: ['Admin', 'Super Admin','Operator']} },
         ]
      },
     {path: '', redirectTo: 'login', pathMatch: 'full'},

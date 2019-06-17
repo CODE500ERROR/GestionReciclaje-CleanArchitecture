@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BaseProject.WebApi.Controller
 {
+    [Authorize(Policy = "RequiredAdminRole")]
     public class PlantController : BaseController
     {
 

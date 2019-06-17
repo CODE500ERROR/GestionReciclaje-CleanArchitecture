@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BaseProject.WebApi.Controller
 {
+    [Authorize()]
     public class MunicipioController : BaseController
     {
       
