@@ -22,3 +22,15 @@ D:\Development\GestionReciclaje\Whoever\Whoever.Mailing.Mandrill\obj\Debug\netst
 D:\Development\GestionReciclaje\Whoever\Whoever.Mailing.Mandrill\obj\Debug\netstandard2.0\Whoever.Mailing.Mandrill.csproj.CopyComplete
 D:\Development\GestionReciclaje\Whoever\Whoever.Mailing.Mandrill\obj\Debug\netstandard2.0\Whoever.Mailing.Mandrill.dll
 D:\Development\GestionReciclaje\Whoever\Whoever.Mailing.Mandrill\obj\Debug\netstandard2.0\Whoever.Mailing.Mandrill.pdb
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Mailing.Mandrill\bin\Debug\netstandard2.0\Whoever.Mailing.Mandrill.deps.json
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Mailing.Mandrill\bin\Debug\netstandard2.0\Whoever.Mailing.Mandrill.dll
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Mailing.Mandrill\bin\Debug\netstandard2.0\Whoever.Mailing.Mandrill.pdb
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Mailing.Mandrill\bin\Debug\netstandard2.0\Whoever.Mailing.dll
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Mailing.Mandrill\bin\Debug\netstandard2.0\Whoever.Mailing.pdb
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Mailing.Mandrill\obj\Debug\netstandard2.0\Whoever.Mailing.Mandrill.csprojAssemblyReference.cache
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Mailing.Mandrill\obj\Debug\netstandard2.0\Whoever.Mailing.Mandrill.csproj.CoreCompileInputs.cache
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Mailing.Mandrill\obj\Debug\netstandard2.0\Whoever.Mailing.Mandrill.AssemblyInfoInputs.cache
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Mailing.Mandrill\obj\Debug\netstandard2.0\Whoever.Mailing.Mandrill.AssemblyInfo.cs
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Mailing.Mandrill\obj\Debug\netstandard2.0\Whoever.Mailing.Mandrill.csproj.CopyComplete
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Mailing.Mandrill\obj\Debug\netstandard2.0\Whoever.Mailing.Mandrill.dll
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Mailing.Mandrill\obj\Debug\netstandard2.0\Whoever.Mailing.Mandrill.pdb

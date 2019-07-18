@@ -26,3 +26,17 @@ D:\Development\GestionReciclaje\Whoever\Whoever.Web\obj\Debug\netstandard2.0\Who
 D:\Development\GestionReciclaje\Whoever\Whoever.Web\obj\Debug\netstandard2.0\Whoever.Web.csproj.CopyComplete
 D:\Development\GestionReciclaje\Whoever\Whoever.Web\obj\Debug\netstandard2.0\Whoever.Web.dll
 D:\Development\GestionReciclaje\Whoever\Whoever.Web\obj\Debug\netstandard2.0\Whoever.Web.pdb
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Web\bin\Debug\netstandard2.0\Whoever.Web.deps.json
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Web\bin\Debug\netstandard2.0\Whoever.Web.dll
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Web\bin\Debug\netstandard2.0\Whoever.Web.pdb
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Web\bin\Debug\netstandard2.0\Whoever.Common.dll
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Web\bin\Debug\netstandard2.0\Microsoft.Extensions.Identity.Core.dll
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Web\bin\Debug\netstandard2.0\Whoever.Common.pdb
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Web\bin\Debug\netstandard2.0\Microsoft.Extensions.Identity.Core.xml
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Web\obj\Debug\netstandard2.0\Whoever.Web.csprojAssemblyReference.cache
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Web\obj\Debug\netstandard2.0\Whoever.Web.csproj.CoreCompileInputs.cache
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Web\obj\Debug\netstandard2.0\Whoever.Web.AssemblyInfoInputs.cache
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Web\obj\Debug\netstandard2.0\Whoever.Web.AssemblyInfo.cs
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Web\obj\Debug\netstandard2.0\Whoever.Web.csproj.CopyComplete
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Web\obj\Debug\netstandard2.0\Whoever.Web.dll
+D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Web\obj\Debug\netstandard2.0\Whoever.Web.pdb

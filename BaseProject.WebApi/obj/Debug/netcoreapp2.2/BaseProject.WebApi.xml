@@ -96,6 +96,28 @@
             <param name="query"></param>
             <returns></returns>
         </member>
+        <member name="M:BaseProject.WebApi.Controller.SeparationController.GetAll(BaseProject.Application.Separation.Queries.GetSeparationListQuery)">
+            <summary>
+            Get all roles.
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseProject.WebApi.Controller.SeparationController.Create(BaseProject.Application.Separation.Commands.CreateSeparationCommand)">
+            <summary>
+            Get all roles.
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseProject.WebApi.Controller.SeparationController.Get(System.Guid)">
+            <summary>
+            Get user by id.
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:BaseProject.WebApi.Controller.SeparationController.Delete(System.Guid)" -->
+        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:BaseProject.WebApi.Controller.SeparationController.Update(BaseProject.Application.Separation.Commands.UpdateSeparationCommand)" -->
         <member name="M:BaseProject.WebApi.Controller.UserController.GetAll(BaseProject.Application.Users.Queries.GetAllUsers.GetUserListQuery)">
             <summary>
             Get all users.

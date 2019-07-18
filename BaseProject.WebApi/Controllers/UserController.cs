@@ -10,7 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BaseProject.WebApi.Controller
 {
-    [Authorize(Policy = "RequiredAdminRole")]
+    //[Authorize(Policy = "RequiredAdminRole")]
+    
     public class UserController : BaseController
     {
       
@@ -44,6 +45,7 @@ namespace BaseProject.WebApi.Controller
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesDefaultResponseType]
+        [HttpPut]
         public async Task<IActionResult> Update([FromBody]UpdateUserCommand command)
         {
             await Mediator.Send(command);

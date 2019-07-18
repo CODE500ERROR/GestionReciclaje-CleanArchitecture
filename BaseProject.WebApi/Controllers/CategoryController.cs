@@ -22,7 +22,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BaseProject.WebApi.Controller
 {
 
-    [Authorize(Policy  = "RequiredAdminRole")]
+    //[Authorize(Policy  = "RequiredAdminRole")]
     public class CategoryController : BaseController
     {
         /// <summary>
@@ -30,8 +30,7 @@ namespace BaseProject.WebApi.Controller
         /// </summary>
         /// <param name="query"></param>
         /// <returns></returns>
-        [HttpGet]
-       
+        [HttpGet]      
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<CategoryListViewModel>> GetAll([FromQuery] GetCategoryListQuery query)
         {
@@ -83,6 +82,7 @@ namespace BaseProject.WebApi.Controller
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesDefaultResponseType]
+        [HttpPut]
         public async Task<IActionResult> Update([FromBody]UpdateCategoryCommand command)
         {
             await Mediator.Send(command);

@@ -15,7 +15,7 @@ namespace BaseProject.Persistence.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.2-servicing-10034")
+                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -26,7 +26,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 29, 21, 26, 28, 324, DateTimeKind.Local).AddTicks(9376));
+                        .HasDefaultValue(new DateTime(2019, 7, 18, 17, 0, 28, 27, DateTimeKind.Local).AddTicks(284));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -74,7 +74,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 29, 21, 26, 28, 322, DateTimeKind.Local).AddTicks(9380));
+                        .HasDefaultValue(new DateTime(2019, 7, 18, 17, 0, 28, 23, DateTimeKind.Local).AddTicks(5839));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -100,7 +100,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 29, 21, 26, 28, 314, DateTimeKind.Local).AddTicks(3369));
+                        .HasDefaultValue(new DateTime(2019, 7, 18, 17, 0, 28, 8, DateTimeKind.Local).AddTicks(6822));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -130,7 +130,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 5, 29, 21, 26, 28, 320, DateTimeKind.Local).AddTicks(8719));
+                        .HasDefaultValue(new DateTime(2019, 7, 18, 17, 0, 28, 15, DateTimeKind.Local).AddTicks(989));
 
                     b.Property<string>("Description");
 
@@ -214,6 +214,38 @@ namespace BaseProject.Persistence.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("RoleClaim");
+                });
+
+            modelBuilder.Entity("BaseProject.Domain.Separation", b =>
+                {
+                    b.Property<Guid>("SeparationId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreationTime")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(new DateTime(2019, 7, 18, 17, 0, 28, 19, DateTimeKind.Local).AddTicks(6545));
+
+                    b.Property<string>("Description");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("MeasuresUnit");
+
+                    b.Property<Guid>("PlantId");
+
+                    b.Property<Guid>("ProductId");
+
+                    b.Property<double>("Quantity");
+
+                    b.HasKey("SeparationId");
+
+                    b.HasIndex("PlantId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Separation");
                 });
 
             modelBuilder.Entity("BaseProject.Domain.User", b =>
@@ -393,6 +425,19 @@ namespace BaseProject.Persistence.Migrations
                         .WithMany("Claims")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("BaseProject.Domain.Separation", b =>
+                {
+                    b.HasOne("BaseProject.Domain.Plant", "Plant")
+                        .WithMany("Separations")
+                        .HasForeignKey("PlantId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("BaseProject.Domain.Product", "Product")
+                        .WithMany("Separations")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("BaseProject.Domain.User", b =>

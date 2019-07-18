@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BaseProject.WebApi.Controller
 {
-    [Authorize(Policy = "RequiredAdminRole")]
+    //[Authorize(Policy = "RequiredAdminRole")]
     public class PlantController : BaseController
     {
 
@@ -61,7 +61,7 @@ namespace BaseProject.WebApi.Controller
         /// <returns></returns>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesDefaultResponseType]
+        [ProducesDefaultResponseType]        
         public async Task<IActionResult> Delete(Guid id)
         {
             await Mediator.Send(new DeletePlantCommand { PlantId = id });
@@ -74,6 +74,7 @@ namespace BaseProject.WebApi.Controller
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesDefaultResponseType]
+        [HttpPut]
         public async Task<IActionResult> Update([FromBody]UpdatePlantCommand command)
         {
             await Mediator.Send(command);

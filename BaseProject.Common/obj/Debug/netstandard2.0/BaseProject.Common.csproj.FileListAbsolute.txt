@@ -26,3 +26,17 @@ D:\Development\GestionReciclaje\BaseProject.Common\obj\Debug\netstandard2.0\Base
 D:\Development\GestionReciclaje\BaseProject.Common\obj\Debug\netstandard2.0\BaseProject.Common.csproj.CopyComplete
 D:\Development\GestionReciclaje\BaseProject.Common\obj\Debug\netstandard2.0\BaseProject.Common.dll
 D:\Development\GestionReciclaje\BaseProject.Common\obj\Debug\netstandard2.0\BaseProject.Common.pdb
+D:\Facu\GestionReciclaje-CleanArchitecture\BaseProject.Common\bin\Debug\netstandard2.0\BaseProject.Common.deps.json
+D:\Facu\GestionReciclaje-CleanArchitecture\BaseProject.Common\bin\Debug\netstandard2.0\BaseProject.Common.dll
+D:\Facu\GestionReciclaje-CleanArchitecture\BaseProject.Common\bin\Debug\netstandard2.0\BaseProject.Common.pdb
+D:\Facu\GestionReciclaje-CleanArchitecture\BaseProject.Common\bin\Debug\netstandard2.0\Whoever.Common.dll
+D:\Facu\GestionReciclaje-CleanArchitecture\BaseProject.Common\bin\Debug\netstandard2.0\Microsoft.Extensions.Identity.Core.dll
+D:\Facu\GestionReciclaje-CleanArchitecture\BaseProject.Common\bin\Debug\netstandard2.0\Whoever.Common.pdb
+D:\Facu\GestionReciclaje-CleanArchitecture\BaseProject.Common\bin\Debug\netstandard2.0\Microsoft.Extensions.Identity.Core.xml
+D:\Facu\GestionReciclaje-CleanArchitecture\BaseProject.Common\obj\Debug\netstandard2.0\BaseProject.Common.csprojAssemblyReference.cache
+D:\Facu\GestionReciclaje-CleanArchitecture\BaseProject.Common\obj\Debug\netstandard2.0\BaseProject.Common.csproj.CoreCompileInputs.cache
+D:\Facu\GestionReciclaje-CleanArchitecture\BaseProject.Common\obj\Debug\netstandard2.0\BaseProject.Common.AssemblyInfoInputs.cache
+D:\Facu\GestionReciclaje-CleanArchitecture\BaseProject.Common\obj\Debug\netstandard2.0\BaseProject.Common.AssemblyInfo.cs
+D:\Facu\GestionReciclaje-CleanArchitecture\BaseProject.Common\obj\Debug\netstandard2.0\BaseProject.Common.csproj.CopyComplete
+D:\Facu\GestionReciclaje-CleanArchitecture\BaseProject.Common\obj\Debug\netstandard2.0\BaseProject.Common.dll
+D:\Facu\GestionReciclaje-CleanArchitecture\BaseProject.Common\obj\Debug\netstandard2.0\BaseProject.Common.pdb

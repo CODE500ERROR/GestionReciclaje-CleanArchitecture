@@ -25,6 +25,7 @@ namespace BaseProject.Persistence
         public virtual DbSet<Plant> Plants{ get; set; }
         public virtual DbSet<Category> Categories{ get; set; }
         public virtual DbSet<Product> Products{ get; set; }
+        public virtual DbSet<Separation> Separations { get; set; }
         #endregion
     }
 }

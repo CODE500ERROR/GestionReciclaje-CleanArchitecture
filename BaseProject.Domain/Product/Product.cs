@@ -14,5 +14,6 @@ namespace BaseProject.Domain
         public Category Category { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime CreationTime { get; set; }
+        public virtual ICollection<Separation> Separations { get; set; }
     }
 }

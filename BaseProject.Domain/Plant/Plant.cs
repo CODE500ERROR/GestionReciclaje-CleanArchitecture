@@ -21,6 +21,7 @@ namespace BaseProject.Domain
         public Guid MunicipioId { get; set; }
         public virtual Municipio Municipio { get; set; }
         public virtual ICollection<User> Users{ get; set; }
+        public virtual ICollection<Separation> Separations { get; set; }
 
     }
 }

@@ -21,7 +21,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BaseProject.WebApi.Controller
 {
-    [Authorize(Policy = "RequiredOperator")]
+    //[Authorize(Policy = "RequiredOperator")]
     public class ProductController : BaseController
     {
         /// <summary>
@@ -80,6 +80,7 @@ namespace BaseProject.WebApi.Controller
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesDefaultResponseType]
+        [HttpPut]
         public async Task<IActionResult> Update([FromBody]UpdateProductCommand command)
         {
             await Mediator.Send(command);
