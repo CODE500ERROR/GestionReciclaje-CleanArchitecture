@@ -25,10 +25,11 @@ namespace BaseProject.Application.Separation.Commands
 
         public async Task<bool> Handle(CreateSeparationCommand request, CancellationToken cancellationToken)
         {
-
-            var separation = _mapper.Map<Domain.Separation>(request);
+            request.PlantId =Guid.Parse("A4EF3853-760B-4D59-51FD-08D70C659891");
+            
             try
-            {                
+            {
+                var separation = _mapper.Map<Domain.Separation>(request);
                 var result = await _context.Separations.AddAsync(separation);
                 await _context.SaveChangesAsync(cancellationToken);
                 return true;

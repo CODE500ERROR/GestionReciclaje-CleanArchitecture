@@ -58,9 +58,9 @@ export class CreateProductComponent implements OnInit {
      });
  }
 
- getAllParent(){
-   this.categoryService.getAllParent().subscribe(data => {
-    this.parents = data as unknown as Category[];
+ getAllParent() {
+   this.categoryService.getAllParent().subscribe(data => {     
+    this.parents = data.parents as unknown as Category[];
   }, error => {
     this.alertService.error(error);
   }, () => {
@@ -68,8 +68,8 @@ export class CreateProductComponent implements OnInit {
  }
 
  getCategoryByParent() {
-  this.categoryService.getByParent(this.createProductForm.value.categoryParentId).subscribe(data => {
-    this.children = data;
+  this.categoryService.getByParent(this.createProductForm.value.categoryParentId).subscribe(data => {    
+    this.children = data.children;
    }, error => {
      this.alertService.error(error);
    }, () => {

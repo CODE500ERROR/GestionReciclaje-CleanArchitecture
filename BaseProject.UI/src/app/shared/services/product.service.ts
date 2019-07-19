@@ -28,7 +28,7 @@ export class ProductService {
     return this.http.get(this.baseApiUrl , { observe: 'response', params})
     .pipe(
       map(response => {
-          paginatedResult.entity = response.body['list'];
+          paginatedResult.entity = response.body['products'];
           paginatedResult.filters.totalRecords = response.body['totalRecords'];
           return paginatedResult;
       }));

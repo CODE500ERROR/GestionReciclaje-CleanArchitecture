@@ -27,7 +27,7 @@ export class PlantService {
     return this.http.get(this.baseApiUrl , { observe: 'response', params})
     .pipe(
       map(response => {
-        paginatedResult.entity = response.body['list'];
+        paginatedResult.entity = response.body['plants'];
         paginatedResult.filters.totalRecords = response.body['totalRecords'];
         return paginatedResult;
       }));

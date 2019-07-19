@@ -14,6 +14,7 @@ import { MatDialogModule } from '@angular/material';
 import { ListUserResolver } from './resolvers/list-user-resolvers';
 import { DetailUserResolver } from './resolvers/detail-user-resolvers';
 import { AuthGuard } from './guards/auth.guard';
+import { DetailPlantResolver } from './resolvers/detail-plant-resolvers';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { AuthGuard } from './guards/auth.guard';
     AlertifyService,
 
     ListPlantResolver,
+    DetailPlantResolver,
 
     ListProductResolver,
     DetailProductResolver,

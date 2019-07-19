@@ -18,7 +18,6 @@ D:\Development\GestionReciclaje\Whoever\Whoever.Data\obj\Debug\netstandard2.0\Wh
 D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Data\bin\Debug\netstandard2.0\Whoever.Data.deps.json
 D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Data\bin\Debug\netstandard2.0\Whoever.Data.dll
 D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Data\bin\Debug\netstandard2.0\Whoever.Data.pdb
-D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Data\obj\Debug\netstandard2.0\Whoever.Data.csprojAssemblyReference.cache
 D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Data\obj\Debug\netstandard2.0\Whoever.Data.csproj.CoreCompileInputs.cache
 D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Data\obj\Debug\netstandard2.0\Whoever.Data.AssemblyInfoInputs.cache
 D:\Facu\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Data\obj\Debug\netstandard2.0\Whoever.Data.AssemblyInfo.cs

@@ -57,13 +57,13 @@ export class EditPlantComponent implements OnInit {
 
   getAllMunicipios(){
     this.municipioService.getAll().subscribe(data =>  {
-     this.municipios = data;
+     this.municipios = data.municipios;
     }, error => {
        this.alertService.error(error);
     }, () => {
     });
   }
   cancel() {
-    this.router.navigate(['/Plant']);
+    this.router.navigate(['/plant']);
   }
 }

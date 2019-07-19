@@ -42,7 +42,7 @@ namespace BaseProject.WebApi.Controller
         /// </summary>
         /// <param name="command"></param>
         /// <returns></returns>
-        [HttpPost("Create")]
+        [HttpPost()]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesDefaultResponseType]
 

@@ -20,13 +20,13 @@ constructor(private http: HttpClient) { }
 
 
   login(userLogin: any) {
-    return this.http.post(this.baseApiUrl + 'Login', userLogin)
+    return this.http.post(this.baseApiUrl + 'token', userLogin)
                     .pipe(
                         map((response: any) => {
                            if (response) {
-                               localStorage.setItem('token', response.token);
-                               this.decodedToken = this.jwtHelper.decodeToken(response.token);
-                               localStorage.setItem('userEmail', this.decodedToken.unique_name);
+                               localStorage.setItem('token', response.accessToken.token);
+                               this.decodedToken = this.jwtHelper.decodeToken(response.accessToken.token);
+                               localStorage.setItem('userEmail', this.decodedToken.sub);
                            }
                         })
                     );

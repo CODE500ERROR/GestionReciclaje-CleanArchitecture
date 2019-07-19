@@ -8,7 +8,7 @@ using Whoever.Common.Mapping;
 
 namespace BaseProject.Application.Separation.Commands
 {
-    public class CreateSeparationCommand: IRequest<bool>
+    public class CreateSeparationCommand: IRequest<bool>,IMapFrom<Domain.Separation>
     {
 
         public Guid SeparationId { get; set; }

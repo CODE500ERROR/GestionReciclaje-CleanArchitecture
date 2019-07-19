@@ -36,7 +36,7 @@ namespace BaseProject.WebApi.Controller
         /// </summary>
         /// <param name="command"></param>
         /// <returns></returns>
-        [HttpPost("Create")]
+        [HttpPost()]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesDefaultResponseType]
         public async Task<ActionResult<int>> Create([FromBody] CreateSeparationCommand command)

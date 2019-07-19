@@ -14,6 +14,7 @@ namespace BaseProject.Domain
         public string MeasuresUnit { get; set; }
         public DateTime CreationTime { get; set; }
         public bool IsDeleted { get; set; }
+
         public virtual Plant Plant { get; set; }
         public virtual Product Product { get; set; }
 

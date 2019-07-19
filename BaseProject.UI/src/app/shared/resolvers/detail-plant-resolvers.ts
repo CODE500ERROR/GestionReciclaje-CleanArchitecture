@@ -18,7 +18,7 @@ export class DetailPlantResolver implements Resolve<Plant> {
             catchError(error => {
                 console.log(error);
                 this.alertify.error('Problem retrieving your data');
-                this.router.navigate(['/home']);
+                this.router.navigate(['/starter']);
                 return of(null);
             })
         );

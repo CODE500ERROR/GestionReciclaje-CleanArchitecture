@@ -57,9 +57,9 @@ export class CreatePlantComponent implements OnInit {
    this.router.navigate(['/plant']);
  }
 
- getAllMunicipios(){
-   this.municipioService.getAll().subscribe(data =>  { 
-    this.municipios = data;
+ getAllMunicipios() {
+   this.municipioService.getAll().subscribe(data =>  {
+    this.municipios = data.municipios;
    }, error => {
       this.alertService.error(error);
    }, () => {

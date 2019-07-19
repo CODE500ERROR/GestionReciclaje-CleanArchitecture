@@ -32,7 +32,7 @@ export class SeparationService {
 
     return this.http.get(this.baseApiUrl, { observe: 'response', params }).pipe(
       map(response => {
-        paginatedResult.entity = response.body;
+        paginatedResult.entity = response.body['separations'];
         return paginatedResult;
       })
     );

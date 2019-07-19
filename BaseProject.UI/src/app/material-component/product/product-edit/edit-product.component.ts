@@ -69,7 +69,7 @@ export class EditProductComponent implements OnInit {
   getAllParent() {
     this.categoryService.getAllParent().subscribe(
       data => {
-        this.parents = (data as unknown) as Category[];
+        this.parents = (data.parents as unknown) as Category[];
       },
       error => {
         this.alertService.error(error);
@@ -79,11 +79,12 @@ export class EditProductComponent implements OnInit {
   }
 
   getCategoryByParent() {
+    debugger:
     this.categoryService
       .getByParent(this.updateProductForm.value.categoryParentId)
       .subscribe(
         data => {
-          this.children = data;
+          this.children = data.children;
         },
         error => {
           this.alertService.error(error);
