@@ -14,7 +14,6 @@ import { ModalService } from '../../../shared/services/modal.service';
 })
 export class ListPlantComponent implements OnInit, AfterViewInit {
   filters = new PlantFilter();
-  isLoading = true;
   displayedColumns: string[] = [
     'name',
     'address',
@@ -38,8 +37,7 @@ export class ListPlantComponent implements OnInit, AfterViewInit {
     this.route.data.subscribe(data => {
       this.dataSource.data = data.plants.entity as Plant[];
       this.filters.totalRecords = data.plants.filters.totalRecords;
-      this.isLoading = false;
-    }, error => this.isLoading = false);
+    });
   }
 
   ngAfterViewInit(): void {
@@ -53,15 +51,12 @@ export class ListPlantComponent implements OnInit, AfterViewInit {
   }
 
   getAll() {
-   this.isLoading = true;
     this.plantService.getAll(this.filters).subscribe(
       res => {
         this.dataSource.data = res.entity as Plant[];
-        this.isLoading = false;
       },
       error => {
         this.alertify.error(error);
-        this.isLoading = false;
       }
     );
   }

@@ -45,7 +45,6 @@ export class ListCategoryComponent implements OnInit, AfterViewInit {
 
 
   getAll()  {
-    this.isLoading = true;
     this.categoryService.getAll(this.filters).subscribe((res) => {
       this.dataSource.data = res.entity as Category[];
       this.isLoading = false;

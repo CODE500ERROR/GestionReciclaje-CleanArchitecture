@@ -14,13 +14,13 @@ import { ModalService } from '../../../shared/services/modal.service';
   styleUrls: ['./list-category.component.css']
 })
 export class ListCategoryComponent implements OnInit, AfterViewInit {
-  isLoading = true;
+  
   filters = new CategoryFilter();
   displayedColumns: string[] = [ 'name', 'parentName', 'actions'];
   public dataSource = new MatTableDataSource<Category>();
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-
+  
   constructor(private route: ActivatedRoute, private router: Router,  private alertify: AlertifyService,
               private categoryService: CategoryService,  public dialogService: ModalService) { }
 
@@ -28,9 +28,9 @@ export class ListCategoryComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.dataSource.data =  data.categories.entity as Category[];
-      this.isLoading = false;
       this.filters.totalRecords = data.categories.filters.totalRecords;
-    }, error => this.isLoading = false);
+
+    });
   }
 
   ngAfterViewInit(): void {
@@ -45,13 +45,10 @@ export class ListCategoryComponent implements OnInit, AfterViewInit {
 
 
   getAll()  {
-    this.isLoading = true;
     this.categoryService.getAll(this.filters).subscribe((res) => {
-      this.dataSource.data = res.entity as Category[];
-      this.isLoading = false;
+      this.dataSource.data = res.entity as Category[];  
     }, error => {
       this.alertify.error(error);
-      this.isLoading = false;
     });
   }
 

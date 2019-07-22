@@ -57,11 +57,9 @@ export class ListPlantComponent implements OnInit, AfterViewInit {
     this.plantService.getAll(this.filters).subscribe(
       res => {
         this.dataSource.data = res.entity as Plant[];
-        this.isLoading = false;
       },
       error => {
         this.alertify.error(error);
-        this.isLoading = false;
       }
     );
   }

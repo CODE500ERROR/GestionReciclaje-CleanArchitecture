@@ -30,7 +30,8 @@ export class ListCategoryComponent implements OnInit, AfterViewInit {
       this.dataSource.data =  data.categories.entity as Category[];
       this.isLoading = false;
       this.filters.totalRecords = data.categories.filters.totalRecords;
-    }, error => this.isLoading = false);
+
+    });
   }
 
   ngAfterViewInit(): void {
@@ -45,13 +46,10 @@ export class ListCategoryComponent implements OnInit, AfterViewInit {
 
 
   getAll()  {
-    this.isLoading = true;
     this.categoryService.getAll(this.filters).subscribe((res) => {
       this.dataSource.data = res.entity as Category[];
-      this.isLoading = false;
     }, error => {
       this.alertify.error(error);
-      this.isLoading = false;
     });
   }
 
