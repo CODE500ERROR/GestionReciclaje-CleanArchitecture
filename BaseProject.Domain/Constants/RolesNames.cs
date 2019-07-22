@@ -7,6 +7,7 @@ namespace BaseProject.Domain.Constants
         public static RolesNames Admin = new AdminType();
         public static RolesNames SuperAdmin = new SuperAdminType();
         public static RolesNames Operator= new OperatorType();
+        public static RolesNames Supervisor = new SupervisorType();
 
         protected RolesNames(int id, string name)
             : base(id, name)
@@ -29,6 +30,12 @@ namespace BaseProject.Domain.Constants
         private class OperatorType : RolesNames
         {
             public OperatorType() : base(3, "Operator")
+            { }
+        }
+
+        private class SupervisorType : RolesNames
+        {
+            public SupervisorType() : base(4, "Supervisor")
             { }
         }
 
