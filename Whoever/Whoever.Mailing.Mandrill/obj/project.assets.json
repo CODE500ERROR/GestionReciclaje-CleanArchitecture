@@ -74,7 +74,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "a/iSwnRZb+LHFk49hQOyThh/ZNC3vsbZsF65XwQIb863qF6msmhdQtxGXFL28Ob2NsCz/drEj28BJd/YPpLRBg==",
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -217,7 +217,7 @@
       ]
     },
     "Newtonsoft.Json/12.0.1": {
-      "sha512": "jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
+      "sha512": "pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
       "type": "package",
       "path": "newtonsoft.json/12.0.1",
       "files": [
@@ -275,11 +275,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Facu\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing.Mandrill\\Whoever.Mailing.Mandrill.csproj",
+      "projectUniqueName": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing.Mandrill\\Whoever.Mailing.Mandrill.csproj",
       "projectName": "Whoever.Mailing.Mandrill",
-      "projectPath": "D:\\Facu\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing.Mandrill\\Whoever.Mailing.Mandrill.csproj",
+      "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing.Mandrill\\Whoever.Mailing.Mandrill.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\Facu\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing.Mandrill\\obj\\",
+      "outputPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing.Mandrill\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -298,8 +298,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\Facu\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing\\Whoever.Mailing.csproj": {
-              "projectPath": "D:\\Facu\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing\\Whoever.Mailing.csproj"
+            "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing\\Whoever.Mailing.csproj": {
+              "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing\\Whoever.Mailing.csproj"
             }
           }
         }

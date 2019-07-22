@@ -1,0 +1,89 @@
+<!-- <form
+  [formGroup]="createCategoryForm"
+  (ngSubmit)="save()"
+  class="text-center border border-light p-5 form"
+>
+  <p class="h4 mb-4">Crear Categoría</p>
+
+  <mat-form-field class="full-width-input">
+    <input matInput 
+           placeholder="Nombre"            
+           [value]="createCategoryForm.get('name').value | titlecase"
+           formControlName="name" />
+    
+           <mat-error *ngIf="createCategoryForm.get('name').errors">
+      Nombre es requerido
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Seleccione una opción</mat-label>
+    <mat-select [value]="createCategoryForm.get('parentId').value"
+                formControlName="parentId">
+      <mat-option *ngFor="let item of parents" value="{{item.categoryId}}">{{item.name}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="createCategoryForm.get('parentId').errors">
+      Municipio es requerido
+    </mat-error>
+  </mat-form-field>
+
+
+  <div >
+    <button
+      mat-raised-button
+      color="primary"
+      class="btn-large-50"
+      type="submit"
+    >
+      Guardar
+    </button>
+    <button
+      mat-raised-button
+      color=""
+      class="btn-large-50"
+      type="button"
+      (click)="cancel()"
+    >
+      Cancelar
+    </button>
+  </div>
+</form> -->
+
+
+
+<div class="contenedor-formulario">
+    <div class="wrap">
+      <form action="" class="formulario">
+        <div>
+          <div class="input-group">
+            <input type="text" id="nombre" name="nombre">
+            <label class="label" for="nombre">Nombre:</label>
+          </div>
+          <div class="input-group">
+            <input type="email" id="correo" name="correo">
+            <label class="label" for="correo">Correo:</label>
+          </div>
+          <div class="input-group">
+            <input type="password" id="pass" name="pass">
+            <label class="label" for="pass">Contraseña:</label>
+          </div>
+          <div class="input-group">
+            <input type="password" id="pass2" name="pass2">
+            <label class="label" for="pass2">Repetir Contraseña:</label>
+          </div>
+          <div class="input-group radio">
+            <input type="radio" name="sexo" id="hombre" value="Hombre">
+            <label for="hombre">Hombre</label>
+            <input type="radio" name="sexo" id="mujer" value="Mujer">
+            <label for="mujer">Mujer</label>
+          </div>
+          <div class="input-group checkbox">
+            <input type="checkbox" name="terminos" id="terminos" value="true">
+            <label for="terminos">Acepto los Terminos y Condiciones</label>
+          </div>
+  
+          <input type="submit" id="btn-submit" value="Enviar">
+        </div>
+      </form>
+    </div>
+  </div>

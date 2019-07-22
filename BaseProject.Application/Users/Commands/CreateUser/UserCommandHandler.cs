@@ -52,19 +52,22 @@ namespace BaseProject.Application.Auth.Commands.Login
                         ValidationFailure[] errors = new ValidationFailure[] { new ValidationFailure("PlantId", "La cantidad de usuarios para esta planta no puede ser mayor a " + plant.OperatorsQuantity) };
                         throw new ValidationException(errors);
                     }
-
-                    //var rolesOperator= usersByPlant.Select(x=>x.Roles.Where(r=>r.RoleId== RolesNames.Admin.Id)).ToList().Count();
-                    //if (usersByPlant.Count() + 1 == plant.OperatorsQuantity && )
                     
-                    
-
                     var user = _mapper.Map<User>(request);
                     var result = await _userManager.CreateAsync(user, request.Password);
-                    if (!result.Succeeded)                    
-                        throw new ValidationException(result.ToValidationFailureList());                                    
-                    result = await _userManager.AddToRolesAsync(user, request.Roles);                                           
-                    if (!result.Succeeded)                    
-                        throw new ValidationException(result.ToValidationFailureList());               
+                    if (!result.Succeeded)
+                    {
+                        //throw new ValidationException(result.ToValidationFailureList());                         
+                        ValidationFailure[] errors = new ValidationFailure[] { new ValidationFailure("PlantId", result.Errors.First().Description) };
+                        throw new ValidationException(errors);
+                    }                    
+                                                       
+                    result = await _userManager.AddToRolesAsync(user, request.Roles);
+                    if (!result.Succeeded)
+                    {
+                        ValidationFailure[] errors = new ValidationFailure[] { new ValidationFailure("PlantId", result.Errors.First().Description) };
+                        throw new ValidationException(errors);
+                    }              
 
                     ts.Complete();
                     return user.Id;

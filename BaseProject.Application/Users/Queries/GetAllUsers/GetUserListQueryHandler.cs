@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading;
@@ -32,14 +33,14 @@ namespace BaseProject.Application.Users.Administrators.Queries.GetAdministratorD
         }
 
         public async Task<UserListViewModel> Handle(GetUserListQuery request,CancellationToken cancellationToken)
-        {            
+        {
+            var userId = Convert.ToInt16(_httpContextAccesor.HttpContext.User.FindFirst("id")?.Value);
             var data = _context.Users
                                       .OrderByDescending(x => x.CreationTime)
-                                      .Where(x => !x.IsDeleted &&
+                                      .Where(x => !x.IsDeleted && x.Id != userId &&
                                                          (string.IsNullOrEmpty(request.Email) || x.Email.Contains(request.Email)))
                                       .AsQueryable().ProjectTo<UserLookupModel>(_mapper.ConfigurationProvider);
-           var pageList = await PagedList<UserLookupModel>.CreateAsync(data, request.PageNumber, request.PageSize);
-            
+           var pageList = await PagedList<UserLookupModel>.CreateAsync(data, request.PageNumber, request.PageSize);           
             return new UserListViewModel {
                 PageNumber=pageList.CurrentPage,
                 PageSize=pageList.PageSize,

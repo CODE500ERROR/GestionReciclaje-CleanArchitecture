@@ -73,7 +73,15 @@ namespace BaseProject.Persistence
         private void SeedUsers(BaseProjectDbContext context)
         {
 
-            var userSuperAdmin = new User() { FirstName = "Super Admin", LastName = "Super Admin", Email = "super_admin@gmail.com", UserName = "super_admin@gmail.com", NormalizedEmail = "super_admin@gmail.com".ToUpper(), NormalizedUserName = "super_admin@gmail.com".ToUpper(), CreationTime = DateTime.Now, ConcurrencyStamp = "a07301d1-bc56-4e99-a2b3-b59e438bb129", SecurityStamp = "6YYH5RHYUXZC7RVJ4CHFGYRST465ZVFY", PasswordHash = "AQAAAAEAACcQAAAAECqWq4BVHlxZP8v3+lJHuZEt4rHoP8zQ6peVBNjjQvUDuPHUiC8GkrpuVNEw5O8Q7w==" };
+            var userSuperAdmin = new User() { FirstName = "Super Admin", LastName = "Super Admin",
+                                              Email = "super_admin@gmail.com", UserName = "super_admin@gmail.com",
+                                              NormalizedEmail = "super_admin@gmail.com".ToUpper(),
+                                              NormalizedUserName = "super_admin@gmail.com".ToUpper(),
+                                              CreationTime = DateTime.Now,
+                                              ConcurrencyStamp = "72f1a523-bd84-4ce3-837e-7bb1ae0a858e",
+                                              SecurityStamp = "5C2PYGYDGPP7T455XEEIDXXQUSECSQMJ",
+                                              PasswordHash = "AQAAAAEAACcQAAAAEDaNjfiSXFkS4J9t4PThBC1uD8LkqiX7sah5wkqXhPz7Gqbvtkqtz+cVc5/k6CpwRg=="
+            };
             context.Users.Add(userSuperAdmin);
             var userRole = new UserRole() {
                 RoleId = RolesNames.SuperAdmin.Id,
