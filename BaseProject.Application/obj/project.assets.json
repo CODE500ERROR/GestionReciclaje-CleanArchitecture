@@ -2955,13 +2955,15 @@
       ]
     },
     "Newtonsoft.Json/11.0.2": {
-      "sha512": "znZGbws7E4BA9jxNZ7FuiIRI3C9hrgatVQSTKhIYZYNOud4M5VfGlTYi6RdYO5sQrebFuF/g9UEV3hOxDMXF6Q==",
+      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
       "type": "package",
       "path": "newtonsoft.json/11.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
+        "Newtonsoft.Json.11.0.2.nupkg.sha512",
+        "Newtonsoft.Json.nuspec",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -2979,9 +2981,7 @@
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.11.0.2.nupkg.sha512",
-        "newtonsoft.json.nuspec"
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml"
       ]
     },
     "Remotion.Linq/2.2.0": {
@@ -5100,11 +5100,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.Application\\BaseProject.Application.csproj",
+      "projectUniqueName": "D:\\Development\\GestionReciclaje\\BaseProject.Application\\BaseProject.Application.csproj",
       "projectName": "BaseProject.Application",
-      "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.Application\\BaseProject.Application.csproj",
+      "projectPath": "D:\\Development\\GestionReciclaje\\BaseProject.Application\\BaseProject.Application.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.Application\\obj\\",
+      "outputPath": "D:\\Development\\GestionReciclaje\\BaseProject.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5123,17 +5123,17 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.Common\\BaseProject.Common.csproj": {
-              "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.Common\\BaseProject.Common.csproj"
+            "D:\\Development\\GestionReciclaje\\BaseProject.Common\\BaseProject.Common.csproj": {
+              "projectPath": "D:\\Development\\GestionReciclaje\\BaseProject.Common\\BaseProject.Common.csproj"
             },
-            "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.Domain\\BaseProject.Domain.csproj": {
-              "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.Domain\\BaseProject.Domain.csproj"
+            "D:\\Development\\GestionReciclaje\\BaseProject.Domain\\BaseProject.Domain.csproj": {
+              "projectPath": "D:\\Development\\GestionReciclaje\\BaseProject.Domain\\BaseProject.Domain.csproj"
             },
-            "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.Persistence\\BaseProject.Persistence.csproj": {
-              "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.Persistence\\BaseProject.Persistence.csproj"
+            "D:\\Development\\GestionReciclaje\\BaseProject.Persistence\\BaseProject.Persistence.csproj": {
+              "projectPath": "D:\\Development\\GestionReciclaje\\BaseProject.Persistence\\BaseProject.Persistence.csproj"
             },
-            "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Common\\Whoever.Common.csproj": {
-              "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Common\\Whoever.Common.csproj"
+            "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Common\\Whoever.Common.csproj": {
+              "projectPath": "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Common\\Whoever.Common.csproj"
             }
           }
         }

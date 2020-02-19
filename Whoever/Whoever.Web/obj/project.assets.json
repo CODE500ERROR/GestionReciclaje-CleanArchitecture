@@ -8124,11 +8124,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Web\\Whoever.Web.csproj",
+      "projectUniqueName": "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Web\\Whoever.Web.csproj",
       "projectName": "Whoever.Web",
-      "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Web\\Whoever.Web.csproj",
+      "projectPath": "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Web\\Whoever.Web.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Web\\obj\\",
+      "outputPath": "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -8147,8 +8147,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Common\\Whoever.Common.csproj": {
-              "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Common\\Whoever.Common.csproj"
+            "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Common\\Whoever.Common.csproj": {
+              "projectPath": "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Common\\Whoever.Common.csproj"
             }
           }
         }

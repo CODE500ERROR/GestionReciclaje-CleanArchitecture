@@ -139,17 +139,13 @@ namespace BaseProject.WebApi
                                 }
                             });
                     })
-                // Enable middleware to serve generated Swagger as a JSON endpoint.
-                .UseSwagger()
-                //.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials())
-
-                .UseCors(x => x.WithOrigins("http://localhost:4200")
-                .AllowAnyHeader().AllowAnyMethod().AllowCredentials())
-
+                 // Enable middleware to serve generated Swagger as a JSON endpoint.
+                 .UseSwagger()
+                .UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().WithOrigins().AllowCredentials())
                 // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), 
                 // specifying the Swagger JSON endpoint.
                 .UseSwaggerUI(c => {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "BaseProject V1");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "TableroFiscal V1");
                 })
                 .UseAuthentication()
                 .UseMvc();

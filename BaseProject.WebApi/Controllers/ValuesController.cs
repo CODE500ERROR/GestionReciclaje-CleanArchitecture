@@ -15,7 +15,7 @@ namespace BaseProject.WebApi.Controller
     //[Authorize()]
     public class ValuesController : BaseController
     {
-      
+        [HttpGet]
         public string Get()
         {
             return "Its work";

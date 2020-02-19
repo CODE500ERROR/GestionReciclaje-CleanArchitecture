@@ -1,0 +1,185 @@
+<form
+  [formGroup]="userForm"
+  name="userForm"
+  (ngSubmit)="createUser()"
+  autocomplete="off"
+>
+  <div class="div-container">
+    <mat-grid-list cols="2" rowHeight="50px">
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button
+          style="margin-right: 10px;"
+          class="mat-raised-button mat-primary"
+          color="primary"
+          type="submit"
+        >
+          <span class="mat-button-wrapper"
+            ><mat-icon
+              class="mat-icon notranslate material-icons mat-icon-no-color"
+              role="img"
+              aria-hidden="true"
+              >save</mat-icon
+            >
+            Guardar
+          </span>
+        </button>
+
+        <a
+          [routerLink]="['/usuarios']"
+          class="mat-raised-button"
+          color="primary"
+          type="button"
+        >
+          <span class="mat-button-wrapper"
+            ><mat-icon
+              class="mat-icon notranslate material-icons mat-icon-no-color"
+              role="img"
+              aria-hidden="true"
+              >keyboard_backspace</mat-icon
+            >
+            Cancelar
+          </span>
+        </a>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1"> </mat-grid-tile>
+    </mat-grid-list>
+
+    <div
+      class=""
+      fxLayout="row wrap"
+      style="flex-flow: row wrap; box-sizing: border-box; display: flex;"
+    >
+      <div
+        class=""
+        fxFlex="100"
+        fxFlex.gt-sm="100"
+        style="flex: 1 1 100%; box-sizing: border-box; max-width: 100%;"
+      >
+        <mat-card class="mat-card">
+          <mat-card-content class="mat-card-content">
+            <mat-card-title class="mat-card-title">Crear</mat-card-title>
+
+            <!--FIELD FIRSTNAME-->
+            <mat-form-field>
+              <input
+                type="text"
+                matInput
+                [value]="userForm.get('firstName').value"
+                formControlName="firstName"
+                name="firstName"
+                autofocus
+                placeholder="Nombre"
+              />
+
+              <mat-error *ngIf="userForm.get('firstName').errors">
+                Nombre es requerido
+              </mat-error>
+            </mat-form-field>
+
+            <!--FIELD LASTNAME-->
+            <mat-form-field>
+              <input
+                matInput
+                [value]="userForm.get('lastName').value"
+                formControlName="lastName"
+                name="lastName"
+                placeholder="Apellido"
+              />
+
+              <mat-error *ngIf="userForm.get('lastName').errors">
+                Apellido es requerido
+              </mat-error>
+            </mat-form-field>
+
+            <!--FIELD ADDRESS-->
+            <mat-form-field>
+              <input
+                matInput
+                [value]="userForm.get('address').value"
+                formControlName="address"
+                name="address"
+                placeholder="Dirección"
+              />
+            </mat-form-field>
+
+            <!--FIELD IDENTIFICATION TYPE-->
+            <mat-form-field>
+              <mat-label>Tipo de Identificación</mat-label>
+              <mat-select
+              [value]="userForm.get('identificationTypeId').value"
+                formControlName="identificationTypeId"
+                name="identificationType"
+              >
+                <mat-option
+                  *ngFor="let food of identificationTypes"
+                  [value]="food.identificationTypeId"
+                >
+                  {{ food.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <!--FIELD IDENTIFICATION VALUE-->
+            <mat-form-field>
+              <input
+                type="number"
+                matInput
+                [value]="userForm.get('identificationValue').value"
+                formControlName="identificationValue"
+                name="identificationValue"
+                placeholder="Número de Identificación"
+              />
+            </mat-form-field>
+
+            <mat-form-field>
+              <input
+                matInput
+                [value]="userForm.get('email').value"
+                formControlName="email"
+                name="email"
+                placeholder="Email"
+              />
+
+              <mat-error *ngIf="f.email.errors && f.email.errors.required">
+                Email es requerido
+              </mat-error>
+
+              <mat-error *ngIf="f.email.errors && f.email.errors.email">
+                Debe ingresar un email válido
+              </mat-error>
+            </mat-form-field>
+
+            <!--FIELD PHONENUMBERL-->
+            <mat-form-field>
+              <input
+                type="number"
+                matInput
+                [value]="userForm.get('phoneNumber').value"
+                formControlName="phoneNumber"
+                name="phoneNumber"
+                placeholder="Teléfono"
+              />
+            </mat-form-field>
+
+         
+         <!--FIELD role TYPE-->
+         <mat-form-field>
+          <mat-label>Rol</mat-label>
+          <mat-select [value]="userForm.get('rol').value" 
+                      formControlName="rol" 
+                      name="rol">
+            <mat-option *ngFor="let item of roles" [value]="item.value">
+              {{item.value}}
+            </mat-option>
+          </mat-select>
+
+          <mat-error *ngIf="userForm.get('rol').errors">
+            Rol es requerido
+          </mat-error>
+        </mat-form-field>
+          
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</form>

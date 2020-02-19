@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>{{data.message}}</h1>
+      <mat-form-field class="demo-chip-list" *ngIf="data.element.length">
+          <mat-chip-list #chipList>            
+            <mat-chip *ngFor="let item of data.element">
+              {{item.name}}
+            </mat-chip>            
+            <input [matChipInputFor]="chipList" />
+          </mat-chip-list>
+        </mat-form-field>
+
+<div mat-dialog-actions>  
+  <button mat-raised-button color="primary" (click)="closeDialog()">Ok</button>
+</div>
+
+
+
+
+

@@ -32,3 +32,4 @@ D:\Development\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Data\obj\Debug
 D:\Development\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Data\obj\Debug\netstandard2.0\Whoever.Data.dll
 D:\Development\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Data\obj\Debug\netstandard2.0\Whoever.Data.pdb
 D:\Development\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Data\obj\Debug\netstandard2.0\Whoever.Data.csprojAssemblyReference.cache
+D:\Development\GestionReciclaje\Whoever\Whoever.Data\obj\Debug\netstandard2.0\Whoever.Data.csprojAssemblyReference.cache

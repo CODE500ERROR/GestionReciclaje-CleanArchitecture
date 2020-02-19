@@ -13552,11 +13552,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.WebApi\\BaseProject.WebApi.csproj",
+      "projectUniqueName": "D:\\Development\\GestionReciclaje\\BaseProject.WebApi\\BaseProject.WebApi.csproj",
       "projectName": "BaseProject.WebApi",
-      "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.WebApi\\BaseProject.WebApi.csproj",
+      "projectPath": "D:\\Development\\GestionReciclaje\\BaseProject.WebApi\\BaseProject.WebApi.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.WebApi\\obj\\",
+      "outputPath": "D:\\Development\\GestionReciclaje\\BaseProject.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13575,20 +13575,20 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.Application\\BaseProject.Application.csproj": {
-              "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.Application\\BaseProject.Application.csproj"
+            "D:\\Development\\GestionReciclaje\\BaseProject.Application\\BaseProject.Application.csproj": {
+              "projectPath": "D:\\Development\\GestionReciclaje\\BaseProject.Application\\BaseProject.Application.csproj"
             },
-            "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.Common\\BaseProject.Common.csproj": {
-              "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.Common\\BaseProject.Common.csproj"
+            "D:\\Development\\GestionReciclaje\\BaseProject.Common\\BaseProject.Common.csproj": {
+              "projectPath": "D:\\Development\\GestionReciclaje\\BaseProject.Common\\BaseProject.Common.csproj"
             },
-            "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.Infrastructure\\BaseProject.Infrastructure.csproj": {
-              "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\BaseProject.Infrastructure\\BaseProject.Infrastructure.csproj"
+            "D:\\Development\\GestionReciclaje\\BaseProject.Infrastructure\\BaseProject.Infrastructure.csproj": {
+              "projectPath": "D:\\Development\\GestionReciclaje\\BaseProject.Infrastructure\\BaseProject.Infrastructure.csproj"
             },
-            "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Common\\Whoever.Common.csproj": {
-              "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Common\\Whoever.Common.csproj"
+            "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Common\\Whoever.Common.csproj": {
+              "projectPath": "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Common\\Whoever.Common.csproj"
             },
-            "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Web\\Whoever.Web.csproj": {
-              "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Web\\Whoever.Web.csproj"
+            "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Web\\Whoever.Web.csproj": {
+              "projectPath": "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Web\\Whoever.Web.csproj"
             }
           }
         }

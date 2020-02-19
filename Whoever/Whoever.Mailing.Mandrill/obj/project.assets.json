@@ -275,11 +275,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing.Mandrill\\Whoever.Mailing.Mandrill.csproj",
+      "projectUniqueName": "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Mailing.Mandrill\\Whoever.Mailing.Mandrill.csproj",
       "projectName": "Whoever.Mailing.Mandrill",
-      "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing.Mandrill\\Whoever.Mailing.Mandrill.csproj",
+      "projectPath": "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Mailing.Mandrill\\Whoever.Mailing.Mandrill.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing.Mandrill\\obj\\",
+      "outputPath": "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Mailing.Mandrill\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -298,8 +298,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing\\Whoever.Mailing.csproj": {
-              "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing\\Whoever.Mailing.csproj"
+            "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Mailing\\Whoever.Mailing.csproj": {
+              "projectPath": "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Mailing\\Whoever.Mailing.csproj"
             }
           }
         }

@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing\\Whoever.Mailing.csproj",
+      "projectUniqueName": "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Mailing\\Whoever.Mailing.csproj",
       "projectName": "Whoever.Mailing",
-      "projectPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing\\Whoever.Mailing.csproj",
+      "projectPath": "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Mailing\\Whoever.Mailing.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\Development\\GestionReciclaje-CleanArchitecture\\Whoever\\Whoever.Mailing\\obj\\",
+      "outputPath": "D:\\Development\\GestionReciclaje\\Whoever\\Whoever.Mailing\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

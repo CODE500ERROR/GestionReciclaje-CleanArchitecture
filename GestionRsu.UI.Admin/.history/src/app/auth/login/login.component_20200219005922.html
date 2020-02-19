@@ -1,0 +1,79 @@
+<div class="login-register">
+  <div class="login-register-box">
+    <mat-card>
+      <mat-card-content>
+        <form
+          class="login-form"
+          [formGroup]="loginForm"
+          name="loginForm"
+          (ngSubmit)="login()"
+        >
+          <div class="text-center">
+            <h2 class="app-name">Iniciar Sesión</h2>
+          </div>
+
+          <div fxLayout="row wrap">
+            <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.gt-xs="100">
+              <mat-form-field class="w-100">
+                <input
+                  matInput
+                  placeholder="Email"
+                  name="email"
+                  formControlName="email"
+                  required
+                />
+                <mat-error *ngIf="loginForm.get('email').errors">
+                  Email is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.gt-xs="100">
+              <mat-form-field class="w-100">
+                <input
+                  matInput
+                  name="password"
+                  type="password"
+                  formControlName="password"
+                  [type]="hide ? 'password' : 'text'"
+                  placeholder="Contraseña"
+                  required
+                />
+                <mat-icon matSuffix (click)="hide = !hide">{{
+                  hide ? "visibility_off" : "visibility"
+                }}</mat-icon>
+                <mat-error *ngIf="loginForm.get('password').errors">
+                  Password is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div fxFlex="50" fxFlex.gt-sm="50" fxFlex.gt-xs="50">
+              <!-- <mat-checkbox color="primary">Remember Me</mat-checkbox> -->
+            </div>
+            <div
+              fxFlex="50"
+              fxFlex.gt-sm="50"
+              fxFlex.gt-xs="50"
+              class="text-right font-weight-400"
+            >
+              <!-- <a href="javascript:void(0)">Forget Password</a> -->
+            </div>
+            <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.gt-xs="100">
+              <button
+                mat-raised-button
+                color="primary"
+                class="btn-block btn-lg m-t-20 m-b-20"
+                [disabled]="loading"
+                type="submit">
+                                
+                <span *ngIf="!loading">Iniciar Sesión</span>
+                <mat-icon *ngIf="loading"
+                  ><mat-spinner color="accent" diameter="20"> </mat-spinner
+                ></mat-icon>
+              </button>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -32,3 +32,4 @@ D:\Development\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Mailing\obj\De
 D:\Development\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Mailing\obj\Debug\netstandard2.0\Whoever.Mailing.AssemblyInfo.cs
 D:\Development\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Mailing\obj\Debug\netstandard2.0\Whoever.Mailing.dll
 D:\Development\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Mailing\obj\Debug\netstandard2.0\Whoever.Mailing.pdb
+D:\Development\GestionReciclaje-CleanArchitecture\Whoever\Whoever.Mailing\obj\Debug\netstandard2.0\Whoever.Mailing.csprojAssemblyReference.cache
