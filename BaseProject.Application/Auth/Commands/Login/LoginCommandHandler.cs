@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using BaseProject.Application.Interfaces;
@@ -7,7 +8,6 @@ using BaseProject.Domain;
 using BaseProject.Persistence;
 using FluentValidation.Results;
 using MediatR;
-using Whoever.Common.Exceptions;
 
 namespace BaseProject.Application.Auth.Commands.Login
 {
@@ -30,38 +30,20 @@ namespace BaseProject.Application.Auth.Commands.Login
 
         public async Task<LoginModel> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
-            try
-            {
-                // ensure we have a user with the given user name
+            
                 var user = await _userManager.FindByNameAsync(request.Email);
                 if (user == null)
-                {
-                    ValidationFailure[] errors = new ValidationFailure[] { new ValidationFailure("Email", "Invalid Email") };
-                    throw new ValidationException(errors); //nameof(LoginCommand.Password), "Invalid UserName or Password");
-                }
+                    throw new ValidationException("Usuario Inválido");
 
                 var validPassword = await _userManager.CheckPasswordAsync(user, request.Password);
                 if (!validPassword)
-                {
-                    ValidationFailure[] errors = new ValidationFailure[] { new ValidationFailure("Password", "Invalid Password") };
-                    throw new ValidationException(errors); //nameof(LoginCommand.Password), "Invalid UserName or Password");
-                }
+                    throw new ValidationException("Contraseña Inválida");
 
-
-                // generate refresh token
                 var token = _tokenFactory.GenerateToken();
-                //var refreshToken = new RefreshToken(token, DateTime.UtcNow.AddDays(5), user.Id, request.RemoteIpAddress);
-                //_context.RefreshTokens.Add(refreshToken);
-                //await _context.SaveChangesAsync();
                 var roles = await _userManager.GetRolesAsync(user);
                 var accessToken = await _jwtFactory.GenerateEncodedToken(user.Id.ToString(), user.UserName, roles );
                 return new LoginModel(accessToken, token);
-            }
-            catch (System.Exception ex)
-            {
-
-                throw new ValidationException();
-            }
+           
            
         }
     }

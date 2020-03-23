@@ -6,6 +6,7 @@ using BaseProject.Application.Roles;
 using BaseProject.Application.Roles.GetAllRoles;
 using BaseProject.Application.Separation.Commands;
 using BaseProject.Application.Separation.Queries;
+using BaseProject.Application.Separation.Queries.GetSeparationByPlant;
 using BaseProject.Application.Users.Commands.UpdateUser;
 using BaseProject.Application.Users.Queries.GetAllUsers;
 using BaseProject.WebApi.Common;
@@ -55,6 +56,21 @@ namespace BaseProject.WebApi.Controller
         {
             return Ok(await Mediator.Send(new GetSeparationDetailQuery { SeparationId = id }));
         }
+
+
+        /// <summary>
+        /// Get user by id.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("GetSeparationByPlant")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<GetSeparationByPlantModel>> GetSeparationByPlant()
+        {
+            return Ok(await Mediator.Send(new GetSeparationByPlantQuery {}));
+        }
+
+
+        
 
 
         /// delete user.

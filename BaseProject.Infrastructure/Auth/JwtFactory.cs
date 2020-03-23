@@ -37,8 +37,7 @@ namespace BaseProject.Infrastructure.Auth
             {
                 claims.Add(new Claim(Constants.Strings.JwtClaimIdentifiers.Rol, role));
             }
-
-            // Create the JWT security token and encode it.
+           
             var jwt = new JwtSecurityToken(
                 _jwtOptions.Issuer,
                 _jwtOptions.Audience,

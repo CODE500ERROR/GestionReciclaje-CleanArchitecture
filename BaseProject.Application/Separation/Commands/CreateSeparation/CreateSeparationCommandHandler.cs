@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -32,19 +33,12 @@ namespace BaseProject.Application.Separation.Commands
             
             try
             {
-                var userId = Convert.ToInt16(_httpContextAccesor.HttpContext.User.FindFirst("id")?.Value);
-                var user = await _context.Users.Where(x=>x.Id==userId).FirstAsync();
+                var userId = _httpContextAccesor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var user = await _context.Users.Where(x=>x.Id==1).FirstAsync();
                 request.PlantId = user.PlantId;
 
-                var separation = new Domain.Separation {
-                    Description = request.Description,
-                    PlantId = request.PlantId.Value,
-                    ProductId = request.ProductId,
-                    MeasuresUnit = request.MeasuresUnit,
-                    Quantity = request.Quantity
-                }; //_mapper.Map<Domain.Separation>(request);
-                
-                var result = await _context.Separations.AddAsync(separation);
+                var separation = _mapper.Map<Domain.Separation>(request);           
+                var result = await _context.Separations.AddAsync(separation);                
                 await _context.SaveChangesAsync(cancellationToken);
                 return true;
             }
