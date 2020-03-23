@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ChartType, ChartDataSets, ChartOptions } from 'chart.js';
 import { Label } from 'ng2-charts';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
-import { SeparationService } from '../../../shared/services/separation.service';
 
 
 @Component({
@@ -23,34 +22,19 @@ export class BarChartReportComponent implements OnInit {
       }
     }
   };
-  public barChartLabels: Label[] = [];
+  public barChartLabels: Label[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [pluginDataLabels];
 
   public barChartData: ChartDataSets[] = [
-    { data: [], label: '' },
-    { data: [], label: '' },
-    { data: [], label: '' }
+    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
+    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
   ];
 
-  constructor(private separationService: SeparationService) {this. getSeparationByPlant(); }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  private getSeparationByPlant() {
-    this.separationService.getSeparationByPlant().subscribe(result => {
-      let i = 0;
-      result.forEach(item => {
-           this.barChartLabels.push(item.plantName);
-           this.barChartData[i].data.push(item.quantity);
-           this.barChartData[i].label= (item.plantName);
-           i  = i + 1;
-        });
-    }, error => {
-
-    });
   }
 
   // events

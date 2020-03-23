@@ -19,7 +19,6 @@ export class PieChartComponent implements OnInit {
     plugins: {
       datalabels: {
         formatter: (value, ctx) => {
-          // const quantity = (ctx.chart.data.datasets[0].data[ctx.dataIndex]);
           const label = ctx.chart.data.labels[ctx.dataIndex];
           return label;
         },
@@ -29,7 +28,7 @@ export class PieChartComponent implements OnInit {
   public pieChartLabels: Label[] = [];
   public pieChartData: number[] = [];
   public pieChartType: ChartType = 'pie';
-  public pieChartLegend = true;
+  public pieChartLegend = false;
   public pieChartPlugins = [pluginDataLabels];
   public pieChartColors = [
     {

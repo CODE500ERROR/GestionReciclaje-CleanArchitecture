@@ -29,7 +29,7 @@ export class BarChartReportComponent implements OnInit {
   public barChartPlugins = [pluginDataLabels];
 
   public barChartData: ChartDataSets[] = [
-    { data: [], label: '' },
+    { data: [], label: '' }
     { data: [], label: '' },
     { data: [], label: '' }
   ];
@@ -41,8 +41,8 @@ export class BarChartReportComponent implements OnInit {
 
   private getSeparationByPlant() {
     this.separationService.getSeparationByPlant().subscribe(result => {
-      let i = 0;
       result.forEach(item => {
+          let i = 0;
            this.barChartLabels.push(item.plantName);
            this.barChartData[i].data.push(item.quantity);
            this.barChartData[i].label= (item.plantName);

@@ -29,9 +29,7 @@ export class BarChartReportComponent implements OnInit {
   public barChartPlugins = [pluginDataLabels];
 
   public barChartData: ChartDataSets[] = [
-    { data: [], label: '' },
-    { data: [], label: '' },
-    { data: [], label: '' }
+    { data: [65, 59, 80], label: 'Series A' },
   ];
 
   constructor(private separationService: SeparationService) {this. getSeparationByPlant(); }
@@ -40,13 +38,13 @@ export class BarChartReportComponent implements OnInit {
   }
 
   private getSeparationByPlant() {
-    this.separationService.getSeparationByPlant().subscribe(result => {
-      let i = 0;
-      result.forEach(item => {
+    this.separationService.getSeparationByPlant().subscribe(data => {
+        data.forEach(item => {
            this.barChartLabels.push(item.plantName);
-           this.barChartData[i].data.push(item.quantity);
-           this.barChartData[i].label= (item.plantName);
-           i  = i + 1;
+          // this.barChartData.push({
+          //   data: [65, 59, 80],
+          //   label: item.plantName
+          // });
         });
     }, error => {
 
