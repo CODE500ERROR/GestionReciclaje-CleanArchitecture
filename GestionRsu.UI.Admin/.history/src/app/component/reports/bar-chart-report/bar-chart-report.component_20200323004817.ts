@@ -30,7 +30,7 @@ export class BarChartReportComponent implements OnInit {
 
   public barChartData: ChartDataSets[] = [
     { data: [65, 59, 80], label: 'Series A' },
-    // { data: [28, 48, 40], label: 'Series B' }
+    { data: [28, 48, 40], label: 'Series B' }
     // { data: [], label: '' },
     // { data: [], label: '' }
   ];

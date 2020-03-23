@@ -29,8 +29,7 @@ export class BarChartReportComponent implements OnInit {
   public barChartPlugins = [pluginDataLabels];
 
   public barChartData: ChartDataSets[] = [
-    { data: [65, 59, 80], label: 'Series A' },
-    // { data: [28, 48, 40], label: 'Series B' }
+    { data: [], label: 'Seria A' },
     // { data: [], label: '' },
     // { data: [], label: '' }
   ];
@@ -45,7 +44,7 @@ export class BarChartReportComponent implements OnInit {
        // let i = 0;
       result.forEach(item => {
            this.barChartLabels.push(item.plantName);
-           // this.barChartData[0].data.push(item.quantity);
+           this.barChartData[0].data.push(item.quantity);
            // this.barChartData[0].label= (item.plantName);
            // i  = i + 1;
         });
