@@ -15,7 +15,7 @@ namespace BaseProject.Persistence.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
+                .HasAnnotation("ProductVersion", "2.2.2-servicing-10034")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -24,9 +24,7 @@ namespace BaseProject.Persistence.Migrations
                     b.Property<Guid>("CategoryId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("CreationTime")
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 7, 18, 17, 0, 28, 27, DateTimeKind.Local).AddTicks(284));
+                    b.Property<DateTime>("CreationTime");
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -72,9 +70,7 @@ namespace BaseProject.Persistence.Migrations
                     b.Property<Guid>("MunicipioId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("CreationTime")
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 7, 18, 17, 0, 28, 23, DateTimeKind.Local).AddTicks(5839));
+                    b.Property<DateTime>("CreationTime");
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -98,9 +94,7 @@ namespace BaseProject.Persistence.Migrations
                         .IsRequired()
                         .HasMaxLength(200);
 
-                    b.Property<DateTime>("CreationTime")
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 7, 18, 17, 0, 28, 8, DateTimeKind.Local).AddTicks(6822));
+                    b.Property<DateTime>("CreationTime");
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -128,9 +122,7 @@ namespace BaseProject.Persistence.Migrations
 
                     b.Property<Guid>("CategoryId");
 
-                    b.Property<DateTime>("CreationTime")
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 7, 18, 17, 0, 28, 15, DateTimeKind.Local).AddTicks(989));
+                    b.Property<DateTime>("CreationTime");
 
                     b.Property<string>("Description");
 
@@ -221,9 +213,7 @@ namespace BaseProject.Persistence.Migrations
                     b.Property<Guid>("SeparationId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("CreationTime")
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 7, 18, 17, 0, 28, 19, DateTimeKind.Local).AddTicks(6545));
+                    b.Property<DateTime>("CreationTime");
 
                     b.Property<string>("Description");
 

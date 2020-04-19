@@ -33,8 +33,8 @@ namespace BaseProject.Application.Separation.Commands
             
             try
             {
-                var userId = _httpContextAccesor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-                var user = await _context.Users.Where(x=>x.Id==1).FirstAsync();
+                var userId = int.Parse(_httpContextAccesor.HttpContext.User.Claims.FirstOrDefault(u => u.Type == "id").Value);
+                var user = await _context.Users.Where(x=>x.Id== userId).FirstAsync();
                 request.PlantId = user.PlantId;
 
                 var separation = _mapper.Map<Domain.Separation>(request);           

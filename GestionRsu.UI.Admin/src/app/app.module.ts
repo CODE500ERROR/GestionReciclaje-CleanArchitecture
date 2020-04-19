@@ -44,12 +44,9 @@ export function token() {
     HasRoleDirective,
     ModalOkComponent,
     ModalConfirmComponent,
-    
-
   ],
   imports: [
     BrowserModule,
-    
     BrowserAnimationsModule,
     DemoMaterialModule,
     FormsModule,
@@ -68,8 +65,8 @@ export function token() {
     JwtModule.forRoot({
       config: {
         tokenGetter: token,
-        whitelistedDomains: ['localhost:52677'],
-        blacklistedRoutes: ['localhost:52677/api/auth']
+        whitelistedDomains: ['localhost:52676'],
+        blacklistedRoutes: ['localhost:52676/api/auth']
       }
     }),
   ],

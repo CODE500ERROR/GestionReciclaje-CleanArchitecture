@@ -27,14 +27,17 @@ export class EditSeparationComponent implements OnInit {
     private fb: FormBuilder,
     private alertService: AlertifyService,
     private separationService: SeparationService
-  ) {}
-
-  ngOnInit() {
+  ) {
+    
     this.route.data.subscribe(data => {
       this.separation = data.separation;
-      this.createUpdateForm();
+      console.log( data.separation);
       this.getAllProduct();
     });
+  }
+
+  ngOnInit() {
+    this.createUpdateForm();
   }
 
   createUpdateForm() {
@@ -70,7 +73,8 @@ export class EditSeparationComponent implements OnInit {
   getAllProduct() {
     this.productService.getAll(this.filtersProduct).subscribe(
       res => {
-        this.products = (res.entity as unknown) as Product[];
+        this.products = res.entity;
+        console.log(this.products);
       },
       error => {
         this.alertService.error(error);

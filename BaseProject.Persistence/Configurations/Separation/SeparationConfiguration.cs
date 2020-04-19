@@ -19,10 +19,7 @@ namespace BaseProject.Persistence.Configurations.Plant
             builder
                    .Property(x => x.IsDeleted)
                    .HasDefaultValue(false);
-
-            builder
-                 .Property(x => x.CreationTime)
-                 .HasDefaultValue(DateTime.Now);
+           
 
             builder
                   .HasOne(x => x.Plant)

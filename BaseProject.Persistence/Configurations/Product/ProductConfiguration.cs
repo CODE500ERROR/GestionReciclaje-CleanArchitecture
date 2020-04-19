@@ -19,9 +19,7 @@ namespace BaseProject.Persistence.Configurations.Plant
                 .IsRequired()
                 .HasMaxLength(100);
 
-            builder.Property(x => x.CreationTime)
-                   .HasDefaultValue(DateTime.Now);
-
+            
             builder.Property(x => x.IsDeleted)
                    .HasDefaultValue(false);
 

@@ -23,6 +23,7 @@ namespace BaseProject.WebApi.Controller
 {
 
     //[Authorize(Policy  = "RequiredAdminRole")]
+    [Authorize()]
     public class CategoryController : BaseController
     {
         /// <summary>

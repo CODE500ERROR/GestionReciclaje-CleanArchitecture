@@ -73,13 +73,13 @@ namespace BaseProject.WebApi
             
 
             //policy
-            services.AddAuthorization(option => {
+            //services.AddAuthorization(option => {
 
-                option.AddPolicy("RequiredAdminRole", policy => policy.RequireRole("Admin"));
-                //option.AddPolicy("RequiredAdminRole", policy => policy.RequireClaim("api-access"));
-                option.AddPolicy("RequiredSuperAdminRole", policy => policy.RequireRole("Super Admin"));
-                option.AddPolicy("RequiredOperator", policy => policy.RequireRole("Operator"));
-            });
+            //    option.AddPolicy("RequiredAdminRole", policy => policy.RequireRole("Admin"));
+            //    //option.AddPolicy("RequiredAdminRole", policy => policy.RequireClaim("api-access"));
+            //    option.AddPolicy("RequiredSuperAdminRole", policy => policy.RequireRole("Super Admin"));
+            //    option.AddPolicy("RequiredOperator", policy => policy.RequireRole("Operator"));
+            //});
 
 
 
