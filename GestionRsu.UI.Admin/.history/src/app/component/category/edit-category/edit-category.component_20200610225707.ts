@@ -45,7 +45,8 @@ export class EditCategoryComponent implements OnInit {
       this.alertService.error(error);
     }, () => {
       this.alertService.success('Modificado exitosamente');
-      this.cancel();
+      this.router.navigate(['/categorias']);
+
     });
   }
 

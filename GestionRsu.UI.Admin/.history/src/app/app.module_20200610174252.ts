@@ -28,7 +28,6 @@ import { ErrorInterceptorProvider } from './shared/helpers/error.interceptor';
 import { NgxLoadingModule } from 'ngx-loading';
 import { LoaderService } from './shared/services/loader.service';
 import { LoaderInterceptor } from './shared/helpers/loader.interceptor';
-import { TokenInterceptor } from './shared/helpers/token.interceptor';
 
 export function token() {
   return localStorage.getItem('token');
@@ -66,7 +65,7 @@ export function token() {
     JwtModule.forRoot({
       config: {
         tokenGetter: token,
-        whitelistedDomains: ['localhost:52676'],
+        whitelistedDomains: ['http://gestionrsu.api.devlights.com'],
         blacklistedRoutes: ['localhost:52676/api/auth']
       }
     }),
@@ -79,11 +78,6 @@ export function token() {
       provide: LocationStrategy,
       useClass: PathLocationStrategy
     },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true
-    }
   ],
   entryComponents: [ModalOkComponent, ModalConfirmComponent],
   bootstrap: [AppComponent]

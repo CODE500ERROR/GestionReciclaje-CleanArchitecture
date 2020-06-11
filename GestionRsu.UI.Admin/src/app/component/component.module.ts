@@ -55,6 +55,7 @@ import { ListSeparationComponent } from './separation/list-separation/list-separ
 import { ChartsModule } from 'ng2-charts';
 import { BarChartReportComponent } from './reports/bar-chart-report/bar-chart-report.component';
 import { PieChartComponent } from './reports/pie-chart/pie-chart.component';
+import { ReportComponent } from './reports/report/report.component';
 
 
 @NgModule({
@@ -143,6 +144,7 @@ import { PieChartComponent } from './reports/pie-chart/pie-chart.component';
     ListUserComponent,
     BarChartReportComponent,
     PieChartComponent,
+    ReportComponent,
   ]
 })
 export class ComponentsModule { }

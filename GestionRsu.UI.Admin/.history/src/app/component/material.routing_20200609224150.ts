@@ -43,7 +43,6 @@ import { EditSeparationComponent } from './separation/edit-separation/edit-separ
 import { DetailSeparationResolver } from '../shared/resolvers/detail-separation-resolvers';
 import { BarChartReportComponent } from './reports/bar-chart-report/bar-chart-report.component';
 import { PieChartComponent } from './reports/pie-chart/pie-chart.component';
-import { ReportComponent } from './reports/report/report.component';
 
 export const MaterialRoutes: Routes = [
   {
@@ -210,8 +209,15 @@ export const MaterialRoutes: Routes = [
   
   // ******************** REPORTS *******************
   {
-    path: 'reportes',
-    component: ReportComponent,
+    path: 'reportes/planta',
+    component: BarChartReportComponent,
+    // data: { roles: ['Admin', 'Super Admin'] }
+  },
+
+
+  {
+    path: 'reportes/torta',
+    component: PieChartComponent,
     // data: { roles: ['Admin', 'Super Admin'] }
   },
 

@@ -41,10 +41,6 @@ constructor(private http: HttpClient) { }
     return !this.jwtHelper.isTokenExpired(token);
   }
 
-  getToken() {
-    return  localStorage.getItem('token');;
-  }
-
   initToken() {
     const token = localStorage.getItem('token');
     const user: User = JSON.parse(localStorage.getItem('user'));

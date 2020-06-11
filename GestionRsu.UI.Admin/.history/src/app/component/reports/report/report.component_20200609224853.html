@@ -1,0 +1,9 @@
+<h3>Reportes</h3>
+
+<mat-form-field>
+    <mat-label>Seleccione reporte</mat-label>
+    <mat-select >
+      <mat-option *ngFor="let item of reportsType" value="{{item.id}}">{{item.value}}</mat-option>
+    </mat-select>
+
+  </mat-form-field>
