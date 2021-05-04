@@ -7,4 +7,6 @@ export class Plant {
   address: string;
   municipioName: string;
   operatorsQuantity: number;
+  longitude : string;
+  latitude : string;
 }

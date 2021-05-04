@@ -36,6 +36,8 @@ export class EditPlantComponent implements OnInit {
          plantId: [this.plant.plantId, Validators.required],
          name: [this.plant.name, Validators.required],
          address: [this.plant.address, Validators.required],
+         latitude: [this.plant.latitude, Validators.required],
+         longitude: [this.plant.longitude, Validators.required],
          municipioId: [this.plant.municipioId],
          operatorsQuantity: [this.plant.operatorsQuantity, Validators.required],
        }

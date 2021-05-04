@@ -63,7 +63,7 @@ autocomplete="off"
             <mat-form-field class="full-width-input">
               <input matInput 
                      placeholder="Nombre"            
-                     [value]="createPlantForm.get('name').value | titlecase"
+                     [value]="createPlantForm.get('name').value"
                      formControlName="name" />
               
                      <mat-error *ngIf="createPlantForm.get('name').errors">
@@ -73,7 +73,7 @@ autocomplete="off"
           
             <mat-form-field class="full-width-input">
               <input matInput placeholder="Dirección" 
-                     [value]="createPlantForm.get('address').value | titlecase"
+                     [value]="createPlantForm.get('address').value"
                      formControlName="address" />
           
               <mat-error *ngIf="createPlantForm.get('address').errors">
@@ -100,6 +100,28 @@ autocomplete="off"
               </mat-select>
               <mat-error *ngIf="createPlantForm.get('municipioId').errors">
                 Municipio es requerido
+              </mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field class="full-width-input">
+              <input matInput 
+                     placeholder="Latitud"            
+                     formControlName="latitude" />
+              
+                     <mat-error *ngIf="createPlantForm.get('latitude').errors">
+                Latitud es requerido
+              </mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field class="full-width-input">
+              <input matInput 
+                     placeholder="Longitud"            
+                     formControlName="longitude" />
+              
+                     <mat-error *ngIf="createPlantForm.get('longitude').errors">
+                      Longitud es requerido
               </mat-error>
             </mat-form-field>
           

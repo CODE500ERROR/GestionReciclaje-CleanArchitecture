@@ -34,7 +34,7 @@ export class ReportComponent implements OnInit {
   public barChartPlugins = [pluginDataLabels];
 
   public barChartData: ChartDataSets[] = [
-    { data: [65, 59, 80], label: 'Series A' },
+    // { data: [65, 59, 80], label: 'Series A' },
     // { data: [28, 48, 40], label: 'Series B' }
     // { data: [], label: '' },
     // { data: [], label: '' }
@@ -81,6 +81,7 @@ export class ReportComponent implements OnInit {
   private getSeparationByPlant() {
     this.separationService.getSeparationByPlant().subscribe(
       (data) => {
+        console.log(data)
         this.MappedPieChartReport(data);
         this.MappedBarChartReport(data);
       },
@@ -96,6 +97,7 @@ export class ReportComponent implements OnInit {
   }
   private MappedBarChartReport(data) {
     data.forEach((item) => {
+      this.barChartData.push({ data: [65, 59, 80], label: item.plantName });
       this.barChartLabels.push(item.plantName);
     });
   }

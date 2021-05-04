@@ -18,8 +18,7 @@ export const AppRoutes: Routes = [
       },
       {
         path: '',
-        loadChildren:
-          './component/component.module#ComponentsModule'
+        loadChildren: './component/component.module#ComponentsModule'
       },
       {
         path: 'starter',

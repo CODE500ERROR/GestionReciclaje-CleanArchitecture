@@ -9,7 +9,7 @@ import { StarterRoutes } from './starter.routing';
 @NgModule({
   imports: [
     CommonModule,
-    DemoMaterialModule,
+     DemoMaterialModule,
     FlexLayoutModule,
     RouterModule.forChild(StarterRoutes)
   ],
