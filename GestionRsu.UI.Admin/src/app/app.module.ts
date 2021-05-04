@@ -62,7 +62,7 @@ export function token() {
       progressBar: true,
       positionClass: 'toast-bottom-right'
     }),
-    RouterModule.forRoot(AppRoutes),
+    RouterModule.forRoot(AppRoutes, { relativeLinkResolution: 'legacy' }),
     JwtModule.forRoot({
       config: {
         tokenGetter: token,

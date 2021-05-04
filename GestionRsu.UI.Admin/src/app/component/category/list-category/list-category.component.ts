@@ -19,8 +19,8 @@ export class ListCategoryComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = [ 'name', 'parentName', 'actions'];
   panelOpenState: boolean;
   public dataSource = new MatTableDataSource<Category>();
-  @ViewChild(MatSort, {static: false}) sort: MatSort;
-  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private route: ActivatedRoute, private router: Router,  private alertify: AlertifyService,
               private categoryService: CategoryService,  public dialogService: ModalService) { }

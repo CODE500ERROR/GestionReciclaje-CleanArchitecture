@@ -24,8 +24,8 @@ export class ListPlantComponent implements OnInit, AfterViewInit {
     'actions'
   ];
   public dataSource = new MatTableDataSource<Plant>();
-  @ViewChild(MatSort ,{static: false}) sort: MatSort;
-  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
     private route: ActivatedRoute,
