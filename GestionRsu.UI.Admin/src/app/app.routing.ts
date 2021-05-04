@@ -18,11 +18,11 @@ export const AppRoutes: Routes = [
       },
       {
         path: '',
-        loadChildren: './component/component.module#ComponentsModule'
+        loadChildren: () => import('./component/component.module').then(m => m.ComponentsModule)
       },
       {
         path: 'starter',
-        loadChildren: './starter/starter.module#StarterModule'
+        loadChildren: () => import('./starter/starter.module').then(m => m.StarterModule)
       }
     ]
   },
