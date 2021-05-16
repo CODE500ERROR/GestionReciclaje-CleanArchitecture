@@ -34,6 +34,8 @@
     <Compile Remove="Migrations\20190226203856_InitialCreate.cs" />
     <Compile Remove="Migrations\20190226203955_InitialCreate.cs" />
     <Compile Remove="Migrations\20190226204959_InitialCreate.cs" />
+    <Compile Remove="Migrations\20210505150732_ConvertLatLongToLong.cs" />
+    <Compile Remove="Migrations\20210505150732_ConvertLatLongToLong.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

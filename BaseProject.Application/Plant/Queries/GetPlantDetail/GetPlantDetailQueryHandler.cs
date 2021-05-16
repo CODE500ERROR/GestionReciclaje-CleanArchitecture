@@ -39,7 +39,9 @@ namespace BaseProject.Application.Plant.Queries.GetPlantDetail
                 Name=Plant.Name,
                 Address=Plant.Address,
                 OperatorsQuantity=Plant.OperatorsQuantity,
-                MunicipioId=Plant.MunicipioId
+                MunicipioId=Plant.MunicipioId,
+                Longitude = Plant.Longitude,
+                Latitude = Plant.Latitude
             };
 
         }

@@ -27,7 +27,7 @@ namespace BaseProject.Infrastructure.Auth
             var identity = GenerateClaimsIdentity(id, userName, roles);
             var claims = new List<Claim>
             {
-                 new Claim(JwtRegisteredClaimNames.Sub, userName),
+                 new Claim(JwtRegisteredClaimNames.Email, userName),
                  new Claim(JwtRegisteredClaimNames.Jti, await _jwtOptions.JtiGenerator()),
                  new Claim(JwtRegisteredClaimNames.Iat, ToUnixEpochDate(_jwtOptions.IssuedAt).ToString(), ClaimValueTypes.Integer64),                                  
                  new Claim(Constants.Strings.JwtClaimIdentifiers.Id, id)

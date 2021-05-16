@@ -1,0 +1,221 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>Crear Plantas </strong>
+          </div>
+          <div class="card-body" *ngIf="createPlantForm">
+            <form
+              [formGroup]="createPlantForm"
+              (ngSubmit)="create()"
+              #ngForm="ngForm"
+            >
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="form-col-form-label">Nombre</label>
+                    <input
+                      [ngClass]="{
+                        'is-invalid':
+                          createPlantForm.controls.name.errors && ngForm.submitted
+                      }"
+                      type="text"
+                      formControlName="name"
+                      class="form-control"
+                    />
+  
+                    <div
+                      class="invalid-feedback"
+                      *ngIf="
+                        createPlantForm.controls.name.errors && ngForm.submitted
+                      "
+                    >
+                      Este campo es requerido.
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="form-col-form-label">Dirección</label>
+                    <input
+                      [ngClass]="{
+                        'is-invalid':
+                          createPlantForm.controls.address.errors &&
+                          ngForm.submitted
+                      }"
+                      type="text"
+                      formControlName="address"
+                      class="form-control"
+                    />
+  
+                    <div
+                      class="invalid-feedback"
+                      *ngIf="
+                        createPlantForm.controls.address.errors &&
+                        ngForm.submitted
+                      "
+                    >
+                      Este campo es requerido.
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row">
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="form-col-form-label">Cantidad de Operarios</label>
+                        <input
+                          [ngClass]="{
+                            'is-invalid':
+                              createPlantForm.controls.operatorsQuantity.errors &&
+                              ngForm.submitted
+                          }"
+                          type="text"
+                          formControlName="operatorsQuantity"
+                          class="form-control"
+                        />
+      
+                        <div
+                          class="invalid-feedback"
+                          *ngIf="
+                            createPlantForm.controls.operatorsQuantity.errors &&
+                            ngForm.submitted
+                          "
+                        >
+                          Este campo es requerido.
+                        </div>
+                      </div>
+                    </div>
+                  <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="form-col-form-label">Municipio</label>
+                    <!-- <select
+                      id="select1"
+                      name="select1"
+                      formControlName="municipioId"
+                      class="form-control"
+                    >
+                      <option [value]="null" disabled>
+                        Seleccione Municipio
+                      </option>
+                      <option
+                        *ngFor="let item of municipios"
+                        [value]="item.municipioId"
+                      >
+                        {{ item.name }}
+                      </option>
+                    </select>
+   -->
+                    
+                    <ng-select  
+                    [items]="municipios"
+                      bindLabel="name"
+                      bindValue="municipioId"
+                      [selectOnTab]="true"
+                      placeholder="Seleccione Sub categoria"
+                      appendTo="body"
+                      formControlName="municipioId">
+                    </ng-select>
+                    <div
+                      class="invalid-feedback"
+                      *ngIf="
+                        createPlantForm.controls.municipioId.errors &&
+                        ngForm.submitted
+                      "
+                    >
+                      Este campo es requerido.
+                    </div>
+                  </div>
+                  </div>
+              </div>
+  
+  
+              <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label class="form-col-form-label">Latitud</label>
+                      <input
+                        [ngClass]="{
+                          'is-invalid':
+                            createPlantForm.controls.latitude.errors && ngForm.submitted
+                        }"
+                        type="text"
+                        formControlName="latitude"
+                        class="form-control"
+                      />
+    
+                      <div
+                        class="invalid-feedback"
+                        *ngIf="
+                          createPlantForm.controls.latitude.errors && ngForm.submitted
+                        "
+                      >
+                        Este campo es requerido.
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label class="form-col-form-label">Longitud</label>
+                      <input
+                        [ngClass]="{
+                          'is-invalid':
+                            createPlantForm.controls.longitude.errors &&
+                            ngForm.submitted
+                        }"
+                        type="text"
+                        formControlName="longitude"
+                        class="form-control"
+                      />
+    
+                      <div
+                        class="invalid-feedback"
+                        *ngIf="
+                          createPlantForm.controls.longitude.errors &&
+                          ngForm.submitted
+                        "
+                      >
+                        Este campo es requerido.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+  
+              
+  
+              <div class="row">
+                <div class="col-12 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                  <button
+                    [disabled]="isLoading"
+                    type="submit"
+                    class="btn btn-primary float-right ml-1"
+                  >
+                    <i *ngIf="!isLoading" class="fa fa-save"></i>
+                    <i
+                      *ngIf="isLoading"
+                      class="fa fa-spinner fa-spin fa-3x fa-fw"
+                      style="font-size: 20px"
+                    ></i>
+                    &nbsp;Guardar
+                  </button>
+                  <a
+                    routerLink="/plantas"
+                    type="button"
+                    class="btn btn-secondary float-right"
+                    ><i class="fa fa-close"></i>&nbsp;Cancelar</a
+                  >
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--/.col-->
+    </div>
+  </div>
+  

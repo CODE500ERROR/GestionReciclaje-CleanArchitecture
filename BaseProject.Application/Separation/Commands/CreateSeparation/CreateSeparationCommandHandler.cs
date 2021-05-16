@@ -35,17 +35,21 @@ namespace BaseProject.Application.Separation.Commands
             {
                 var userId = int.Parse(_httpContextAccesor.HttpContext.User.Claims.FirstOrDefault(u => u.Type == "id").Value);
                 var user = await _context.Users.Where(x=>x.Id== userId).FirstAsync();
+                if (!user.PlantId.HasValue)
+                    throw new Exception("Su usuario no tiene una planta asignada");
+
                 request.PlantId = user.PlantId;
 
-                var separation = _mapper.Map<Domain.Separation>(request);           
+                var separation = _mapper.Map<Domain.Separation>(request);
+                separation.CreationTime = DateTime.Now;
                 var result = await _context.Separations.AddAsync(separation);                
                 await _context.SaveChangesAsync(cancellationToken);
                 return true;
             }
             catch (Exception ex)
             {
-                ex.ReThrow();
-                return false;
+                throw ex;
+
             }
         }
     }

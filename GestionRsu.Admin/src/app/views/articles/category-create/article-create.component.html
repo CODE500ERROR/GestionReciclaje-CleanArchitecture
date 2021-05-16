@@ -1,0 +1,62 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <strong>Create Article </strong>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="articleForm" (ngSubmit)="create()" #ngForm="ngForm">
+
+            <div class="row">
+              <div class="col-sm-5">
+                <div class="form-group ">
+                  <label class="form-col-form-label">Nombre</label>
+                  <input [ngClass]="{'is-invalid': articleForm.controls.name.errors && ngForm.submitted }" 
+                         type="text" formControlName="name" class="form-control" />
+
+                  <div class="invalid-feedback" *ngIf="
+                        articleForm.controls.name.errors && ngForm.submitted
+                      ">
+                    Este campo es requerido.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="form-group ">
+                  <label class="form-col-form-label">Categoría</label>
+                  <select id="select1" name="select1" formControlName="parentId" class="form-control">
+                    <option [value]="null" disabled>Seleccione una categoría</option>
+                    <option *ngFor="let item of parents" [value]="item.categoryId">{{item.name}}</option>
+                  </select>
+
+                  <div class="invalid-feedback" *ngIf="articleForm.controls.parentId.errors && ngForm.submitted">
+                    Este campo es requerido.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="row">
+              <div class="col-12 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+
+                <button [disabled]="isLoading" type="submit" class="btn btn-primary float-right ml-1">
+                  <i *ngIf="!isLoading" class="fa fa-save"></i>
+                  <i *ngIf="isLoading" class="fa fa-spinner fa-spin fa-3x fa-fw" style="font-size: 20px;"></i>
+                  &nbsp;Save
+                </button>
+                <a routerLink="/categorias" type="button" class="btn btn-secondary float-right"><i
+                    class="fa fa-close"></i>&nbsp;Cancel</a>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--/.col-->
+  </div>
+</div>

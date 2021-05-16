@@ -26,7 +26,7 @@ export class EditPlantComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.plant = (data.plant);
       this.getAllMunicipios();
-      this.createUpdateForm();
+      this.createUpdateForm(); 
     });
   }
 

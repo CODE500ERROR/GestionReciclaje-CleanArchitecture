@@ -1,0 +1,95 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>Crear Separación </strong>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="createSeparationForm" (ngSubmit)="create()" #ngForm="ngForm">
+  
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group ">
+                    <label class="form-col-form-label">Descripción</label>
+                    <input [ngClass]="{'is-invalid': createSeparationForm.controls.description.errors && ngForm.submitted }" 
+                           type="text" formControlName="description" class="form-control" />
+  
+                    <div class="invalid-feedback" *ngIf="
+                          createSeparationForm.controls.description.errors && ngForm.submitted
+                        ">
+                      Este campo es requerido.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group ">
+                      <label class="form-col-form-label">Producto</label>
+                      <select  id="select1" name="select1" formControlName="productId" class="form-control">
+                        <option [value]="null" disabled>Seleccione Producto</option>
+                        <option *ngFor="let item of products" [value]="item.productId">{{item.name}}</option>
+                      </select>
+    
+                      <div class="invalid-feedback" *ngIf="
+                            createSeparationForm.controls.productId.errors && ngForm.submitted
+                          ">
+                        Este campo es requerido.
+                      </div>
+                    </div>
+                  </div>
+  
+               
+  
+              </div>
+
+              <div class="row">
+
+                <div class="col-sm-6">
+                    <div class="form-group ">
+                      <label class="form-col-form-label">Unidad</label>
+                      <select  id="select1" name="select1" formControlName="measuresUnit" class="form-control">
+                        <option [value]="null" disabled>Seleccione Unidad</option>
+                        <option *ngFor="let item of measuresUnits" [value]="item">{{item}}</option>
+                      </select>
+    
+                      <div class="invalid-feedback" *ngIf="createSeparationForm.controls.measuresUnit.errors && ngForm.submitted">
+                        Este campo es requerido.
+                      </div>
+                    </div>
+                  </div>
+                <div class="col-sm-6">
+                    <div class="form-group ">
+                      <label class="form-col-form-label">Cantidad</label>
+                      
+                      <input [ngClass]="{'is-invalid': createSeparationForm.controls.quantity.errors && ngForm.submitted }" 
+                      type="text" formControlName="quantity" class="form-control" />
+
+                      <div class="invalid-feedback" *ngIf="createSeparationForm.controls.quantity.errors && ngForm.submitted">
+                        Este campo es requerido.
+                      </div>
+                    </div>
+                </div>
+              </div>
+  
+  
+              <div class="row">
+                <div class="col-12 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+  
+                  <button [disabled]="isLoading" type="submit" class="btn btn-primary float-right ml-1">
+                    <i *ngIf="!isLoading" class="fa fa-save"></i>
+                    <i *ngIf="isLoading" class="fa fa-spinner fa-spin fa-3x fa-fw" style="font-size: 20px;"></i>
+                    &nbsp;Guardar
+                  </button>
+                  <a routerLink="/separaciones" type="button" class="btn btn-secondary float-right"><i
+                      class="fa fa-close"></i>&nbsp;Cancelar</a>
+                </div>
+              </div>
+  
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--/.col-->
+    </div>
+  </div>

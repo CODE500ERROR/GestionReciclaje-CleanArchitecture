@@ -1,0 +1,268 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <strong>Crear Usuario </strong>
+        </div>
+        <div class="card-body">
+          <form
+            [formGroup]="createUserForm"
+            (ngSubmit)="create()"
+            #ngForm="ngForm"
+          >
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="form-col-form-label">Nombre</label>
+                  <input
+                    [ngClass]="{
+                      'is-invalid':
+                        createUserForm.controls.firstName.errors &&
+                        ngForm.submitted
+                    }"
+                    type="text"
+                    formControlName="firstName"
+                    class="form-control"
+                  />
+
+                  <div
+                    class="invalid-feedback"
+                    *ngIf="
+                      createUserForm.controls.firstName.errors &&
+                      ngForm.submitted
+                    "
+                  >
+                    Este campo es requerido.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="form-col-form-label">Apellido</label>
+                  <input
+                    [ngClass]="{
+                      'is-invalid':
+                        createUserForm.controls.lastName.errors &&
+                        ngForm.submitted
+                    }"
+                    type="text"
+                    formControlName="lastName"
+                    class="form-control"
+                  />
+
+                  <div
+                    class="invalid-feedback"
+                    *ngIf="
+                      createUserForm.controls.lastName.errors &&
+                      ngForm.submitted
+                    "
+                  >
+                    Este campo es requerido.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="form-col-form-label">Teléfono</label>
+                  <input
+                    [ngClass]="{
+                      'is-invalid':
+                        createUserForm.controls.phoneNumber.errors &&
+                        ngForm.submitted
+                    }"
+                    type="text"
+                    formControlName="phoneNumber"
+                    class="form-control"
+                  />
+
+                  <div
+                    class="invalid-feedback"
+                    *ngIf="
+                      createUserForm.controls.phoneNumber.errors &&
+                      ngForm.submitted
+                    "
+                  >
+                    Este campo es requerido.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="form-col-form-label">Email</label>
+                  <input
+                    [ngClass]="{
+                      'is-invalid':
+                        createUserForm.controls.email.errors && ngForm.submitted
+                    }"
+                    type="text"
+                    formControlName="email"
+                    class="form-control"
+                  />
+
+                  <div
+                    class="invalid-feedback"
+                    *ngIf="
+                      createUserForm.controls.email.errors && ngForm.submitted
+                    "
+                  >
+                    <div *ngIf="createUserForm.controls.email.errors.required">
+                      Este campo es requerido.
+                    </div>
+                    <div *ngIf="createUserForm.controls.email.errors.email">
+                      Debe ingresar un email válido.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="form-col-form-label">Contraseña</label>
+                  <input
+                    [ngClass]="{
+                      'is-invalid':
+                        createUserForm.controls.password.errors &&
+                        ngForm.submitted
+                    }"
+                    type="password"
+                    formControlName="password"
+                    class="form-control"
+                  />
+
+                  <div
+                    class="invalid-feedback"
+                    *ngIf="
+                      createUserForm.controls.password.errors &&
+                      ngForm.submitted
+                    "
+                  >
+                    <div
+                      *ngIf="createUserForm.controls.password.errors.required"
+                    >
+                      Este campo es requerido.
+                    </div>
+                    <div
+                      *ngIf="
+                        createUserForm.controls.password.hasError('minlength')
+                      "
+                    >
+                      Contraseña debe tener al menos 8 caracteres.
+                    </div>
+
+                    <div
+                      *ngIf="
+                        createUserForm.controls.password.hasError('maxlength')
+                      "
+                    >
+                      Contrasñea no puede exceder 10 caracteres.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="form-col-form-label">Repetir Contraseña</label>
+                  <input
+                    [ngClass]="{
+                      'is-invalid':
+                        createUserForm.controls.confirmPassword.errors && ngForm.submitted
+                    }"
+                    type="password"
+                    formControlName="confirmPassword"
+                    class="form-control"
+                  />
+
+                  <div
+                    class="invalid-feedback"
+                    *ngIf="
+                      createUserForm.controls.confirmPassword.errors && ngForm.submitted
+                    "
+                  >
+                    <div *ngIf="createUserForm.controls.confirmPassword.errors.mustMatch">
+                        Contraseña y confirmar contraseña deben ser iguales
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group ">
+                      <label class="form-col-form-label">Planta</label>
+                      <select  id="select1" name="select1" formControlName="plantId" class="form-control">
+                        <option [value]="null" disabled>Seleccione Planta</option>
+                        <option *ngFor="let item of plants" [value]="item.plantId">{{item.name}}</option>
+                      </select>
+    
+                      <div class="invalid-feedback" *ngIf="createUserForm.controls.plantId.errors && ngForm.submitted">
+                        Este campo es requerido.
+                      </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="form-group ">
+                    <label class="form-col-form-label">
+
+                    Roles
+                    </label>
+                    
+                    <ng-select  
+                      	       [items]="roles"
+                                bindLabel="name"
+                                bindValue="name"
+                                [selectOnTab]="true"
+                                placeholder="Seleccione Roles"
+                                appendTo="body"
+                                [multiple]="true"
+                                formControlName="roles">
+                    </ng-select>
+                    
+  
+                    <div class="error-required" *ngIf="createUserForm.controls.roles.errors && ngForm.submitted">
+                      Este campo es requerido.
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                <button
+                  [disabled]="isLoading"
+                  type="submit"
+                  class="btn btn-primary float-right ml-1"
+                >
+                  <i *ngIf="!isLoading" class="fa fa-save"></i>
+                  <i
+                    *ngIf="isLoading"
+                    class="fa fa-spinner fa-spin fa-3x fa-fw"
+                    style="font-size: 20px"
+                  ></i>
+                  &nbsp;Guardar
+                </button>
+                <a
+                  routerLink="/separaciones"
+                  type="button"
+                  class="btn btn-secondary float-right"
+                  ><i class="fa fa-close"></i>&nbsp;Cancelar</a
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--/.col-->
+  </div>
+</div>

@@ -26,17 +26,16 @@ namespace BaseProject.Application.Plant.CreatePlant
         public async Task<bool> Handle(CreatePlantCommand request, CancellationToken cancellationToken)
         {
 
-            var plant = new BaseProject.Domain.Plant() {
-                Address = request.Address,
-                Name = request.Name,
-                MunicipioId = request.MunicipioId,
-                OperatorsQuantity=request.OperatorsQuantity
-            };
-
-
             try
             {
-
+                var plant = new BaseProject.Domain.Plant() {
+                    Address = request.Address,
+                    Name = request.Name,
+                    MunicipioId = request.MunicipioId,
+                    OperatorsQuantity = request.OperatorsQuantity,
+                    Latitude = request.Latitude,
+                    Longitude = request.Longitude
+                };
                 var result = await _context.Plants.AddAsync(plant);
 
                 await _context.SaveChangesAsync(cancellationToken);

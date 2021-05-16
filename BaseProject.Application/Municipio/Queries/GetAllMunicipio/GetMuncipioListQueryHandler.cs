@@ -31,9 +31,9 @@ namespace BaseProject.Application.Users.Administrators.Queries.GetAllRoles
 
         public async Task<MunicipioLookupModel> Handle(GetMunicipioListQuery request, CancellationToken cancellationToken)
         {
-            var a = _context.Municipios;
+           
            return new MunicipioLookupModel {
-               Municipios = await _context.Municipios.ProjectTo<MunicipioViewModel>(_mapper.ConfigurationProvider)
+               Municipios = await _context.Municipios.ProjectTo<MunicipioViewModel>(_mapper.ConfigurationProvider).OrderBy(x=>x.Name)
                                             .ToListAsync(cancellationToken)
            };
         }

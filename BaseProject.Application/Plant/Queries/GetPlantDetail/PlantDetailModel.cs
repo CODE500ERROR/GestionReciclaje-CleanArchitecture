@@ -14,5 +14,7 @@ namespace BaseProject.Application.Plant.Queries.GetPlantDetail
         public string Address { get; set; }
         public Guid MunicipioId { get; set; }
         public int OperatorsQuantity { get; set; }
+        public float Latitude { get; set; }
+        public float Longitude { get; set; }
     }
 }

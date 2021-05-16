@@ -43,10 +43,6 @@ export class CreateSeparationComponent implements OnInit {
     });
   }
 
-  get f() {
-    return this.createSeparationForm.controls;
-  }
-
   createSeparation() {
     if (this.createSeparationForm.invalid) {
       return;

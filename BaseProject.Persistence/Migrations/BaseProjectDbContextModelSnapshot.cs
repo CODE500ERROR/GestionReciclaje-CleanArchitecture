@@ -100,6 +100,10 @@ namespace BaseProject.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(false);
 
+                    b.Property<float>("Latitude");
+
+                    b.Property<float>("Longitude");
+
                     b.Property<Guid>("MunicipioId");
 
                     b.Property<string>("Name")

@@ -15,6 +15,8 @@ namespace BaseProject.Domain
         public Guid PlantId { get; set; }
         public string Name{ get; set; }
         public string Address{ get; set; }
+        public float Latitude { get; set; }
+        public float Longitude { get; set; }
         public DateTime CreationTime { get; set; }
         public bool IsDeleted { get; set; }
         public int OperatorsQuantity { get; set; }

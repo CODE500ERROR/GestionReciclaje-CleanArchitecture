@@ -1,0 +1,104 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>Editar Productos </strong>
+          </div>
+          <div class="card-body" *ngIf="editProductForm">
+            <form [formGroup]="editProductForm" (ngSubmit)="update()" #ngForm="ngForm">
+  
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group ">
+                    <label class="form-col-form-label">Nombre</label>
+                    <input [ngClass]="{'is-invalid': editProductForm.controls.name.errors && ngForm.submitted }" 
+                           type="text" formControlName="name" class="form-control" />
+  
+                    <div class="invalid-feedback" *ngIf="
+                          editProductForm.controls.name.errors && ngForm.submitted
+                        ">
+                      Este campo es requerido.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group ">
+                      <label class="form-col-form-label">Descripción</label>
+                      <input [ngClass]="{'is-invalid': editProductForm.controls.description.errors && ngForm.submitted }" 
+                             type="text" formControlName="description" class="form-control" />
+    
+                      <div class="invalid-feedback" *ngIf="
+                            editProductForm.controls.description.errors && ngForm.submitted
+                          ">
+                        Este campo es requerido.
+                      </div>
+                    </div>
+                  </div>
+  
+               
+  
+              </div>
+
+              <div class="row">
+
+                <div class="col-sm-6">
+                    <div class="form-group ">
+                      <label class="form-col-form-label">Categoría</label>
+                      <select (ngModelChange)="getCategoryByParent()" name="select1" formControlName="categoryParentId" class="form-control">
+                        <option [value]="null" disabled>Seleccione una categoría</option> 
+                        <option *ngFor="let item of parents" [value]="item.categoryId">{{item.name}}</option>
+                      </select>
+    
+                      <div class="invalid-feedback" *ngIf="editProductForm.controls.categoryParentId.errors && ngForm.submitted">
+                        Este campo es requerido.
+                      </div>
+                    </div>
+                  </div>
+                <div class="col-sm-6">
+                    <div class="form-group ">
+                      <label class="form-col-form-label">Sub Categoría</label>
+                      <!-- <select  name="select1" formControlName="categoryId" class="form-control">
+                        <option [value]="null" disabled>Seleccione sub categoría</option>
+                        <option *ngFor="let item of children" [value]="item.categoryId">{{item.name}}</option>
+                      </select> -->
+
+                      <ng-select  
+                      [items]="children"
+                       bindLabel="name"
+                       bindValue="categoryId"
+                       [selectOnTab]="true"
+                       placeholder="Seleccione Sub categoria"
+                       appendTo="body"
+                       formControlName="categoryId">
+                      </ng-select>
+    
+                      <div class="invalid-feedback" *ngIf="editProductForm.controls.categoryId.errors && ngForm.submitted">
+                        Este campo es requerido.
+                      </div>
+                    </div>
+                </div>
+              </div>
+  
+  
+              <div class="row">
+                <div class="col-12 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+  
+                  <button [disabled]="isLoading" type="submit" class="btn btn-primary float-right ml-1">
+                    <i *ngIf="!isLoading" class="fa fa-save"></i>
+                    <i *ngIf="isLoading" class="fa fa-spinner fa-spin fa-3x fa-fw" style="font-size: 20px;"></i>
+                    &nbsp;Guardar
+                  </button>
+                  <a routerLink="/productos" type="button" class="btn btn-secondary float-right"><i
+                      class="fa fa-close"></i>&nbsp;Cancelar</a>
+                </div>
+              </div>
+  
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--/.col-->
+    </div>
+  </div>
