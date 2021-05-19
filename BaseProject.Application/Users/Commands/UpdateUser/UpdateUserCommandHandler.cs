@@ -45,6 +45,9 @@ namespace BaseProject.Application.Users.Administrators.Commands.UpdateAdministra
             user.FirstName = request.FirstName;
             user.LastName = request.LastName;
             user.Email = request.Email;
+            user.UserName = request.Email;
+            user.NormalizedEmail= request.Email.ToUpper();
+            user.UserName= request.Email.ToUpper();
             user.PlantId = request.PlantId;
             user.PhoneNumber = request.PhoneNumber;
             await _context.SaveChangesAsync(cancellationToken);

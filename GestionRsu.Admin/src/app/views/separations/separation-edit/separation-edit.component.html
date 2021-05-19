@@ -26,10 +26,15 @@
                 <div class="col-sm-6">
                     <div class="form-group ">
                       <label class="form-col-form-label">Producto</label>
-                      <select  id="select1" name="select1" formControlName="productId" class="form-control">
-                        <option [value]="null" disabled>Seleccione Producto</option>
-                        <option *ngFor="let item of products" [value]="item.productId">{{item.name}}</option>
-                      </select>
+                      <ng-select  
+                          [items]="products"
+                          bindLabel="name"
+                          bindValue="productId"
+                          [selectOnTab]="true"
+                          placeholder="Seleccione Producto"
+                          appendTo="body"
+                          formControlName="productId">
+                      </ng-select>
     
                       <div class="invalid-feedback" *ngIf="
                             createSeparationForm.controls.productId.errors && ngForm.submitted

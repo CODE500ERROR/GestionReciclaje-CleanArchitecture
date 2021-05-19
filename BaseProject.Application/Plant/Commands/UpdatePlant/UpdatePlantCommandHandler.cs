@@ -34,8 +34,8 @@ namespace BaseProject.Application.Plant.Commands.UpdatePlant
             factory.Name = request.Name;
             factory.MunicipioId = request.MunicipioId;
             factory.OperatorsQuantity = request.OperatorsQuantity;
-            //factory.Latitude = request.Latitude;
-            //factory.Longitude = request.Longitude;
+            factory.Latitude = request.Latitude;
+            factory.Longitude = request.Longitude;
             await _context.SaveChangesAsync(cancellationToken);
 
             return Unit.Value;

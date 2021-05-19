@@ -33,6 +33,7 @@ export class PlantEditComponent implements OnInit {
       .subscribe((data) => {
 
         this.createPlantForm = this.fb.group({
+          plantId: [data.plantId],
           name: [data.name, Validators.required],
           address: [data.address, Validators.required],
           latitude: [data.latitude, Validators.required],
@@ -51,7 +52,7 @@ export class PlantEditComponent implements OnInit {
     this.plantService.updatePlant(this.createPlantForm.value).subscribe(
       () => {
         this.toastrService.success('Creado Exitosamente');
-        this.router.navigate(['/plantas']);
+        this.router.navigate(['/plantas']); 
         this.isLoading = false;
       },
       (error) => {

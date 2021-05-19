@@ -25,7 +25,7 @@ export class SeparationCreateComponent implements OnInit {
     private router: Router,
     private toastService: ToastrService,
     private fb: FormBuilder
-  ) {}
+  ) {this.filtersProduct.pageSize = 1000;}
 
   ngOnInit() {
     this.createRegisterForm();
@@ -61,7 +61,6 @@ export class SeparationCreateComponent implements OnInit {
 
   private getAllProduct() {
     this.productService.getAll(this.filtersProduct).subscribe((res) => {
-      console.log(res)
        this.products = res.entity as unknown as [];
     }, error => {
       this.toastService.error(error);

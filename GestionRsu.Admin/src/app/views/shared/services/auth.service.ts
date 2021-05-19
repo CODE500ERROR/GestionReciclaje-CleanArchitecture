@@ -25,7 +25,7 @@ export class AuthService {
 
 
   logOut() {
-    localStorage.setItem('authorizationData', JSON.stringify({}));
+    localStorage.removeItem('authorizationData');
     this.authentication = new Authentication();
   }
 

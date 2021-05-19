@@ -3,7 +3,7 @@
       <div class="col-sm-12">
         <div class="card">
           <div class="card-header">
-            <strong>Crear Plantas </strong>
+            <strong>Editar Plantas </strong>
           </div>
           <div class="card-body" *ngIf="createPlantForm">
             <form
@@ -111,7 +111,7 @@
    -->
                     
                     <ng-select  
-                    [items]="municipios"
+                      [items]="municipios"
                       bindLabel="name"
                       bindValue="municipioId"
                       [selectOnTab]="true"

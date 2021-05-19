@@ -8,6 +8,7 @@ using BaseProject.Domain;
 using BaseProject.Persistence;
 using FluentValidation.Results;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace BaseProject.Application.Auth.Commands.Login
 {
@@ -31,7 +32,7 @@ namespace BaseProject.Application.Auth.Commands.Login
         public async Task<LoginModel> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
             
-                var user = await _userManager.FindByNameAsync(request.Email);
+                var user = await _context.Users.FirstOrDefaultAsync(x=>x.Email == request.Email);
                 if (user == null)
                     throw new ValidationException("Usuario Inválido");
 

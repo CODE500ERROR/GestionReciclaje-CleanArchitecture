@@ -32,7 +32,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
             //for (const key in serverError.error) {
               //if (serverError.error[key]) {
                // modalStateErrors += serverError.error[key] + '\n';
-               modalStateErrors = serverError.error_description || serverError.ExceptionMessage;
+               modalStateErrors = serverError.error_description || serverError.ExceptionMessage || serverError.error[0];
               //}
             //}
           }

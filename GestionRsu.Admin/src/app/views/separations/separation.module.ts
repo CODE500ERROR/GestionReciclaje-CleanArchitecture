@@ -9,7 +9,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { SharedModule } from '../shared/shared.module';
-
+import { NgSelectModule } from '@ng-select/ng-select'; 
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { SharedModule } from '../shared/shared.module';
     ModalModule.forRoot(), 
     ReactiveFormsModule,
     FormsModule,
-    SharedModule 
+    SharedModule ,
+    NgSelectModule ,
 
   ]
 })
